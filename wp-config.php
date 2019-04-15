@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'voy_wp' );
+define( 'DB_NAME', 'voy-wp' );
 
 /** MySQL database username */
-define( 'DB_USER', 'voy_wp' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'voy_wp' );
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'U(p)0EQ$O;meL`Oe@1$t7nI?<$=|NJ)kb+Shya21)-M2HI#/B#e~:@gX+}h@[LNE' );
-define( 'SECURE_AUTH_KEY',  'Qpe;9 Ye^zuSozw@}2*f9mK~]7/V1,gf[^v4=}@ N!$<(q2qI<3U]kNK^P4b)n;7' );
-define( 'LOGGED_IN_KEY',    'R=yN?s&Ek8ncd;xuvIHU];2fo#piE[MbF6 63@aP:p1TyZmz#94(>XErht{}6<V,' );
-define( 'NONCE_KEY',        'Xr~QqP8%cjPA$] ?m*-CrcjgdfA6Vao>8C/AI6-pi_Y<rI]y=6fKSOS6i/%4F~Xl' );
-define( 'AUTH_SALT',        '<<7vysQ=uPfNxyl? z=97AyIfm~QNn5%JI7^)bFW&;A`V.5`W2xj+KXJY`_hV66T' );
-define( 'SECURE_AUTH_SALT', 'dT-4]:wh_.++<M&L6>&Eywn})wSzy+.`v6eBhl694uF(fc:yp9:?oV! PDbU(ST(' );
-define( 'LOGGED_IN_SALT',   '3rPPnmKp|dUR=KX{W-TVYH7a:60P7z}$h3jgggKJgn~9XX`)6XuCtzMLjypztu!m' );
-define( 'NONCE_SALT',       'X4aAby}iQOenS$2g7~R@,9+/-mc_lfzq!*RMP+cKOgv0K[{xS73~|k0u:zq>G.My' );
+define( 'AUTH_KEY',         'Gdy>JmcNFj_[F.nk&D!=jjM44B:U[L{n^/5%n]&VU/.j./VCz,!!ip;?pqZ#6kym' );
+define( 'SECURE_AUTH_KEY',  'rsa$ETS[GhH$Jl1X2EFVYXZY?fi{+zt)+-nzV+2cIAje?SO9I#;9N=HSnWY..vQq' );
+define( 'LOGGED_IN_KEY',    '4 ~^S#{|_W}H.dI/]|7SPb`CWP:qR4.T] $(u1Bgj$<=e,e*KSYv:5eDGgkB_.*<' );
+define( 'NONCE_KEY',        'fT,U2a$kZ=}~k-fV <:x)]VKerzA{Ym{$G*qhg6}+oI:KyR3aCu[T;Tmio=[ud3`' );
+define( 'AUTH_SALT',        'omR)K?9QxTeR/K3pF!ZEXdtBIJ)8p?nIk!$5=+n}4cgaPo?_|gSLvDiY VuYA_Du' );
+define( 'SECURE_AUTH_SALT', '[<+dY087Xk_y26TuOWgy0|&%6G,_Nk9Sqeq$]/GO@xmGCCqc}APL6gMIt*T,yc{B' );
+define( 'LOGGED_IN_SALT',   '>?R>{hUGq)YtXw9CvA!ld9G+.SZIl:%]G4c)y!&$y[^gjE{9|IyW@4GSb$nU|7a<' );
+define( 'NONCE_SALT',       'c9zyNv>=RjIr4>Qbz+=YIm+k94>wuyS}3w-y1GIC$C<&vy]|MVpP=BL~453$cag=' );
 
 /**#@-*/
 
