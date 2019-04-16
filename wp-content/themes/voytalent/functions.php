@@ -207,7 +207,7 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-/*$i = 0;
+/*
 add_filter('nav_menu_css_class', 'custom_nav_menu_css_class', 10, 2 );
 function custom_nav_menu_css_class( $classes, $items) {
     global $i;
@@ -234,7 +234,7 @@ add_filter('wp_nav_menu_objects', 'wpb_first_and_last_menu_class');
 */
 
 add_filter( 'nav_menu_link_attributes', 'menu_add_class', 10, 3 );
-
+$i = 0;
 function menu_add_class( $atts, $item, $args ) {
     global $i;
     if($args->theme_location = "menu-1" && $i==0){
