@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 
-
 <?php
 	$css_path = get_template_directory_uri() . '/assets/styles/voy-ds.css';
 ?>
@@ -49,15 +48,26 @@
 
 <header class="s-header">
 	<div class="gc">
-		<figure class="logo">
-			<svg id="Lager_2" data-name="Lager 2" xmlns="http://www.w3.org/2000/svg" width="361" height="101.18" viewBox="0 0 361 101.18"><title>voy-talent</title><polygon points="103 101.04 71 101.04 0 30.04 22 7.04 71 56.04 71 0.04 103 0.04 103 101.04"/><polygon points="251 101.04 251 0.04 282 0.04 282 34.04 316 0.04 338 22.04 282 78.04 282 101.04 251 101.04"/><circle cx="345" cy="85.04" r="16"/><path d="M216,80c-25-1-53.3,17.5-53,51,.29,33.26,29,52,53,50,24,2,52.71-16.74,53-50C269.3,97.5,241,79,216,80Zm0,73s-20,0-20-23,20-23,20-23,20,0,20,23S216,153,216,153Z" transform="translate(-39 -79.96)"/></svg>
-		</figure>
+        <a href="<?php echo get_site_url(); ?>">
+            <figure class="logo">
+                <svg id="Lager_2" data-name="Lager 2" xmlns="http://www.w3.org/2000/svg" width="361" height="101.18" viewBox="0 0 361 101.18"><title>voy-talent</title><polygon points="103 101.04 71 101.04 0 30.04 22 7.04 71 56.04 71 0.04 103 0.04 103 101.04"/><polygon points="251 101.04 251 0.04 282 0.04 282 34.04 316 0.04 338 22.04 282 78.04 282 101.04 251 101.04"/><circle cx="345" cy="85.04" r="16"/><path d="M216,80c-25-1-53.3,17.5-53,51,.29,33.26,29,52,53,50,24,2,52.71-16.74,53-50C269.3,97.5,241,79,216,80Zm0,73s-20,0-20-23,20-23,20-23,20,0,20,23S216,153,216,153Z" transform="translate(-39 -79.96)"/></svg>
+            </figure>
+        </a>
 		<nav>
-			<a href="#">Jobs</a>
-			<a href="#" class="-active">Inspiration</a>
-			<a href="#">About</a>
+            <?php
+                $menuParameters = array(
+                    'theme_location' => 'menu-1',
+                    'container'       => false,
+                    'echo'            => false,
+                    'items_wrap'      => '%3$s',
+                    'depth'           => 0,
+                );
+
+                echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' );
+            ?>
 		</nav>
 		<figure class="search-temp">
+            <?php get_search_form(); ?>
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"/></svg>
 		</figure>
 	</div>
