@@ -238,7 +238,7 @@ $i = 0;
 function menu_add_class( $atts, $item, $args ) {
     global $i;
     if($args->theme_location = "menu-1" && $i==0){
-        $class = '-active'; // or something based on $item
+        $class = '-active';
         $atts['class'] = $class;
     }
     $i++;
