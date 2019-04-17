@@ -6,50 +6,67 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 
 	<?php
-	  
-	  // Cache busting for CSS/JS and SVG
-	  $getCacheBustFile = get_template_directory_uri() . '/assets/styles/voy-ds.css';
-	  $getBustHash = '?' . filemtime( $getCacheBustFile );
-	  
+
+  	// Cache busting for CSS/JS and SVG
+  	$getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.css';
+  	if ( file_exists( $getCacheBustFile ) ) {
+      	$getBustHash = '?' . filemtime( $getCacheBustFile );
+   	} else {
+        $getBustHash = '';
+    }
+
 	  $svg_icon_path = get_template_directory_uri() . '/assets/svg/svg-sprite.svg' . $getBustHash;
 		$css_path = get_template_directory_uri() . '/assets/styles/voy-ds.css' . $getBustHash;
 		$js_path = get_template_directory_uri() . '/assets/scripts/voy.js' . $getBustHash;
 	?>
 
 	<script type="text/javascript">
-		
+
+    /* - - Inline Sync resource loader - - */
 		<?php
 			$toastloader = file_get_contents( 'assets/scripts/vendor/toast.min.js' , true );
 	    echo $toastloader;
     ?>
 
-		 var VOY_PRESET = {
-	      // theme: '<?php echo $site_namespace ?>',
-	      version: '<?php echo $getBustHash ?>',
-	      file: '<?php echo $getCacheBustFile ?>',
-	      path: {
-          svg: {
-            icons: '<?php echo $svg_icon_path ?>'
-          },
-          styles: '<?php echo $css_path ?>',
-          // print: '<?php echo $css_print_path ?>',
-          scripts: {
-          //   polyfills: '<?php echo $js_polyfills_path ?>',
-          	voy: '<?php echo $js_path ?>',
-          },
-          // critical: '',
-	      }
-		 };
+    var VOY_PRESET = {
+      path: {
+        svg: {
+          icons: '<?php echo $svg_icon_path ?>'
+        },
+        styles: '<?php echo $css_path ?>',
+        // print: '<?php echo $css_print_path ?>',
+        scripts: {
+        //   polyfills: '<?php echo $js_polyfills_path ?>',
+        	voy: '<?php echo $js_path ?>',
+        },
+        // critical: '',
+      }
+    };
 
-		// LOAD CSS ASYNC
-		toast('[css]'+VOY_PRESET.path.styles);
+    /* - - Inline Critical JS - - */
+    <?php
+      $js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
+      $jsInlineHead = file_get_contents( $js_inline_head , true );
+      echo $jsInlineHead;
+    ?>
 
 	</script>
 
 	<?php wp_head(); ?>
 </head>
 
-<body style="padding:0;margin:0;" <?php body_class( 'ds ds-grid ds-typography' ); ?>>
+<body id="bbb" style="padding:0;margin:0;" <?php body_class( 'ds ds-grid ds-typography' ); ?>>
+
+<script type="text/javascript">
+  VOY.initial.loadGoogleFONTS();
+</script>
+
+<figure class="svg-sprite -hide">
+	<?php
+    $svgSprite = file_get_contents( $svg_icon_path , true );
+    echo $svgSprite;
+  ?>
+</figure>
 
 <header class="s-header">
 	<div class="gc">
