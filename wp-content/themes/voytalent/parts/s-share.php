@@ -21,28 +21,25 @@
 		</div>
 		<div class="g-6 g-m-12 g-t-9">
 			<h3 class="header">Follow us</h3>
+            <?php
+                $array_menu = wp_get_nav_menu_items('Social Menu');
+                //echo "<pre>";
+                //print_r($array_menu)
+            ?>
 			<ul>
-				<li>
-					<a href="#">						
-						<svg role="img" title="icon" class="svg-icon">
-            				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-linkedin"  svg=""></use>
-            			</svg>
-					</a>
-				</li>
-				<li>
-					<a href="#">						
-						<svg role="img" title="icon" class="svg-icon">
-            				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-facebook"  svg=""></use>
-            			</svg>
-					</a>
-				</li>
-				<li>
-					<a href="#">						
-						<svg role="img" title="icon" class="svg-icon">
-            				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-twitter"  svg=""></use>
-            			</svg>
-					</a>
-				</li>
+                <?php
+                    foreach ($array_menu as $menu){
+                ?>
+                    <li>
+                        <a href="<?php echo $menu->url;?>">
+                            <svg role="img" title="icon" class="svg-icon">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo "#".$menu->classes[0];?>"  svg=""></use>
+                            </svg>
+                        </a>
+                    </li>
+				<?php
+                    }
+                ?>
 			</ul>
 		</div>
  	</div>

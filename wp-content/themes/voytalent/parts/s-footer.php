@@ -14,23 +14,24 @@
  <section class="s-footer">
  	<div class="gc">
 		<div class="g-3 g-m-12 hide-tab-desktop">
-			<p>Zurich, Switzerland</p>
-			<p class="mb0">+23465456</p>
-			<a href="#">info@voytalent.com</a>
+            <?php
+                $voy_address = get_option( 'my_option_name' );
+                echo $voy_address["voy_address"];
+            ?>
 		</div>
 		<div class="g-3 g-t-6 g-m-12">
-			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Jobs</a></li>
-				<li><a href="#">Stories</a></li>
-				<li><a href="#">Voy Tv</a></li>
-				<li><a href="#">Community</a></li>
-				<li><a href="#">Employers</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+            <?php
+                $menuFooterParameters = array(
+                    'theme_location' => 'footer',
+                    'container' => false,
+                    'depth' => 0,
+                );
+
+                wp_nav_menu($menuFooterParameters);
+            ?>
 		</div>
 		<div class="g-6 g-m-12 hide-tab-desktop">
-			<a href="#">Voy talent Privacy</a>
+			<a href="<?php echo get_privacy_policy_url();?>">Voy talent Privacy</a>
 	 	</div>
 	 </div>
  </section>
