@@ -25,5 +25,12 @@ get_header();
         </main><!-- .site-main -->
     </section><!-- .content-area -->
 
+
+<?php get_template_part( 'parts/s-list-latest' ); ?>
+<?php get_template_part( 'parts/s-inspiration-week' ); ?>
+<?php get_template_part( 'parts/s-inspiration-teasers' ); ?>
+<?php get_template_part( 'parts/s-team' ); ?>
+
+
 <?php
 get_footer();
