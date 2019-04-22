@@ -7,10 +7,7 @@
  * @since 1.0
  * @version 1.0
  */
-
 ?>
-
-
  <section class="s-footer">
  	<div class="gc">
 		<div class="g-3 g-m-12 hide-tab-desktop">

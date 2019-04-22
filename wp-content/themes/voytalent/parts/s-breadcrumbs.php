@@ -11,7 +11,14 @@
 ?>
 
 <section class="s-breadcrumbs">
-  <div class="gc">
-    <div class="g-12"><a href="">Voy</a><a href="">Jobs</a>Creative director</div>
-  </div>
+    <div class="gc">
+        <!--<div class="g-12"><a href="">Voy</a><a href="">Jobs</a>Creative director</div>-->
+        <div class="g-12">
+            <?php
+                if (!is_home() && function_exists('yoast_breadcrumb')) {
+                    yoast_breadcrumb('', '');
+                }
+            ?>
+        </div>
+    </div>
 </section>

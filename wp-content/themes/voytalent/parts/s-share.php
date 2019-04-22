@@ -23,8 +23,6 @@
 			<h3 class="header">Follow us</h3>
             <?php
                 $array_menu = wp_get_nav_menu_items('Social Menu');
-                //echo "<pre>";
-                //print_r($array_menu)
             ?>
 			<ul>
                 <?php
