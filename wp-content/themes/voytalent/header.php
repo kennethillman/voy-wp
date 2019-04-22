@@ -53,7 +53,6 @@
 
 
     var VOY_PRESET = {
-        // theme: '<?php echo $site_namespace ?>',
         version: '<?php echo $getBustHash ?>',
         file: '<?php echo $getCacheBustFile ?>',
         path: {
@@ -121,4 +120,6 @@
         </figure>
     </div>
 </header>
+
+<?php get_template_part( 'parts/s-breadcrumbs' ); ?>
 
