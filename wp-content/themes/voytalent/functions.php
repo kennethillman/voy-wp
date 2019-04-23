@@ -207,37 +207,11 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-/*
-add_filter('nav_menu_css_class', 'custom_nav_menu_css_class', 10, 2 );
-function custom_nav_menu_css_class( $classes, $items) {
-    global $i;
-    echo "---".$i++;
-    print_r($items);
-    exit;
-    if( 'category' === $items->object ){
-        array_push( $classes, 'dropdown' );
-    }
-    return $classes;
-}
-
-function wpb_first_and_last_menu_class($items) {
-    $theme_locations = get_nav_menu_locations();
-    if($theme_locations['menu-1']!=0){
-        foreach($items as $key => $item) {
-            $items[$key]->classes[] = '-active';
-        }
-    }
-    //print_r($items);exit;
-    return $items;
-}
-add_filter('wp_nav_menu_objects', 'wpb_first_and_last_menu_class');
-*/
-
 add_filter( 'nav_menu_link_attributes', 'menu_add_class', 10, 3 );
 $i = 0;
 function menu_add_class( $atts, $item, $args ) {
     global $i;
-    if($args->theme_location = "menu-1" && $i==0){
+    if($args->theme_location = "menu-1" && $item->object_id == get_the_ID()){
         $class = '-active';
         $atts['class'] = $class;
     }
