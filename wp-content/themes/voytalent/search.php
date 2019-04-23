@@ -4,31 +4,37 @@
 ?>
     <div class="wapper">
         <div class="contentarea clearfix">
-            <div class="content">
-                <h1 class="search-title"> <?php echo $wp_query->found_posts; ?>
-                <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>" </h1>
-                <?php if ( have_posts() ) { ?>
+            <div class="s-search-result content ">
 
-                    <ul>
+              <div class="gc">
+                <div class="g-12">
+                  <div class="m-list -search">
 
-                        <?php while ( have_posts() ) { the_post(); ?>
+                    <h3 class="m-list-header"><?php echo $wp_query->found_posts; ?> <?php _e( 'Search Results Found For', 'locale' ); ?>: <span>"<?php the_search_query(); ?>"</span> </h3>
 
-                            <li>
-                                <h3><a href="<?php echo get_permalink(); ?>">
-                                        <?php the_title();  ?>
-                                    </a></h3>
-                                <?php  the_post_thumbnail('medium') ?>
-                                <?php echo substr(get_the_excerpt(), 0,200); ?>
-                                <div class="h-readmore"> <a href="<?php the_permalink(); ?>">Read More</a></div>
-                            </li>
+                    <?php if ( have_posts() ) { ?>
+                        <ul>
+                            <?php while ( have_posts() ) { the_post(); ?>
 
-                        <?php } ?>
+                                <li>
+                                  <a href="<?php echo get_permalink(); ?>">
+                                    <!-- <?php  the_post_thumbnail('medium') ?> -->
+                                    <div class="text"><strong class="-block"><?php the_title();  ?> </strong> <?php echo substr(get_the_excerpt(), 0,200); ?></div>
+                                    <span class="btn -orange -icon-only">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
+                                    </span>
+                                  </a>
+                                </li>
 
-                    </ul>
+                            <?php } ?>
 
-                    <?php echo paginate_links(); ?>
+                        </ul>
+                      <?php echo paginate_links(); ?>
+                    <?php } ?>
 
-                <?php } ?>
+                  </div>
+                </div>
+              </div>
 
             </div>
         </div>
