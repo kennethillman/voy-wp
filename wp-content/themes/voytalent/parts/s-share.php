@@ -29,7 +29,7 @@
                     foreach ($array_menu as $menu){
                 ?>
                     <li>
-                        <a href="<?php echo $menu->url;?>" target="<?php echo $menu->target;?>">
+                        <a href="<?php echo $menu->url;?>" target="<?php echo $menu->target;?>" title="<?php echo $menu->attr_title;?>">
                             <svg role="img" title="icon" class="svg-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo "#".$menu->classes[0];?>"  svg=""></use>
                             </svg>

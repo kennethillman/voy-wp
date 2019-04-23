@@ -217,9 +217,6 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 endif;
 
 if ( ! function_exists( 'twentynineteen_the_posts_navigation' ) ) :
-	/**
-	 * Documentation for function.
-	 */
 	function twentynineteen_the_posts_navigation() {
 		the_posts_pagination(
 			array(

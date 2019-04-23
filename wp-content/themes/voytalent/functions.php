@@ -218,3 +218,23 @@ function menu_add_class( $atts, $item, $args ) {
     $i++;
     return $atts;
 }
+
+if ( ! function_exists( 'voy_the_posts_navigation' ) ) :
+    function voy_the_posts_navigation() {
+        the_posts_pagination(
+            array(
+                'mid_size'  => 2,
+                'prev_text' => sprintf(
+                    '%s <span class="nav-prev-text">%s</span>',
+                    '',
+                    __( 'Newer posts' )
+                ),
+                'next_text' => sprintf(
+                    '<span class="nav-next-text">%s</span> %s',
+                    __( 'Older posts' ),
+                    ''
+                ),
+            )
+        );
+    }
+endif;

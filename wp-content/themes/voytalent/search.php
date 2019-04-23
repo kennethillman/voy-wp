@@ -1,40 +1,38 @@
 <?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
- */
-
-get_header();
+    get_header();
+    global $wp_query;
 ?>
+    <div class="wapper">
+        <div class="contentarea clearfix">
+            <div class="content">
+                <h1 class="search-title"> <?php echo $wp_query->found_posts; ?>
+                <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>" </h1>
+                <?php if ( have_posts() ) { ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+                    <ul>
 
-		<?php if ( have_posts() ) : ?>
+                        <?php while ( have_posts() ) { the_post(); ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php _e( 'Search results for:', 'twentynineteen' ); ?>
-				</h1>
-				<div class="page-description"><?php echo get_search_query(); ?></div>
-			</header><!-- .page-header -->
+                            <li>
+                                <h3><a href="<?php echo get_permalink(); ?>">
+                                        <?php the_title();  ?>
+                                    </a></h3>
+                                <?php  the_post_thumbnail('medium') ?>
+                                <?php echo substr(get_the_excerpt(), 0,200); ?>
+                                <div class="h-readmore"> <a href="<?php the_permalink(); ?>">Read More</a></div>
+                            </li>
 
-			<?php
-                // Start the Loop.
-                    while ( have_posts() ) :
-                        the_post();
-                        the_excerpt();
-                    endwhile;
-                endif;
-            ?>
-		</main><!-- #main -->
-	</section><!-- #primary -->
+                        <?php } ?>
 
+                    </ul>
+
+                    <?php echo paginate_links(); ?>
+
+                <?php } ?>
+
+            </div>
+        </div>
+    </div>
 <?php
-get_footer();
+    get_footer();
 ?>
