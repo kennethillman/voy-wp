@@ -122,7 +122,7 @@
 </header>
 
 <?php
-    if(is_page()):
+    if(is_page() && !is_home() && !is_front_page()):
         echo "<img src='".get_the_post_thumbnail_url(get_the_ID())."' />";
         echo get_the_title(get_the_ID())."<br />";
         echo get_the_subtitle(get_the_ID());
