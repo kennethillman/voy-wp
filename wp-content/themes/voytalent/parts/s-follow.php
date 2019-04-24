@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying s-share in Voy talent
+ * Template for displaying s-folow in Voy talent
  *
  * @package WordPress
  * @subpackage Voytalent
@@ -10,7 +10,7 @@
 
 ?>
 
- <section class="s-share">
+ <section class="s-follow">
  	<div class="gc">
 		<div class="g-6 g-m-12 g-t-3">
 			<figure class="logo">
@@ -20,7 +20,7 @@
 			</figure>
 		</div>
 		<div class="g-6 g-m-12 g-t-9">
-			<h3 class="header">Share (WIP)</h3>
+			<h3 class="header">Follow us</h3>
             <?php
                 $array_menu = wp_get_nav_menu_items('Social Menu');
             ?>
