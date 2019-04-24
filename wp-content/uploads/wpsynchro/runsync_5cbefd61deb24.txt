@@ -1,0 +1,128 @@
+[2019-04-23 11:56:21.440584] [DEBUG] Running sync controller loop - With subjob allotted time: 47.991552114487 seconds
+[2019-04-23 11:56:21.446751] [INFO] Initating synchronization with remote host with allotted time:47.991552114487
+[2019-04-23 11:56:21.446796] [DEBUG] Calling initate remote service with url: http://php.indpro.se/voy-wp/wp-json/wpsynchro/v1/initiate/ and args: 
+[2019-04-23 11:56:21.872434] [DEBUG] Got remote transfer token: 80caab1d8228b034784bd44da609664669292939
+[2019-04-23 11:56:21.872517] [INFO] Initating synchronization completed on: 0.42576313018799 seconds
+[2019-04-23 11:56:22.362933] [DEBUG] Running sync controller loop - With subjob allotted time: 47.990519046783 seconds
+[2019-04-23 11:56:22.363586] [INFO] Getting masterdata from source and target with allotted time:47.990519046783
+[2019-04-23 11:56:22.364879] [DEBUG] Calling masterdata service on: http://127.0.0.1:8888/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=21e67c85840578767fb57a3423742dab with intent to user as 'from'
+[2019-04-23 11:56:22.862631] [DEBUG] Calling masterdata service on: http://php.indpro.se/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=88b51449f3e8043ee33826a0047e1f659ba7766f with intent to user as 'to'
+[2019-04-23 11:56:23.371387] [DEBUG] Masterdata (from) - _client_home_url: http://127.0.0.1:8888/voy-wp/
+[2019-04-23 11:56:23.371476] [DEBUG] Masterdata (from) - _rest_base_url: http://127.0.0.1:8888/voy-wp/wp-json/
+[2019-04-23 11:56:23.371545] [DEBUG] Masterdata (from) - _wp_options_table: no5mf_options
+[2019-04-23 11:56:23.371613] [DEBUG] Masterdata (from) - _max_allowed_packet_size: 1048576
+[2019-04-23 11:56:23.371679] [DEBUG] Masterdata (from) - _max_post_size: 134217728
+[2019-04-23 11:56:23.371744] [DEBUG] Masterdata (from) - _memory_limit: -1
+[2019-04-23 11:56:23.371809] [DEBUG] Masterdata (from) - _upload_max_filesize: 26214400
+[2019-04-23 11:56:23.371873] [DEBUG] Masterdata (from) - _max_file_uploads: 25
+[2019-04-23 11:56:23.371939] [DEBUG] Masterdata (from) - _sql_version: 10.1.35-MariaDB
+[2019-04-23 11:56:23.372007] [DEBUG] Masterdata (from) - _plugin_version: 1.1.0 FREE
+[2019-04-23 11:56:23.372094] [DEBUG] Masterdata (to) - _client_home_url: http://php.indpro.se/voy-wp/
+[2019-04-23 11:56:23.372158] [DEBUG] Masterdata (to) - _rest_base_url: http://php.indpro.se/voy-wp/wp-json/
+[2019-04-23 11:56:23.372223] [DEBUG] Masterdata (to) - _wp_options_table: no5mf_options
+[2019-04-23 11:56:23.372288] [DEBUG] Masterdata (to) - _max_allowed_packet_size: 1048576
+[2019-04-23 11:56:23.372353] [DEBUG] Masterdata (to) - _max_post_size: 1073741824
+[2019-04-23 11:56:23.372418] [DEBUG] Masterdata (to) - _memory_limit: -1
+[2019-04-23 11:56:23.372483] [DEBUG] Masterdata (to) - _upload_max_filesize: 134217728
+[2019-04-23 11:56:23.375179] [DEBUG] Masterdata (to) - _max_file_uploads: 200
+[2019-04-23 11:56:23.375407] [DEBUG] Masterdata (to) - _sql_version: 10.1.30-MariaDB
+[2019-04-23 11:56:23.375624] [DEBUG] Masterdata (to) - _plugin_version: 1.1.0 FREE
+[2019-04-23 11:56:23.376235] [INFO] Completed masterdata on: 1.0125999450684 seconds
+[2019-04-23 11:56:23.911364] [DEBUG] Running sync controller loop - With subjob allotted time: 47.989087104797 seconds
+[2019-04-23 11:56:23.912554] [INFO] Starting database synchronization loop with allotted time: 47.989087104797
+[2019-04-23 11:56:23.912706] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 1983
+[2019-04-23 11:56:24.735825] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 4
+[2019-04-23 11:56:24.735921] [DEBUG] New table is started: no5mf_posts and setting new default rows per sync: 407
+[2019-04-23 11:56:24.736813] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_posts` where `ID` > 0 order by `ID`  limit 407
+[2019-04-23 11:56:24.736839] [DEBUG] Marking table: no5mf_posts as completed
+[2019-04-23 11:56:24.737201] [WARNING] Large row ignored from table: no5mf_posts - Size: 356 - Increase allowed values on server
+[2019-04-23 11:56:24.737475] [WARNING] Large row ignored from table: no5mf_posts - Size: 1505 - Increase allowed values on server
+[2019-04-23 11:56:24.737784] [WARNING] Large row ignored from table: no5mf_posts - Size: 5748 - Increase allowed values on server
+[2019-04-23 11:56:24.738097] [WARNING] Large row ignored from table: no5mf_posts - Size: 5756 - Increase allowed values on server
+[2019-04-23 11:56:24.738355] [WARNING] Large row ignored from table: no5mf_posts - Size: 659 - Increase allowed values on server
+[2019-04-23 11:56:24.738609] [WARNING] Large row ignored from table: no5mf_posts - Size: 298 - Increase allowed values on server
+[2019-04-23 11:56:24.738958] [WARNING] Large row ignored from table: no5mf_posts - Size: 277 - Increase allowed values on server
+[2019-04-23 11:56:24.739236] [WARNING] Large row ignored from table: no5mf_posts - Size: 296 - Increase allowed values on server
+[2019-04-23 11:56:24.739491] [WARNING] Large row ignored from table: no5mf_posts - Size: 286 - Increase allowed values on server
+[2019-04-23 11:56:24.739758] [WARNING] Large row ignored from table: no5mf_posts - Size: 302 - Increase allowed values on server
+[2019-04-23 11:56:24.740021] [WARNING] Large row ignored from table: no5mf_posts - Size: 283 - Increase allowed values on server
+[2019-04-23 11:56:24.740280] [WARNING] Large row ignored from table: no5mf_posts - Size: 300 - Increase allowed values on server
+[2019-04-23 11:56:24.740538] [WARNING] Large row ignored from table: no5mf_posts - Size: 292 - Increase allowed values on server
+[2019-04-23 11:56:24.740808] [WARNING] Large row ignored from table: no5mf_posts - Size: 306 - Increase allowed values on server
+[2019-04-23 11:56:24.742056] [WARNING] Large row ignored from table: no5mf_posts - Size: 209 - Increase allowed values on server
+[2019-04-23 11:56:24.742344] [WARNING] Large row ignored from table: no5mf_posts - Size: 292 - Increase allowed values on server
+[2019-04-23 11:56:24.742601] [WARNING] Large row ignored from table: no5mf_posts - Size: 306 - Increase allowed values on server
+[2019-04-23 11:56:24.742854] [WARNING] Large row ignored from table: no5mf_posts - Size: 286 - Increase allowed values on server
+[2019-04-23 11:56:24.743111] [WARNING] Large row ignored from table: no5mf_posts - Size: 302 - Increase allowed values on server
+[2019-04-23 11:56:24.743359] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.743607] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.743853] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.744115] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.744365] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.744613] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.744862] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.745133] [WARNING] Large row ignored from table: no5mf_posts - Size: 209 - Increase allowed values on server
+[2019-04-23 11:56:24.745386] [WARNING] Large row ignored from table: no5mf_posts - Size: 241 - Increase allowed values on server
+[2019-04-23 11:56:24.745637] [WARNING] Large row ignored from table: no5mf_posts - Size: 225 - Increase allowed values on server
+[2019-04-23 11:56:24.745888] [WARNING] Large row ignored from table: no5mf_posts - Size: 223 - Increase allowed values on server
+[2019-04-23 11:56:24.746174] [WARNING] Large row ignored from table: no5mf_posts - Size: 677 - Increase allowed values on server
+[2019-04-23 11:56:24.746469] [WARNING] Large row ignored from table: no5mf_posts - Size: 468 - Increase allowed values on server
+[2019-04-23 11:56:24.746820] [WARNING] Large row ignored from table: no5mf_posts - Size: 363 - Increase allowed values on server
+[2019-04-23 11:56:24.747130] [WARNING] Large row ignored from table: no5mf_posts - Size: 246 - Increase allowed values on server
+[2019-04-23 11:56:24.747503] [WARNING] Large row ignored from table: no5mf_posts - Size: 368 - Increase allowed values on server
+[2019-04-23 11:56:24.749286] [WARNING] Large row ignored from table: no5mf_posts - Size: 209 - Increase allowed values on server
+[2019-04-23 11:56:24.749546] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.749796] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.750068] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:56:24.750323] [WARNING] Large row ignored from table: no5mf_posts - Size: 244 - Increase allowed values on server
+[2019-04-23 11:56:24.750380] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:56:25.276201] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:56:25.276562] [WARNING] Hit memory peak - Current peak: 23124768 and memory limit: -15999676.7 - Backing off from: 407 rows to: 284 rows
+[2019-04-23 11:56:25.276751] [DEBUG] Lastrun in ms: 0.54047608375549 rows throttle: 284
+[2019-04-23 11:56:25.277236] [INFO] Database progress update: Total data: 48kB / 48kB - Total rows: 40 / 40
+[2019-04-23 11:56:25.294563] [INFO] Database progress update: Total data: 48kB / 48kB - Total rows: 40 / 40
+[2019-04-23 11:56:25.294709] [INFO] Ending database synchronization loop with remaining time: 1.3821370601654 seconds
+[2019-04-23 11:56:25.832294] [DEBUG] Running sync controller loop - With subjob allotted time: 47.989794015884 seconds
+[2019-04-23 11:56:26.339961] [DEBUG] Running sync controller loop - With subjob allotted time: 47.987348079681 seconds
+[2019-04-23 11:56:26.340510] [INFO] Starting finalize - Allotted time: 47.987348079681
+[2019-04-23 11:56:26.341872] [INFO] Starting database finalize with allotted time: 47.987348079681
+[2019-04-23 11:56:26.342354] [DEBUG] Retrieving new masterdata from target
+[2019-04-23 11:56:26.342401] [DEBUG] Calling masterdata service on: http://php.indpro.se/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=88b51449f3e8043ee33826a0047e1f659ba7766f with intent to user as 'to'
+[2019-04-23 11:56:26.789875] [DEBUG] Retrieving new masterdata completed
+[2019-04-23 11:56:26.790020] [ERROR] Finalize: Error in database synchronization for table no5mf_posts - No rows has been transferred, but should contain 40 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:56:26.790049] [DEBUG] Add drop table in database on no5mf_commentmeta
+[2019-04-23 11:56:26.790072] [DEBUG] Add rename in database from wpsyntmp_no5mf_commentmeta to: no5mf_commentmeta
+[2019-04-23 11:56:26.790099] [DEBUG] Add drop table in database on no5mf_comments
+[2019-04-23 11:56:26.790120] [DEBUG] Add rename in database from wpsyntmp_no5mf_comments to: no5mf_comments
+[2019-04-23 11:56:26.790145] [DEBUG] Add drop table in database on no5mf_links
+[2019-04-23 11:56:26.790167] [DEBUG] Add rename in database from wpsyntmp_no5mf_links to: no5mf_links
+[2019-04-23 11:56:26.790191] [DEBUG] Add drop table in database on no5mf_options
+[2019-04-23 11:56:26.790212] [DEBUG] Add rename in database from wpsyntmp_no5mf_options to: no5mf_options
+[2019-04-23 11:56:26.790237] [DEBUG] Add drop table in database on no5mf_postmeta
+[2019-04-23 11:56:26.790258] [DEBUG] Add rename in database from wpsyntmp_no5mf_postmeta to: no5mf_postmeta
+[2019-04-23 11:56:26.790283] [DEBUG] Add drop table in database on no5mf_posts
+[2019-04-23 11:56:26.790304] [DEBUG] Add rename in database from wpsyntmp_no5mf_posts to: no5mf_posts
+[2019-04-23 11:56:26.790328] [DEBUG] Add drop table in database on no5mf_term_relationships
+[2019-04-23 11:56:26.790350] [DEBUG] Add rename in database from wpsyntmp_no5mf_term_relationships to: no5mf_term_relationships
+[2019-04-23 11:56:26.791669] [DEBUG] Add drop table in database on no5mf_term_taxonomy
+[2019-04-23 11:56:26.791732] [DEBUG] Add rename in database from wpsyntmp_no5mf_term_taxonomy to: no5mf_term_taxonomy
+[2019-04-23 11:56:26.791778] [DEBUG] Add drop table in database on no5mf_termmeta
+[2019-04-23 11:56:26.791803] [DEBUG] Add rename in database from wpsyntmp_no5mf_termmeta to: no5mf_termmeta
+[2019-04-23 11:56:26.791829] [DEBUG] Add drop table in database on no5mf_terms
+[2019-04-23 11:56:26.791851] [DEBUG] Add rename in database from wpsyntmp_no5mf_terms to: no5mf_terms
+[2019-04-23 11:56:26.791875] [DEBUG] Add drop table in database on no5mf_usermeta
+[2019-04-23 11:56:26.791897] [DEBUG] Add rename in database from wpsyntmp_no5mf_usermeta to: no5mf_usermeta
+[2019-04-23 11:56:26.791921] [DEBUG] Add drop table in database on no5mf_users
+[2019-04-23 11:56:26.791943] [DEBUG] Add rename in database from wpsyntmp_no5mf_users to: no5mf_users
+[2019-04-23 11:56:26.791967] [DEBUG] Add drop table in database on no5mf_yoast_seo_links
+[2019-04-23 11:56:26.791988] [DEBUG] Add rename in database from wpsyntmp_no5mf_yoast_seo_links to: no5mf_yoast_seo_links
+[2019-04-23 11:56:26.792013] [DEBUG] Add drop table in database on no5mf_yoast_seo_meta
+[2019-04-23 11:56:26.792034] [DEBUG] Add rename in database from wpsyntmp_no5mf_yoast_seo_meta to: no5mf_yoast_seo_meta
+[2019-04-23 11:56:26.792063] [CRITICAL] No need calling remote client db, because we have errors: 
+
+Array
+(
+    [0] => Finalize: Error in database synchronization for table no5mf_posts - No rows has been transferred, but should contain 40 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+)
+
+[2019-04-23 11:56:26.799941] [INFO] Completed finalize - used time: 0.45939517021179

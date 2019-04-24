@@ -1,0 +1,625 @@
+[2019-04-22 10:41:13.715193] [DEBUG] Running sync controller loop - With subjob allotted time: 47.963275909424 seconds
+[2019-04-22 10:41:13.720405] [INFO] Initating synchronization with remote host with allotted time:47.963275909424
+[2019-04-22 10:41:13.720450] [DEBUG] Calling initate remote service with url: http://staging-voy.activetalents.se/wp-json/wpsynchro/v1/initiate/ and args: 
+[2019-04-22 10:41:15.167451] [DEBUG] Got remote transfer token: cc5d79f71d57bb6a4d5b1649515738f48701ef4f
+[2019-04-22 10:41:15.167790] [INFO] Initating synchronization completed on: 1.4473061561584 seconds
+[2019-04-22 10:41:15.765736] [DEBUG] Running sync controller loop - With subjob allotted time: 47.96578001976 seconds
+[2019-04-22 10:41:15.766313] [INFO] Getting masterdata from source and target with allotted time:47.96578001976
+[2019-04-22 10:41:15.766915] [DEBUG] Calling masterdata service on: http://127.0.0.1:8888/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=21e67c85840578767fb57a3423742dab with intent to user as 'from'
+[2019-04-22 10:41:16.286473] [DEBUG] Calling masterdata service on: http://staging-voy.activetalents.se/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=31626a431658fc014cf119e4b7fb98ced33cf538 with intent to user as 'to'
+[2019-04-22 10:41:17.550983] [DEBUG] Masterdata (from) - _client_home_url: http://127.0.0.1:8888/voy-wp/
+[2019-04-22 10:41:17.551070] [DEBUG] Masterdata (from) - _rest_base_url: http://127.0.0.1:8888/voy-wp/wp-json/
+[2019-04-22 10:41:17.551139] [DEBUG] Masterdata (from) - _wp_options_table: wp_options
+[2019-04-22 10:41:17.551208] [DEBUG] Masterdata (from) - _max_allowed_packet_size: 1048576
+[2019-04-22 10:41:17.551274] [DEBUG] Masterdata (from) - _max_post_size: 134217728
+[2019-04-22 10:41:17.551340] [DEBUG] Masterdata (from) - _memory_limit: -1
+[2019-04-22 10:41:17.551405] [DEBUG] Masterdata (from) - _upload_max_filesize: 26214400
+[2019-04-22 10:41:17.551469] [DEBUG] Masterdata (from) - _max_file_uploads: 25
+[2019-04-22 10:41:17.551535] [DEBUG] Masterdata (from) - _sql_version: 10.1.35-MariaDB
+[2019-04-22 10:41:17.551599] [DEBUG] Masterdata (from) - _plugin_version: 1.1.0 FREE
+[2019-04-22 10:41:17.551685] [DEBUG] Masterdata (to) - _client_home_url: http://staging-voy.activetalents.se/
+[2019-04-22 10:41:17.551754] [DEBUG] Masterdata (to) - _rest_base_url: http://staging-voy.activetalents.se/wp-json/
+[2019-04-22 10:41:17.551818] [DEBUG] Masterdata (to) - _wp_options_table: no5mf_options
+[2019-04-22 10:41:17.551883] [DEBUG] Masterdata (to) - _max_allowed_packet_size: 536870912
+[2019-04-22 10:41:17.551948] [DEBUG] Masterdata (to) - _max_post_size: 268435456
+[2019-04-22 10:41:17.552013] [DEBUG] Masterdata (to) - _memory_limit: 536870912
+[2019-04-22 10:41:17.552078] [DEBUG] Masterdata (to) - _upload_max_filesize: 268435456
+[2019-04-22 10:41:17.554499] [DEBUG] Masterdata (to) - _max_file_uploads: 20
+[2019-04-22 10:41:17.554660] [DEBUG] Masterdata (to) - _sql_version: 5.5.52-MariaDB-cll-lve
+[2019-04-22 10:41:17.554853] [DEBUG] Masterdata (to) - _plugin_version: 1.1.0 FREE
+[2019-04-22 10:41:17.555468] [INFO] Completed masterdata on: 1.7891020774841 seconds
+[2019-04-22 10:41:18.113515] [DEBUG] Running sync controller loop - With subjob allotted time: 47.962159156799 seconds
+[2019-04-22 10:41:18.114603] [INFO] Starting database synchronization loop with allotted time: 47.962159156799
+[2019-04-22 10:41:18.115359] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 10620
+[2019-04-22 10:41:20.358758] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 4
+[2019-04-22 10:41:20.359099] [DEBUG] New table is started: wp_commentmeta and setting new default rows per sync: 500
+[2019-04-22 10:41:20.360509] [DEBUG] Getting data from local DB with SQL query: select * from `wp_commentmeta` where `meta_id` > 0 order by `meta_id`  limit 500
+[2019-04-22 10:41:20.360571] [DEBUG] Marking table: wp_commentmeta as completed
+[2019-04-22 10:41:20.360658] [WARNING] Hit memory peak - Current peak: 23083040 and memory limit: -15971329.5 - Backing off from: 500 rows to: 350 rows
+[2019-04-22 10:41:20.360720] [DEBUG] Lastrun in ms: 0.0014381408691406 rows throttle: 350
+[2019-04-22 10:41:20.361037] [INFO] Database progress update: Total data: 0,0MB / 1,3MB - Total rows: 0 / 422
+[2019-04-22 10:41:20.399128] [DEBUG] New table is started: wp_comments and setting new default rows per sync: 500
+[2019-04-22 10:41:20.399637] [DEBUG] Getting data from local DB with SQL query: select * from `wp_comments` where `comment_ID` > 0 order by `comment_ID`  limit 500
+[2019-04-22 10:41:20.399665] [DEBUG] Marking table: wp_comments as completed
+[2019-04-22 10:41:20.399952] [WARNING] Large row ignored from table: wp_comments - Size: 363 - Increase allowed values on server
+[2019-04-22 10:41:20.400004] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:21.472541] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:21.472658] [DEBUG] Lastrun in ms: 1.0734570026398 rows throttle: 525
+[2019-04-22 10:41:21.472833] [INFO] Database progress update: Total data: 0,0MB / 1,3MB - Total rows: 1 / 422
+[2019-04-22 10:41:21.509172] [DEBUG] New table is started: wp_links and setting new default rows per sync: 500
+[2019-04-22 10:41:21.509816] [DEBUG] Getting data from local DB with SQL query: select * from `wp_links` where `link_id` > 0 order by `link_id`  limit 500
+[2019-04-22 10:41:21.509864] [DEBUG] Marking table: wp_links as completed
+[2019-04-22 10:41:21.511145] [DEBUG] Lastrun in ms: 0.0018858909606934 rows throttle: 525
+[2019-04-22 10:41:21.511339] [INFO] Database progress update: Total data: 0,0MB / 1,3MB - Total rows: 1 / 422
+[2019-04-22 10:41:21.520457] [DEBUG] New table is started: wp_options and setting new default rows per sync: 71
+[2019-04-22 10:41:21.521575] [DEBUG] Getting data from local DB with SQL query: select * from `wp_options` where `option_id` > 0 order by `option_id`  limit 71
+[2019-04-22 10:41:21.521769] [WARNING] Large row ignored from table: wp_options - Size: 51 - Increase allowed values on server
+[2019-04-22 10:41:21.521899] [WARNING] Large row ignored from table: wp_options - Size: 48 - Increase allowed values on server
+[2019-04-22 10:41:21.522026] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.522151] [WARNING] Large row ignored from table: wp_options - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:21.522269] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:21.522393] [WARNING] Large row ignored from table: wp_options - Size: 47 - Increase allowed values on server
+[2019-04-22 10:41:21.522508] [WARNING] Large row ignored from table: wp_options - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:21.522624] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:21.522744] [WARNING] Large row ignored from table: wp_options - Size: 26 - Increase allowed values on server
+[2019-04-22 10:41:21.522860] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.522975] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.523091] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:21.523206] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.523329] [WARNING] Large row ignored from table: wp_options - Size: 47 - Increase allowed values on server
+[2019-04-22 10:41:21.523452] [WARNING] Large row ignored from table: wp_options - Size: 50 - Increase allowed values on server
+[2019-04-22 10:41:21.523576] [WARNING] Large row ignored from table: wp_options - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:21.523694] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:21.524834] [WARNING] Large row ignored from table: wp_options - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:21.524968] [WARNING] Large row ignored from table: wp_options - Size: 43 - Increase allowed values on server
+[2019-04-22 10:41:21.525094] [WARNING] Large row ignored from table: wp_options - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:21.525212] [WARNING] Large row ignored from table: wp_options - Size: 37 - Increase allowed values on server
+[2019-04-22 10:41:21.525328] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.525451] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.525580] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:21.525712] [WARNING] Large row ignored from table: wp_options - Size: 54 - Increase allowed values on server
+[2019-04-22 10:41:21.525829] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.525945] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:21.526069] [WARNING] Large row ignored from table: wp_options - Size: 48 - Increase allowed values on server
+[2019-04-22 10:41:21.526185] [WARNING] Large row ignored from table: wp_options - Size: 25 - Increase allowed values on server
+[2019-04-22 10:41:21.526308] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.526432] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.526647] [WARNING] Large row ignored from table: wp_options - Size: 151 - Increase allowed values on server
+[2019-04-22 10:41:21.526802] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:21.526931] [WARNING] Large row ignored from table: wp_options - Size: 53 - Increase allowed values on server
+[2019-04-22 10:41:21.527049] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:21.527164] [WARNING] Large row ignored from table: wp_options - Size: 26 - Increase allowed values on server
+[2019-04-22 10:41:21.527280] [WARNING] Large row ignored from table: wp_options - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:21.527404] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.528635] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.528899] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:21.529115] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:21.529343] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:21.529601] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:21.529829] [WARNING] Large row ignored from table: wp_options - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:21.530071] [WARNING] Large row ignored from table: wp_options - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:21.530296] [WARNING] Large row ignored from table: wp_options - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:21.530483] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:21.530639] [WARNING] Large row ignored from table: wp_options - Size: 45 - Increase allowed values on server
+[2019-04-22 10:41:21.530849] [WARNING] Large row ignored from table: wp_options - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:21.531047] [WARNING] Large row ignored from table: wp_options - Size: 27 - Increase allowed values on server
+[2019-04-22 10:41:21.531231] [WARNING] Large row ignored from table: wp_options - Size: 37 - Increase allowed values on server
+[2019-04-22 10:41:21.531451] [WARNING] Large row ignored from table: wp_options - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:21.531677] [WARNING] Large row ignored from table: wp_options - Size: 25 - Increase allowed values on server
+[2019-04-22 10:41:21.531880] [WARNING] Large row ignored from table: wp_options - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:21.532084] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.532215] [WARNING] Large row ignored from table: wp_options - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:21.532334] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.532456] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:21.532574] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:21.533978] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.534110] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.534237] [WARNING] Large row ignored from table: wp_options - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:21.534355] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.534472] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.534596] [WARNING] Large row ignored from table: wp_options - Size: 44 - Increase allowed values on server
+[2019-04-22 10:41:21.534732] [WARNING] Large row ignored from table: wp_options - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:21.534857] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:21.534976] [WARNING] Large row ignored from table: wp_options - Size: 44 - Increase allowed values on server
+[2019-04-22 10:41:21.535092] [WARNING] Large row ignored from table: wp_options - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:21.535208] [WARNING] Large row ignored from table: wp_options - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:21.535324] [WARNING] Large row ignored from table: wp_options - Size: 37 - Increase allowed values on server
+[2019-04-22 10:41:21.535386] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:22.466528] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:22.466779] [DEBUG] Lastrun in ms: 0.94619798660278 rows throttle: 75
+[2019-04-22 10:41:22.467195] [INFO] Database progress update: Total data: 0,2MB / 1,3MB - Total rows: 72 / 422
+[2019-04-22 10:41:22.519380] [DEBUG] Getting data from local DB with SQL query: select * from `wp_options` where `option_id` > 72 order by `option_id`  limit 75
+[2019-04-22 10:41:22.519555] [WARNING] Large row ignored from table: wp_options - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:22.519660] [WARNING] Large row ignored from table: wp_options - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:22.519767] [WARNING] Large row ignored from table: wp_options - Size: 44 - Increase allowed values on server
+[2019-04-22 10:41:22.519872] [WARNING] Large row ignored from table: wp_options - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:22.521048] [WARNING] Large row ignored from table: wp_options - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:22.521522] [WARNING] Large row ignored from table: wp_options - Size: 164 - Increase allowed values on server
+[2019-04-22 10:41:22.521690] [WARNING] Large row ignored from table: wp_options - Size: 70 - Increase allowed values on server
+[2019-04-22 10:41:22.521812] [WARNING] Large row ignored from table: wp_options - Size: 69 - Increase allowed values on server
+[2019-04-22 10:41:22.521926] [WARNING] Large row ignored from table: wp_options - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:22.522031] [WARNING] Large row ignored from table: wp_options - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:22.522132] [WARNING] Large row ignored from table: wp_options - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:22.522230] [WARNING] Large row ignored from table: wp_options - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:22.522328] [WARNING] Large row ignored from table: wp_options - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:22.522427] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:22.522525] [WARNING] Large row ignored from table: wp_options - Size: 47 - Increase allowed values on server
+[2019-04-22 10:41:22.522623] [WARNING] Large row ignored from table: wp_options - Size: 25 - Increase allowed values on server
+[2019-04-22 10:41:22.522720] [WARNING] Large row ignored from table: wp_options - Size: 37 - Increase allowed values on server
+[2019-04-22 10:41:22.522818] [WARNING] Large row ignored from table: wp_options - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:22.522916] [WARNING] Large row ignored from table: wp_options - Size: 42 - Increase allowed values on server
+[2019-04-22 10:41:22.523014] [WARNING] Large row ignored from table: wp_options - Size: 44 - Increase allowed values on server
+[2019-04-22 10:41:22.523111] [WARNING] Large row ignored from table: wp_options - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:22.523727] [WARNING] Large row ignored from table: wp_options - Size: 5724 - Increase allowed values on server
+[2019-04-22 10:41:22.523830] [WARNING] Large row ignored from table: wp_options - Size: 26 - Increase allowed values on server
+[2019-04-22 10:41:22.523951] [WARNING] Large row ignored from table: wp_options - Size: 95 - Increase allowed values on server
+[2019-04-22 10:41:22.524074] [WARNING] Large row ignored from table: wp_options - Size: 120 - Increase allowed values on server
+[2019-04-22 10:41:22.524953] [WARNING] Large row ignored from table: wp_options - Size: 123 - Increase allowed values on server
+[2019-04-22 10:41:22.525088] [WARNING] Large row ignored from table: wp_options - Size: 136 - Increase allowed values on server
+[2019-04-22 10:41:22.525213] [WARNING] Large row ignored from table: wp_options - Size: 94 - Increase allowed values on server
+[2019-04-22 10:41:22.525350] [WARNING] Large row ignored from table: wp_options - Size: 275 - Increase allowed values on server
+[2019-04-22 10:41:22.525468] [WARNING] Large row ignored from table: wp_options - Size: 62 - Increase allowed values on server
+[2019-04-22 10:41:22.525585] [WARNING] Large row ignored from table: wp_options - Size: 65 - Increase allowed values on server
+[2019-04-22 10:41:22.525703] [WARNING] Large row ignored from table: wp_options - Size: 68 - Increase allowed values on server
+[2019-04-22 10:41:22.525819] [WARNING] Large row ignored from table: wp_options - Size: 68 - Increase allowed values on server
+[2019-04-22 10:41:22.525935] [WARNING] Large row ignored from table: wp_options - Size: 70 - Increase allowed values on server
+[2019-04-22 10:41:22.526052] [WARNING] Large row ignored from table: wp_options - Size: 68 - Increase allowed values on server
+[2019-04-22 10:41:22.526170] [WARNING] Large row ignored from table: wp_options - Size: 66 - Increase allowed values on server
+[2019-04-22 10:41:22.526287] [WARNING] Large row ignored from table: wp_options - Size: 65 - Increase allowed values on server
+[2019-04-22 10:41:22.526403] [WARNING] Large row ignored from table: wp_options - Size: 68 - Increase allowed values on server
+[2019-04-22 10:41:22.526651] [WARNING] Large row ignored from table: wp_options - Size: 1765 - Increase allowed values on server
+[2019-04-22 10:41:22.526803] [WARNING] Large row ignored from table: wp_options - Size: 458 - Increase allowed values on server
+[2019-04-22 10:41:22.526992] [WARNING] Large row ignored from table: wp_options - Size: 922 - Increase allowed values on server
+[2019-04-22 10:41:22.527124] [WARNING] Large row ignored from table: wp_options - Size: 238 - Increase allowed values on server
+[2019-04-22 10:41:22.527246] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:22.527353] [WARNING] Large row ignored from table: wp_options - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:22.527592] [WARNING] Large row ignored from table: wp_options - Size: 461 - Increase allowed values on server
+[2019-04-22 10:41:22.527699] [WARNING] Large row ignored from table: wp_options - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:22.528830] [WARNING] Large row ignored from table: wp_options - Size: 71 - Increase allowed values on server
+[2019-04-22 10:41:22.528970] [WARNING] Large row ignored from table: wp_options - Size: 255 - Increase allowed values on server
+[2019-04-22 10:41:22.529131] [WARNING] Large row ignored from table: wp_options - Size: 462 - Increase allowed values on server
+[2019-04-22 10:41:22.529378] [WARNING] Large row ignored from table: wp_options - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:22.529598] [WARNING] Large row ignored from table: wp_options - Size: 169 - Increase allowed values on server
+[2019-04-22 10:41:22.529904] [WARNING] Large row ignored from table: wp_options - Size: 697 - Increase allowed values on server
+[2019-04-22 10:41:22.530541] [WARNING] Large row ignored from table: wp_options - Size: 3072 - Increase allowed values on server
+[2019-04-22 10:41:22.530836] [WARNING] Large row ignored from table: wp_options - Size: 671 - Increase allowed values on server
+[2019-04-22 10:41:22.530954] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:22.531223] [WARNING] Large row ignored from table: wp_options - Size: 73 - Increase allowed values on server
+[2019-04-22 10:41:22.531452] [WARNING] Large row ignored from table: wp_options - Size: 56 - Increase allowed values on server
+[2019-04-22 10:41:22.531576] [WARNING] Large row ignored from table: wp_options - Size: 73 - Increase allowed values on server
+[2019-04-22 10:41:22.531680] [WARNING] Large row ignored from table: wp_options - Size: 56 - Increase allowed values on server
+[2019-04-22 10:41:22.531808] [WARNING] Large row ignored from table: wp_options - Size: 56 - Increase allowed values on server
+[2019-04-22 10:41:22.531992] [WARNING] Large row ignored from table: wp_options - Size: 215 - Increase allowed values on server
+[2019-04-22 10:41:22.532107] [WARNING] Large row ignored from table: wp_options - Size: 86 - Increase allowed values on server
+[2019-04-22 10:41:22.532255] [WARNING] Large row ignored from table: wp_options - Size: 371 - Increase allowed values on server
+[2019-04-22 10:41:22.532842] [WARNING] Large row ignored from table: wp_options - Size: 8524 - Increase allowed values on server
+[2019-04-22 10:41:22.532992] [WARNING] Large row ignored from table: wp_options - Size: 413 - Increase allowed values on server
+[2019-04-22 10:41:22.533092] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:22.533233] [WARNING] Large row ignored from table: wp_options - Size: 252 - Increase allowed values on server
+[2019-04-22 10:41:22.534181] [WARNING] Large row ignored from table: wp_options - Size: 60 - Increase allowed values on server
+[2019-04-22 10:41:22.534321] [WARNING] Large row ignored from table: wp_options - Size: 124 - Increase allowed values on server
+[2019-04-22 10:41:22.534424] [WARNING] Large row ignored from table: wp_options - Size: 89 - Increase allowed values on server
+[2019-04-22 10:41:22.535735] [WARNING] Large row ignored from table: wp_options - Size: 10144 - Increase allowed values on server
+[2019-04-22 10:41:22.535837] [WARNING] Large row ignored from table: wp_options - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:22.535944] [WARNING] Large row ignored from table: wp_options - Size: 68 - Increase allowed values on server
+[2019-04-22 10:41:22.536050] [WARNING] Large row ignored from table: wp_options - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:22.536182] [WARNING] Large row ignored from table: wp_options - Size: 187 - Increase allowed values on server
+[2019-04-22 10:41:22.536236] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:23.393684] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:23.394194] [DEBUG] Lastrun in ms: 0.8764500617981 rows throttle: 79
+[2019-04-22 10:41:23.395449] [INFO] Database progress update: Total data: 0,4MB / 1,3MB - Total rows: 147 / 422
+[2019-04-22 10:41:23.453583] [DEBUG] Getting data from local DB with SQL query: select * from `wp_options` where `option_id` > 324 order by `option_id`  limit 79
+[2019-04-22 10:41:23.453628] [DEBUG] Marking table: wp_options as completed
+[2019-04-22 10:41:23.453809] [WARNING] Large row ignored from table: wp_options - Size: 56 - Increase allowed values on server
+[2019-04-22 10:41:23.453975] [WARNING] Large row ignored from table: wp_options - Size: 103 - Increase allowed values on server
+[2019-04-22 10:41:23.454137] [WARNING] Large row ignored from table: wp_options - Size: 97 - Increase allowed values on server
+[2019-04-22 10:41:23.454442] [WARNING] Large row ignored from table: wp_options - Size: 1350 - Increase allowed values on server
+[2019-04-22 10:41:23.457012] [WARNING] Large row ignored from table: wp_options - Size: 45667 - Increase allowed values on server
+[2019-04-22 10:41:23.457205] [WARNING] Large row ignored from table: wp_options - Size: 425 - Increase allowed values on server
+[2019-04-22 10:41:23.457272] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:24.373072] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:24.373123] [DEBUG] Lastrun in ms: 0.92052912712097 rows throttle: 83
+[2019-04-22 10:41:24.373202] [INFO] Database progress update: Total data: 0,5MB / 1,3MB - Total rows: 153 / 422
+[2019-04-22 10:41:24.413984] [DEBUG] New table is started: wp_postmeta and setting new default rows per sync: 500
+[2019-04-22 10:41:24.415383] [DEBUG] Getting data from local DB with SQL query: select * from `wp_postmeta` where `meta_id` > 0 order by `meta_id`  limit 500
+[2019-04-22 10:41:24.415407] [DEBUG] Marking table: wp_postmeta as completed
+[2019-04-22 10:41:24.415504] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.415570] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.415634] [WARNING] Large row ignored from table: wp_postmeta - Size: 33 - Increase allowed values on server
+[2019-04-22 10:41:24.415694] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.415752] [WARNING] Large row ignored from table: wp_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:24.415815] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.415878] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.415954] [WARNING] Large row ignored from table: wp_postmeta - Size: 49 - Increase allowed values on server
+[2019-04-22 10:41:24.416019] [WARNING] Large row ignored from table: wp_postmeta - Size: 26 - Increase allowed values on server
+[2019-04-22 10:41:24.416082] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.416146] [WARNING] Large row ignored from table: wp_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:24.416204] [WARNING] Large row ignored from table: wp_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:24.416263] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.416325] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.416388] [WARNING] Large row ignored from table: wp_postmeta - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:24.417145] [WARNING] Large row ignored from table: wp_postmeta - Size: 50 - Increase allowed values on server
+[2019-04-22 10:41:24.417270] [WARNING] Large row ignored from table: wp_postmeta - Size: 27 - Increase allowed values on server
+[2019-04-22 10:41:24.417380] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.417448] [WARNING] Large row ignored from table: wp_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:24.417509] [WARNING] Large row ignored from table: wp_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:24.417568] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.417632] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.417694] [WARNING] Large row ignored from table: wp_postmeta - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:24.417765] [WARNING] Large row ignored from table: wp_postmeta - Size: 50 - Increase allowed values on server
+[2019-04-22 10:41:24.417828] [WARNING] Large row ignored from table: wp_postmeta - Size: 27 - Increase allowed values on server
+[2019-04-22 10:41:24.417891] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.417954] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.418021] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.418084] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.418147] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.418209] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.418271] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.418334] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.418397] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.418459] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.418522] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419139] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419208] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419273] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419336] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419399] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419462] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419525] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419589] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419651] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419715] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419778] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419840] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419903] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.419969] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.420028] [WARNING] Large row ignored from table: wp_postmeta - Size: 22 - Increase allowed values on server
+[2019-04-22 10:41:24.420091] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.420153] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.420216] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.420279] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.420341] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.420404] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.420986] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.421055] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.421119] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.421182] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.421242] [WARNING] Large row ignored from table: wp_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:24.421300] [WARNING] Large row ignored from table: wp_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:24.421363] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.421426] [WARNING] Large row ignored from table: wp_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:24.421499] [WARNING] Large row ignored from table: wp_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-22 10:41:24.421562] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.421625] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.421688] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.421748] [WARNING] Large row ignored from table: wp_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:24.421806] [WARNING] Large row ignored from table: wp_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:24.421869] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.421931] [WARNING] Large row ignored from table: wp_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:24.422004] [WARNING] Large row ignored from table: wp_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-22 10:41:24.422069] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.422131] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.422194] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.422253] [WARNING] Large row ignored from table: wp_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:24.422803] [WARNING] Large row ignored from table: wp_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:24.422872] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.422935] [WARNING] Large row ignored from table: wp_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:24.423012] [WARNING] Large row ignored from table: wp_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-22 10:41:24.423076] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.423139] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.423202] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.423261] [WARNING] Large row ignored from table: wp_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:24.423320] [WARNING] Large row ignored from table: wp_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:24.423383] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.423446] [WARNING] Large row ignored from table: wp_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-22 10:41:24.423515] [WARNING] Large row ignored from table: wp_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-22 10:41:24.423577] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.423640] [WARNING] Large row ignored from table: wp_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:24.423705] [WARNING] Large row ignored from table: wp_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:24.423764] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.423822] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.423886] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.423948] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.424021] [WARNING] Large row ignored from table: wp_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-22 10:41:24.424084] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.424624] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.424692] [WARNING] Large row ignored from table: wp_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:24.424752] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.424810] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.424873] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.424937] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.425014] [WARNING] Large row ignored from table: wp_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-22 10:41:24.425077] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.425140] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.425203] [WARNING] Large row ignored from table: wp_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-22 10:41:24.425262] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.425321] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.425383] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.425446] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.425515] [WARNING] Large row ignored from table: wp_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-22 10:41:24.425578] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.425640] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.425703] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.425762] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.425821] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.425884] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.426446] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.426522] [WARNING] Large row ignored from table: wp_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-22 10:41:24.426586] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.426650] [WARNING] Large row ignored from table: wp_postmeta - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:24.426709] [WARNING] Large row ignored from table: wp_postmeta - Size: 42 - Increase allowed values on server
+[2019-04-22 10:41:24.426772] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.426831] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.426890] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.426971] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.427103] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.427184] [WARNING] Large row ignored from table: wp_postmeta - Size: 65 - Increase allowed values on server
+[2019-04-22 10:41:24.427261] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.427326] [WARNING] Large row ignored from table: wp_postmeta - Size: 53 - Increase allowed values on server
+[2019-04-22 10:41:24.427392] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.427477] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.427572] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.427727] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.427881] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.428074] [WARNING] Large row ignored from table: wp_postmeta - Size: 65 - Increase allowed values on server
+[2019-04-22 10:41:24.428273] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.428397] [WARNING] Large row ignored from table: wp_postmeta - Size: 54 - Increase allowed values on server
+[2019-04-22 10:41:24.429399] [WARNING] Large row ignored from table: wp_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:24.429620] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.429737] [WARNING] Large row ignored from table: wp_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:24.429881] [WARNING] Large row ignored from table: wp_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:24.430025] [WARNING] Large row ignored from table: wp_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-22 10:41:24.430161] [WARNING] Large row ignored from table: wp_postmeta - Size: 64 - Increase allowed values on server
+[2019-04-22 10:41:24.430233] [WARNING] Large row ignored from table: wp_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-22 10:41:24.430300] [WARNING] Large row ignored from table: wp_postmeta - Size: 111 - Increase allowed values on server
+[2019-04-22 10:41:24.430368] [WARNING] Large row ignored from table: wp_postmeta - Size: 43 - Increase allowed values on server
+[2019-04-22 10:41:24.430429] [WARNING] Large row ignored from table: wp_postmeta - Size: 42 - Increase allowed values on server
+[2019-04-22 10:41:24.430495] [WARNING] Large row ignored from table: wp_postmeta - Size: 37 - Increase allowed values on server
+[2019-04-22 10:41:24.430569] [WARNING] Large row ignored from table: wp_postmeta - Size: 24 - Increase allowed values on server
+[2019-04-22 10:41:24.430631] [WARNING] Large row ignored from table: wp_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-22 10:41:24.430671] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:25.368726] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:25.368972] [DEBUG] Lastrun in ms: 0.95486998558044 rows throttle: 525
+[2019-04-22 10:41:25.369878] [INFO] Database progress update: Total data: 0,9MB / 1,3MB - Total rows: 307 / 422
+[2019-04-22 10:41:25.423074] [DEBUG] New table is started: wp_posts and setting new default rows per sync: 500
+[2019-04-22 10:41:25.426041] [DEBUG] Getting data from local DB with SQL query: select * from `wp_posts` where `ID` > 0 order by `ID`  limit 500
+[2019-04-22 10:41:25.426096] [DEBUG] Marking table: wp_posts as completed
+[2019-04-22 10:41:25.426965] [WARNING] Large row ignored from table: wp_posts - Size: 356 - Increase allowed values on server
+[2019-04-22 10:41:25.429770] [WARNING] Large row ignored from table: wp_posts - Size: 1513 - Increase allowed values on server
+[2019-04-22 10:41:25.430242] [WARNING] Large row ignored from table: wp_posts - Size: 5749 - Increase allowed values on server
+[2019-04-22 10:41:25.430616] [WARNING] Large row ignored from table: wp_posts - Size: 215 - Increase allowed values on server
+[2019-04-22 10:41:25.431245] [WARNING] Large row ignored from table: wp_posts - Size: 231 - Increase allowed values on server
+[2019-04-22 10:41:25.431670] [WARNING] Large row ignored from table: wp_posts - Size: 217 - Increase allowed values on server
+[2019-04-22 10:41:25.432109] [WARNING] Large row ignored from table: wp_posts - Size: 217 - Increase allowed values on server
+[2019-04-22 10:41:25.432489] [WARNING] Large row ignored from table: wp_posts - Size: 217 - Increase allowed values on server
+[2019-04-22 10:41:25.432846] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.433211] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.433564] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.433919] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.434274] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.434626] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.434980] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.435348] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.435658] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.435989] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.436302] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.436612] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.436924] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.437239] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.438315] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.438634] [WARNING] Large row ignored from table: wp_posts - Size: 219 - Increase allowed values on server
+[2019-04-22 10:41:25.438945] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.439258] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.439566] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.439876] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.440188] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.440565] [WARNING] Large row ignored from table: wp_posts - Size: 5757 - Increase allowed values on server
+[2019-04-22 10:41:25.440881] [WARNING] Large row ignored from table: wp_posts - Size: 659 - Increase allowed values on server
+[2019-04-22 10:41:25.441193] [WARNING] Large row ignored from table: wp_posts - Size: 298 - Increase allowed values on server
+[2019-04-22 10:41:25.441502] [WARNING] Large row ignored from table: wp_posts - Size: 277 - Increase allowed values on server
+[2019-04-22 10:41:25.441818] [WARNING] Large row ignored from table: wp_posts - Size: 296 - Increase allowed values on server
+[2019-04-22 10:41:25.442128] [WARNING] Large row ignored from table: wp_posts - Size: 286 - Increase allowed values on server
+[2019-04-22 10:41:25.442448] [WARNING] Large row ignored from table: wp_posts - Size: 302 - Increase allowed values on server
+[2019-04-22 10:41:25.442726] [WARNING] Large row ignored from table: wp_posts - Size: 283 - Increase allowed values on server
+[2019-04-22 10:41:25.443000] [WARNING] Large row ignored from table: wp_posts - Size: 300 - Increase allowed values on server
+[2019-04-22 10:41:25.443277] [WARNING] Large row ignored from table: wp_posts - Size: 292 - Increase allowed values on server
+[2019-04-22 10:41:25.443579] [WARNING] Large row ignored from table: wp_posts - Size: 306 - Increase allowed values on server
+[2019-04-22 10:41:25.444226] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.444964] [WARNING] Large row ignored from table: wp_posts - Size: 292 - Increase allowed values on server
+[2019-04-22 10:41:25.445522] [WARNING] Large row ignored from table: wp_posts - Size: 306 - Increase allowed values on server
+[2019-04-22 10:41:25.447096] [WARNING] Large row ignored from table: wp_posts - Size: 286 - Increase allowed values on server
+[2019-04-22 10:41:25.447757] [WARNING] Large row ignored from table: wp_posts - Size: 302 - Increase allowed values on server
+[2019-04-22 10:41:25.448061] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.448339] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.448611] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.448880] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.449149] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.449425] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.449673] [WARNING] Large row ignored from table: wp_posts - Size: 210 - Increase allowed values on server
+[2019-04-22 10:41:25.449926] [WARNING] Large row ignored from table: wp_posts - Size: 209 - Increase allowed values on server
+[2019-04-22 10:41:25.450179] [WARNING] Large row ignored from table: wp_posts - Size: 225 - Increase allowed values on server
+[2019-04-22 10:41:25.450432] [WARNING] Large row ignored from table: wp_posts - Size: 225 - Increase allowed values on server
+[2019-04-22 10:41:25.450686] [WARNING] Large row ignored from table: wp_posts - Size: 223 - Increase allowed values on server
+[2019-04-22 10:41:25.450946] [WARNING] Large row ignored from table: wp_posts - Size: 677 - Increase allowed values on server
+[2019-04-22 10:41:25.451202] [WARNING] Large row ignored from table: wp_posts - Size: 468 - Increase allowed values on server
+[2019-04-22 10:41:25.451458] [WARNING] Large row ignored from table: wp_posts - Size: 363 - Increase allowed values on server
+[2019-04-22 10:41:25.451713] [WARNING] Large row ignored from table: wp_posts - Size: 246 - Increase allowed values on server
+[2019-04-22 10:41:25.451969] [WARNING] Large row ignored from table: wp_posts - Size: 368 - Increase allowed values on server
+[2019-04-22 10:41:25.452007] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:26.318891] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:26.318994] [DEBUG] Lastrun in ms: 0.89583992958069 rows throttle: 525
+[2019-04-22 10:41:26.320606] [INFO] Database progress update: Total data: 1,1MB / 1,3MB - Total rows: 368 / 422
+[2019-04-22 10:41:26.362518] [DEBUG] New table is started: wp_term_relationships and setting new default rows per sync: 427
+[2019-04-22 10:41:26.363120] [DEBUG] Getting data from local DB with SQL query: select * from `wp_term_relationships` where `object_id` > 0 order by `object_id`  limit 427
+[2019-04-22 10:41:26.363172] [DEBUG] Marking table: wp_term_relationships as completed
+[2019-04-22 10:41:26.363360] [WARNING] Large row ignored from table: wp_term_relationships - Size: 8 - Increase allowed values on server
+[2019-04-22 10:41:26.363450] [WARNING] Large row ignored from table: wp_term_relationships - Size: 8 - Increase allowed values on server
+[2019-04-22 10:41:26.363514] [WARNING] Large row ignored from table: wp_term_relationships - Size: 8 - Increase allowed values on server
+[2019-04-22 10:41:26.363581] [WARNING] Large row ignored from table: wp_term_relationships - Size: 8 - Increase allowed values on server
+[2019-04-22 10:41:26.363641] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.363701] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.363760] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.363819] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.363881] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.363945] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.364009] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.364087] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.364150] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.364210] [WARNING] Large row ignored from table: wp_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:26.364254] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:27.390825] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:27.390926] [DEBUG] Lastrun in ms: 1.0283329486847 rows throttle: 449
+[2019-04-22 10:41:27.392558] [INFO] Database progress update: Total data: 1,1MB / 1,3MB - Total rows: 382 / 422
+[2019-04-22 10:41:27.436598] [DEBUG] New table is started: wp_term_taxonomy and setting new default rows per sync: 122
+[2019-04-22 10:41:27.438140] [DEBUG] Getting data from local DB with SQL query: select * from `wp_term_taxonomy` where `term_taxonomy_id` > 0 order by `term_taxonomy_id`  limit 122
+[2019-04-22 10:41:27.438205] [DEBUG] Marking table: wp_term_taxonomy as completed
+[2019-04-22 10:41:27.438508] [WARNING] Large row ignored from table: wp_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-22 10:41:27.438763] [WARNING] Large row ignored from table: wp_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-22 10:41:27.438995] [WARNING] Large row ignored from table: wp_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-22 10:41:27.439203] [WARNING] Large row ignored from table: wp_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-22 10:41:27.439252] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:28.412988] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:28.413204] [DEBUG] Lastrun in ms: 0.97646999359131 rows throttle: 129
+[2019-04-22 10:41:28.413621] [INFO] Database progress update: Total data: 1,2MB / 1,3MB - Total rows: 386 / 422
+[2019-04-22 10:41:28.457645] [DEBUG] New table is started: wp_termmeta and setting new default rows per sync: 500
+[2019-04-22 10:41:28.458665] [DEBUG] Getting data from local DB with SQL query: select * from `wp_termmeta` where `meta_id` > 0 order by `meta_id`  limit 500
+[2019-04-22 10:41:28.458731] [DEBUG] Marking table: wp_termmeta as completed
+[2019-04-22 10:41:28.458822] [DEBUG] Lastrun in ms: 0.0010800361633301 rows throttle: 525
+[2019-04-22 10:41:28.459008] [INFO] Database progress update: Total data: 1,2MB / 1,3MB - Total rows: 386 / 422
+[2019-04-22 10:41:28.470855] [DEBUG] New table is started: wp_terms and setting new default rows per sync: 122
+[2019-04-22 10:41:28.471645] [DEBUG] Getting data from local DB with SQL query: select * from `wp_terms` where `term_id` > 0 order by `term_id`  limit 122
+[2019-04-22 10:41:28.471690] [DEBUG] Marking table: wp_terms as completed
+[2019-04-22 10:41:28.471874] [WARNING] Large row ignored from table: wp_terms - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:28.473273] [WARNING] Large row ignored from table: wp_terms - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:28.473744] [WARNING] Large row ignored from table: wp_terms - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:28.474113] [WARNING] Large row ignored from table: wp_terms - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:28.474185] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:29.397037] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:29.397291] [DEBUG] Lastrun in ms: 0.9263060092926 rows throttle: 129
+[2019-04-22 10:41:29.397699] [INFO] Database progress update: Total data: 1,2MB / 1,3MB - Total rows: 390 / 422
+[2019-04-22 10:41:29.453351] [DEBUG] New table is started: wp_usermeta and setting new default rows per sync: 500
+[2019-04-22 10:41:29.454106] [DEBUG] Getting data from local DB with SQL query: select * from `wp_usermeta` where `umeta_id` > 0 order by `umeta_id`  limit 500
+[2019-04-22 10:41:29.454157] [DEBUG] Marking table: wp_usermeta as completed
+[2019-04-22 10:41:29.454368] [WARNING] Large row ignored from table: wp_usermeta - Size: 25 - Increase allowed values on server
+[2019-04-22 10:41:29.454541] [WARNING] Large row ignored from table: wp_usermeta - Size: 22 - Increase allowed values on server
+[2019-04-22 10:41:29.454714] [WARNING] Large row ignored from table: wp_usermeta - Size: 21 - Increase allowed values on server
+[2019-04-22 10:41:29.454886] [WARNING] Large row ignored from table: wp_usermeta - Size: 23 - Increase allowed values on server
+[2019-04-22 10:41:29.455061] [WARNING] Large row ignored from table: wp_usermeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:29.455233] [WARNING] Large row ignored from table: wp_usermeta - Size: 35 - Increase allowed values on server
+[2019-04-22 10:41:29.455405] [WARNING] Large row ignored from table: wp_usermeta - Size: 34 - Increase allowed values on server
+[2019-04-22 10:41:29.455576] [WARNING] Large row ignored from table: wp_usermeta - Size: 28 - Increase allowed values on server
+[2019-04-22 10:41:29.455730] [WARNING] Large row ignored from table: wp_usermeta - Size: 18 - Increase allowed values on server
+[2019-04-22 10:41:29.455894] [WARNING] Large row ignored from table: wp_usermeta - Size: 38 - Increase allowed values on server
+[2019-04-22 10:41:29.456061] [WARNING] Large row ignored from table: wp_usermeta - Size: 19 - Increase allowed values on server
+[2019-04-22 10:41:29.457326] [WARNING] Large row ignored from table: wp_usermeta - Size: 61 - Increase allowed values on server
+[2019-04-22 10:41:29.457437] [WARNING] Large row ignored from table: wp_usermeta - Size: 26 - Increase allowed values on server
+[2019-04-22 10:41:29.457544] [WARNING] Large row ignored from table: wp_usermeta - Size: 47 - Increase allowed values on server
+[2019-04-22 10:41:29.457642] [WARNING] Large row ignored from table: wp_usermeta - Size: 30 - Increase allowed values on server
+[2019-04-22 10:41:29.457777] [WARNING] Large row ignored from table: wp_usermeta - Size: 339 - Increase allowed values on server
+[2019-04-22 10:41:29.457876] [WARNING] Large row ignored from table: wp_usermeta - Size: 49 - Increase allowed values on server
+[2019-04-22 10:41:29.458032] [WARNING] Large row ignored from table: wp_usermeta - Size: 73 - Increase allowed values on server
+[2019-04-22 10:41:29.458177] [WARNING] Large row ignored from table: wp_usermeta - Size: 88 - Increase allowed values on server
+[2019-04-22 10:41:29.458299] [WARNING] Large row ignored from table: wp_usermeta - Size: 68 - Increase allowed values on server
+[2019-04-22 10:41:29.458397] [WARNING] Large row ignored from table: wp_usermeta - Size: 36 - Increase allowed values on server
+[2019-04-22 10:41:29.458502] [WARNING] Large row ignored from table: wp_usermeta - Size: 40 - Increase allowed values on server
+[2019-04-22 10:41:29.458599] [WARNING] Large row ignored from table: wp_usermeta - Size: 42 - Increase allowed values on server
+[2019-04-22 10:41:29.458703] [WARNING] Large row ignored from table: wp_usermeta - Size: 37 - Increase allowed values on server
+[2019-04-22 10:41:29.458868] [WARNING] Large row ignored from table: wp_usermeta - Size: 554 - Increase allowed values on server
+[2019-04-22 10:41:29.458924] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:30.451127] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:30.451512] [DEBUG] Lastrun in ms: 0.9978289604187 rows throttle: 525
+[2019-04-22 10:41:30.451811] [INFO] Database progress update: Total data: 1,2MB / 1,3MB - Total rows: 415 / 422
+[2019-04-22 10:41:30.501888] [DEBUG] New table is started: wp_users and setting new default rows per sync: 500
+[2019-04-22 10:41:30.502465] [DEBUG] Getting data from local DB with SQL query: select * from `wp_users` where `ID` > 0 order by `ID`  limit 500
+[2019-04-22 10:41:30.502498] [DEBUG] Marking table: wp_users as completed
+[2019-04-22 10:41:30.503807] [WARNING] Large row ignored from table: wp_users - Size: 118 - Increase allowed values on server
+[2019-04-22 10:41:30.503924] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:31.636465] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:31.636572] [DEBUG] Lastrun in ms: 1.1346220970154 rows throttle: 525
+[2019-04-22 10:41:31.636746] [INFO] Database progress update: Total data: 1,2MB / 1,3MB - Total rows: 416 / 422
+[2019-04-22 10:41:31.680873] [DEBUG] New table is started: wp_yoast_seo_links and setting new default rows per sync: 500
+[2019-04-22 10:41:31.681457] [DEBUG] Getting data from local DB with SQL query: select * from `wp_yoast_seo_links` where `id` > 0 order by `id`  limit 500
+[2019-04-22 10:41:31.681519] [DEBUG] Marking table: wp_yoast_seo_links as completed
+[2019-04-22 10:41:31.681560] [DEBUG] Lastrun in ms: 0.00064206123352051 rows throttle: 525
+[2019-04-22 10:41:31.681644] [INFO] Database progress update: Total data: 1,2MB / 1,3MB - Total rows: 416 / 422
+[2019-04-22 10:41:31.690482] [DEBUG] New table is started: wp_yoast_seo_meta and setting new default rows per sync: 183
+[2019-04-22 10:41:31.691074] [DEBUG] Getting data from local DB with SQL query: select * from `wp_yoast_seo_meta` limit 0,183
+[2019-04-22 10:41:31.691109] [DEBUG] Marking table: wp_yoast_seo_meta as completed
+[2019-04-22 10:41:31.691217] [WARNING] Large row ignored from table: wp_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-22 10:41:31.691291] [WARNING] Large row ignored from table: wp_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:31.691362] [WARNING] Large row ignored from table: wp_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:31.691430] [WARNING] Large row ignored from table: wp_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:31.691499] [WARNING] Large row ignored from table: wp_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:31.691567] [WARNING] Large row ignored from table: wp_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-22 10:41:31.691615] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-22 10:41:32.627516] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-22 10:41:32.629663] [DEBUG] Lastrun in ms: 0.9390561580658 rows throttle: 193
+[2019-04-22 10:41:32.630178] [INFO] Database progress update: Total data: 1,3MB / 1,3MB - Total rows: 422 / 422
+[2019-04-22 10:41:32.674939] [INFO] Database progress update: Total data: 1,3MB / 1,3MB - Total rows: 422 / 422
+[2019-04-22 10:41:32.674984] [INFO] Ending database synchronization loop with remaining time: 14.560381174088 seconds
+[2019-04-22 10:41:33.206741] [DEBUG] Running sync controller loop - With subjob allotted time: 47.961683034897 seconds
+[2019-04-22 10:41:33.724519] [DEBUG] Running sync controller loop - With subjob allotted time: 47.988019943237 seconds
+[2019-04-22 10:41:33.725173] [INFO] Starting finalize - Allotted time: 47.988019943237
+[2019-04-22 10:41:33.726760] [INFO] Starting database finalize with allotted time: 47.988019943237
+[2019-04-22 10:41:33.726785] [DEBUG] Add sql statement to delete WP Synchro options: delete from `wpsyntmp_no5mf_options`  where option_name like 'wpsynchro_%'
+[2019-04-22 10:41:33.726798] [DEBUG] Add sql statement to copy current WP Synchro options to temp table: insert into `wpsyntmp_no5mf_options` (option_name,option_value,autoload) select option_name,option_value,autoload from no5mf_options where option_name like 'wpsynchro_%'
+[2019-04-22 10:41:33.726812] [DEBUG] Add sql statement to delete active plugin setting: delete from `wpsyntmp_no5mf_options`  where option_name = 'active_plugins'
+[2019-04-22 10:41:33.726825] [DEBUG] Add sql statement to copy current active plugin setting to temp table: insert into `wpsyntmp_no5mf_options` (option_name,option_value,autoload) select option_name,option_value,autoload from no5mf_options where option_name = 'active_plugins'
+[2019-04-22 10:41:33.727305] [DEBUG] Retrieving new masterdata from target
+[2019-04-22 10:41:33.727349] [DEBUG] Calling masterdata service on: http://staging-voy.activetalents.se/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=31626a431658fc014cf119e4b7fb98ced33cf538 with intent to user as 'to'
+[2019-04-22 10:41:34.888551] [DEBUG] Retrieving new masterdata completed
+[2019-04-22 10:41:34.888822] [ERROR] Finalize: Error in database synchronization for table wp_comments - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.888948] [ERROR] Finalize: Error in database synchronization for table wp_options - No rows has been transferred, but should contain 152 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889047] [ERROR] Finalize: Error in database synchronization for table wp_postmeta - No rows has been transferred, but should contain 154 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889149] [ERROR] Finalize: Error in database synchronization for table wp_posts - No rows has been transferred, but should contain 61 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889318] [ERROR] Finalize: Error in database synchronization for table wp_term_relationships - No rows has been transferred, but should contain 14 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889428] [ERROR] Finalize: Error in database synchronization for table wp_term_taxonomy - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889549] [ERROR] Finalize: Error in database synchronization for table wp_terms - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889646] [ERROR] Finalize: Error in database synchronization for table wp_usermeta - No rows has been transferred, but should contain 25 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889741] [ERROR] Finalize: Error in database synchronization for table wp_users - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889894] [ERROR] Finalize: Error in database synchronization for table wp_yoast_seo_meta - No rows has been transferred, but should contain 6 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-22 10:41:34.889947] [DEBUG] Add drop table in database on wp_commentmeta
+[2019-04-22 10:41:34.891653] [DEBUG] Add rename in database from wpsyntmp_wp_commentmeta to: wp_commentmeta
+[2019-04-22 10:41:34.891760] [DEBUG] Add drop table in database on wp_comments
+[2019-04-22 10:41:34.891825] [DEBUG] Add rename in database from wpsyntmp_wp_comments to: wp_comments
+[2019-04-22 10:41:34.891897] [DEBUG] Add drop table in database on wp_links
+[2019-04-22 10:41:34.891958] [DEBUG] Add rename in database from wpsyntmp_wp_links to: wp_links
+[2019-04-22 10:41:34.892022] [DEBUG] Add drop table in database on wp_options
+[2019-04-22 10:41:34.892069] [DEBUG] Add rename in database from wpsyntmp_wp_options to: wp_options
+[2019-04-22 10:41:34.892152] [DEBUG] Add drop table in database on wp_postmeta
+[2019-04-22 10:41:34.892233] [DEBUG] Add rename in database from wpsyntmp_wp_postmeta to: wp_postmeta
+[2019-04-22 10:41:34.892316] [DEBUG] Add drop table in database on wp_posts
+[2019-04-22 10:41:34.892391] [DEBUG] Add rename in database from wpsyntmp_wp_posts to: wp_posts
+[2019-04-22 10:41:34.892474] [DEBUG] Add drop table in database on wp_term_relationships
+[2019-04-22 10:41:34.892544] [DEBUG] Add rename in database from wpsyntmp_wp_term_relationships to: wp_term_relationships
+[2019-04-22 10:41:34.892627] [DEBUG] Add drop table in database on wp_term_taxonomy
+[2019-04-22 10:41:34.892693] [DEBUG] Add rename in database from wpsyntmp_wp_term_taxonomy to: wp_term_taxonomy
+[2019-04-22 10:41:34.892770] [DEBUG] Add drop table in database on wp_termmeta
+[2019-04-22 10:41:34.892838] [DEBUG] Add rename in database from wpsyntmp_wp_termmeta to: wp_termmeta
+[2019-04-22 10:41:34.892918] [DEBUG] Add drop table in database on wp_terms
+[2019-04-22 10:41:34.892984] [DEBUG] Add rename in database from wpsyntmp_wp_terms to: wp_terms
+[2019-04-22 10:41:34.893057] [DEBUG] Add drop table in database on wp_usermeta
+[2019-04-22 10:41:34.893199] [DEBUG] Add rename in database from wpsyntmp_wp_usermeta to: wp_usermeta
+[2019-04-22 10:41:34.895174] [DEBUG] Add drop table in database on wp_users
+[2019-04-22 10:41:34.895321] [DEBUG] Add rename in database from wpsyntmp_wp_users to: wp_users
+[2019-04-22 10:41:34.895451] [DEBUG] Add drop table in database on wp_yoast_seo_links
+[2019-04-22 10:41:34.895522] [DEBUG] Add rename in database from wpsyntmp_wp_yoast_seo_links to: wp_yoast_seo_links
+[2019-04-22 10:41:34.895628] [DEBUG] Add drop table in database on wp_yoast_seo_meta
+[2019-04-22 10:41:34.895747] [DEBUG] Add rename in database from wpsyntmp_wp_yoast_seo_meta to: wp_yoast_seo_meta
+[2019-04-22 10:41:34.895906] [CRITICAL] No need calling remote client db, because we have errors: 
+
+Array
+(
+    [0] => Finalize: Error in database synchronization for table wp_comments - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [1] => Finalize: Error in database synchronization for table wp_options - No rows has been transferred, but should contain 152 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [2] => Finalize: Error in database synchronization for table wp_postmeta - No rows has been transferred, but should contain 154 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [3] => Finalize: Error in database synchronization for table wp_posts - No rows has been transferred, but should contain 61 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [4] => Finalize: Error in database synchronization for table wp_term_relationships - No rows has been transferred, but should contain 14 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [5] => Finalize: Error in database synchronization for table wp_term_taxonomy - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [6] => Finalize: Error in database synchronization for table wp_terms - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [7] => Finalize: Error in database synchronization for table wp_usermeta - No rows has been transferred, but should contain 25 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [8] => Finalize: Error in database synchronization for table wp_users - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [9] => Finalize: Error in database synchronization for table wp_yoast_seo_meta - No rows has been transferred, but should contain 6 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+)
+
+[2019-04-22 10:41:34.923023] [INFO] Completed finalize - used time: 1.197811126709

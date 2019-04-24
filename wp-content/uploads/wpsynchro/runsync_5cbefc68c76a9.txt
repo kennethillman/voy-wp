@@ -1,0 +1,5 @@
+[2019-04-23 11:52:19.539947] [DEBUG] Running sync controller loop - With subjob allotted time: 47.630033016205 seconds
+[2019-04-23 11:52:19.927578] [INFO] Initating synchronization with remote host with allotted time:47.630033016205
+[2019-04-23 11:52:19.927813] [DEBUG] Calling initate remote service with url: http://staging-voy.activetalents.se/wp-json/wpsynchro/v1/initiate/ and args: 
+[2019-04-23 11:52:20.876338] [CRITICAL] Failed initializing - Could not get a valid token from remote server
+[2019-04-23 11:52:20.876365] [INFO] Initating synchronization completed on: 0.94882988929749 seconds

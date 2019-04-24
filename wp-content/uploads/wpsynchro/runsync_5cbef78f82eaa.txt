@@ -1,0 +1,628 @@
+[2019-04-23 11:31:30.784527] [DEBUG] Running sync controller loop - With subjob allotted time: 47.956096887589 seconds
+[2019-04-23 11:31:30.790491] [INFO] Initating synchronization with remote host with allotted time:47.956096887589
+[2019-04-23 11:31:30.790531] [DEBUG] Calling initate remote service with url: http://php.indpro.se/voy-wp/wp-json/wpsynchro/v1/initiate/ and args: 
+[2019-04-23 11:31:31.872277] [DEBUG] Got remote transfer token: 4614cbaec0d207b572d98c8aff1354de5b30f516
+[2019-04-23 11:31:31.872879] [INFO] Initating synchronization completed on: 1.0823090076447 seconds
+[2019-04-23 11:31:32.402635] [DEBUG] Running sync controller loop - With subjob allotted time: 47.964100122452 seconds
+[2019-04-23 11:31:32.403238] [INFO] Getting masterdata from source and target with allotted time:47.964100122452
+[2019-04-23 11:31:32.403875] [DEBUG] Calling masterdata service on: http://127.0.0.1:8888/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=21e67c85840578767fb57a3423742dab with intent to user as 'from'
+[2019-04-23 11:31:32.895061] [DEBUG] Calling masterdata service on: http://php.indpro.se/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=d7d82a549fb931f0274aa2bd95def8e32dd790d2 with intent to user as 'to'
+[2019-04-23 11:31:33.404803] [DEBUG] Masterdata (from) - _client_home_url: http://127.0.0.1:8888/voy-wp/
+[2019-04-23 11:31:33.404893] [DEBUG] Masterdata (from) - _rest_base_url: http://127.0.0.1:8888/voy-wp/wp-json/
+[2019-04-23 11:31:33.404963] [DEBUG] Masterdata (from) - _wp_options_table: no5mf_options
+[2019-04-23 11:31:33.405032] [DEBUG] Masterdata (from) - _max_allowed_packet_size: 1048576
+[2019-04-23 11:31:33.405100] [DEBUG] Masterdata (from) - _max_post_size: 134217728
+[2019-04-23 11:31:33.405168] [DEBUG] Masterdata (from) - _memory_limit: -1
+[2019-04-23 11:31:33.405236] [DEBUG] Masterdata (from) - _upload_max_filesize: 26214400
+[2019-04-23 11:31:33.405302] [DEBUG] Masterdata (from) - _max_file_uploads: 25
+[2019-04-23 11:31:33.405369] [DEBUG] Masterdata (from) - _sql_version: 10.1.35-MariaDB
+[2019-04-23 11:31:33.405436] [DEBUG] Masterdata (from) - _plugin_version: 1.1.0 FREE
+[2019-04-23 11:31:33.405569] [DEBUG] Masterdata (to) - _client_home_url: http://php.indpro.se/voy-wp/
+[2019-04-23 11:31:33.405637] [DEBUG] Masterdata (to) - _rest_base_url: http://php.indpro.se/voy-wp/wp-json/
+[2019-04-23 11:31:33.405704] [DEBUG] Masterdata (to) - _wp_options_table: no5mf_options
+[2019-04-23 11:31:33.405771] [DEBUG] Masterdata (to) - _max_allowed_packet_size: 1048576
+[2019-04-23 11:31:33.405838] [DEBUG] Masterdata (to) - _max_post_size: 134217728
+[2019-04-23 11:31:33.405906] [DEBUG] Masterdata (to) - _memory_limit: -1
+[2019-04-23 11:31:33.405973] [DEBUG] Masterdata (to) - _upload_max_filesize: 134217728
+[2019-04-23 11:31:33.407974] [DEBUG] Masterdata (to) - _max_file_uploads: 20
+[2019-04-23 11:31:33.408208] [DEBUG] Masterdata (to) - _sql_version: 10.1.30-MariaDB
+[2019-04-23 11:31:33.408415] [DEBUG] Masterdata (to) - _plugin_version: 1.1.0 FREE
+[2019-04-23 11:31:33.409031] [INFO] Completed masterdata on: 1.0057370662689 seconds
+[2019-04-23 11:31:33.958942] [DEBUG] Running sync controller loop - With subjob allotted time: 47.963888168335 seconds
+[2019-04-23 11:31:33.960570] [INFO] Starting database synchronization loop with allotted time: 47.963888168335
+[2019-04-23 11:31:33.961311] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 10704
+[2019-04-23 11:31:35.736662] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 4
+[2019-04-23 11:31:35.736724] [DEBUG] New table is started: no5mf_commentmeta and setting new default rows per sync: 500
+[2019-04-23 11:31:35.737101] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_commentmeta` where `meta_id` > 0 order by `meta_id`  limit 500
+[2019-04-23 11:31:35.737122] [DEBUG] Marking table: no5mf_commentmeta as completed
+[2019-04-23 11:31:35.737155] [WARNING] Hit memory peak - Current peak: 23123696 and memory limit: -15999497.5 - Backing off from: 500 rows to: 350 rows
+[2019-04-23 11:31:35.737175] [DEBUG] Lastrun in ms: 0.00040197372436523 rows throttle: 350
+[2019-04-23 11:31:35.737278] [INFO] Database progress update: Total data: 0,0MB / 1,6MB - Total rows: 0 / 425
+[2019-04-23 11:31:35.757511] [DEBUG] New table is started: no5mf_comments and setting new default rows per sync: 30
+[2019-04-23 11:31:35.757848] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_comments` where `comment_ID` > 0 order by `comment_ID`  limit 30
+[2019-04-23 11:31:35.757866] [DEBUG] Marking table: no5mf_comments as completed
+[2019-04-23 11:31:35.758069] [WARNING] Large row ignored from table: no5mf_comments - Size: 363 - Increase allowed values on server
+[2019-04-23 11:31:35.758106] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:36.295297] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:36.295345] [DEBUG] Lastrun in ms: 0.53779602050781 rows throttle: 32
+[2019-04-23 11:31:36.295407] [INFO] Database progress update: Total data: 0,0MB / 1,6MB - Total rows: 1 / 425
+[2019-04-23 11:31:36.301226] [DEBUG] New table is started: no5mf_links and setting new default rows per sync: 500
+[2019-04-23 11:31:36.301754] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_links` where `link_id` > 0 order by `link_id`  limit 500
+[2019-04-23 11:31:36.301812] [DEBUG] Marking table: no5mf_links as completed
+[2019-04-23 11:31:36.302611] [DEBUG] Lastrun in ms: 0.0013189315795898 rows throttle: 525
+[2019-04-23 11:31:36.302742] [INFO] Database progress update: Total data: 0,0MB / 1,6MB - Total rows: 1 / 425
+[2019-04-23 11:31:36.308733] [DEBUG] New table is started: no5mf_options and setting new default rows per sync: 54
+[2019-04-23 11:31:36.309472] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_options` where `option_id` > 0 order by `option_id`  limit 54
+[2019-04-23 11:31:36.309593] [WARNING] Large row ignored from table: no5mf_options - Size: 50 - Increase allowed values on server
+[2019-04-23 11:31:36.309670] [WARNING] Large row ignored from table: no5mf_options - Size: 47 - Increase allowed values on server
+[2019-04-23 11:31:36.309744] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.309818] [WARNING] Large row ignored from table: no5mf_options - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:36.309887] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.309961] [WARNING] Large row ignored from table: no5mf_options - Size: 47 - Increase allowed values on server
+[2019-04-23 11:31:36.310030] [WARNING] Large row ignored from table: no5mf_options - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:36.310098] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.310166] [WARNING] Large row ignored from table: no5mf_options - Size: 26 - Increase allowed values on server
+[2019-04-23 11:31:36.310234] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.310302] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.310383] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.310456] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.310530] [WARNING] Large row ignored from table: no5mf_options - Size: 47 - Increase allowed values on server
+[2019-04-23 11:31:36.310603] [WARNING] Large row ignored from table: no5mf_options - Size: 50 - Increase allowed values on server
+[2019-04-23 11:31:36.310676] [WARNING] Large row ignored from table: no5mf_options - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:36.310745] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.311462] [WARNING] Large row ignored from table: no5mf_options - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:36.311549] [WARNING] Large row ignored from table: no5mf_options - Size: 43 - Increase allowed values on server
+[2019-04-23 11:31:36.311624] [WARNING] Large row ignored from table: no5mf_options - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:36.311694] [WARNING] Large row ignored from table: no5mf_options - Size: 37 - Increase allowed values on server
+[2019-04-23 11:31:36.311763] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.311836] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.311911] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.311984] [WARNING] Large row ignored from table: no5mf_options - Size: 54 - Increase allowed values on server
+[2019-04-23 11:31:36.312053] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.312121] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.312195] [WARNING] Large row ignored from table: no5mf_options - Size: 48 - Increase allowed values on server
+[2019-04-23 11:31:36.312263] [WARNING] Large row ignored from table: no5mf_options - Size: 25 - Increase allowed values on server
+[2019-04-23 11:31:36.312336] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.312411] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.312547] [WARNING] Large row ignored from table: no5mf_options - Size: 151 - Increase allowed values on server
+[2019-04-23 11:31:36.312622] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.312697] [WARNING] Large row ignored from table: no5mf_options - Size: 53 - Increase allowed values on server
+[2019-04-23 11:31:36.312766] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.312834] [WARNING] Large row ignored from table: no5mf_options - Size: 26 - Increase allowed values on server
+[2019-04-23 11:31:36.312904] [WARNING] Large row ignored from table: no5mf_options - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:36.312977] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.313592] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.313674] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:36.313744] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.313817] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.313886] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:36.313959] [WARNING] Large row ignored from table: no5mf_options - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:36.314028] [WARNING] Large row ignored from table: no5mf_options - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:36.314100] [WARNING] Large row ignored from table: no5mf_options - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:36.314169] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.314238] [WARNING] Large row ignored from table: no5mf_options - Size: 45 - Increase allowed values on server
+[2019-04-23 11:31:36.314310] [WARNING] Large row ignored from table: no5mf_options - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:36.314380] [WARNING] Large row ignored from table: no5mf_options - Size: 27 - Increase allowed values on server
+[2019-04-23 11:31:36.314449] [WARNING] Large row ignored from table: no5mf_options - Size: 37 - Increase allowed values on server
+[2019-04-23 11:31:36.314521] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.314594] [WARNING] Large row ignored from table: no5mf_options - Size: 25 - Increase allowed values on server
+[2019-04-23 11:31:36.314662] [WARNING] Large row ignored from table: no5mf_options - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:36.314703] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:36.939909] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:36.940209] [DEBUG] Lastrun in ms: 0.63135099411011 rows throttle: 57
+[2019-04-23 11:31:36.940715] [INFO] Database progress update: Total data: 0,2MB / 1,6MB - Total rows: 55 / 425
+[2019-04-23 11:31:36.985874] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_options` where `option_id` > 55 order by `option_id`  limit 57
+[2019-04-23 11:31:36.987199] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.987317] [WARNING] Large row ignored from table: no5mf_options - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:36.987429] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.987544] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.987835] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.988091] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.988179] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.988266] [WARNING] Large row ignored from table: no5mf_options - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:36.988348] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.988429] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.988515] [WARNING] Large row ignored from table: no5mf_options - Size: 44 - Increase allowed values on server
+[2019-04-23 11:31:36.988601] [WARNING] Large row ignored from table: no5mf_options - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:36.988686] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:36.988767] [WARNING] Large row ignored from table: no5mf_options - Size: 44 - Increase allowed values on server
+[2019-04-23 11:31:36.988847] [WARNING] Large row ignored from table: no5mf_options - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:36.988927] [WARNING] Large row ignored from table: no5mf_options - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:36.989011] [WARNING] Large row ignored from table: no5mf_options - Size: 37 - Increase allowed values on server
+[2019-04-23 11:31:36.989091] [WARNING] Large row ignored from table: no5mf_options - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:36.989171] [WARNING] Large row ignored from table: no5mf_options - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:36.989257] [WARNING] Large row ignored from table: no5mf_options - Size: 44 - Increase allowed values on server
+[2019-04-23 11:31:36.989343] [WARNING] Large row ignored from table: no5mf_options - Size: 33 - Increase allowed values on server
+[2019-04-23 11:31:36.990141] [WARNING] Large row ignored from table: no5mf_options - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:36.990259] [WARNING] Large row ignored from table: no5mf_options - Size: 164 - Increase allowed values on server
+[2019-04-23 11:31:36.990359] [WARNING] Large row ignored from table: no5mf_options - Size: 70 - Increase allowed values on server
+[2019-04-23 11:31:36.990456] [WARNING] Large row ignored from table: no5mf_options - Size: 69 - Increase allowed values on server
+[2019-04-23 11:31:36.990550] [WARNING] Large row ignored from table: no5mf_options - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:36.990637] [WARNING] Large row ignored from table: no5mf_options - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:36.990717] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.990798] [WARNING] Large row ignored from table: no5mf_options - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:36.990878] [WARNING] Large row ignored from table: no5mf_options - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:36.990959] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:36.991042] [WARNING] Large row ignored from table: no5mf_options - Size: 47 - Increase allowed values on server
+[2019-04-23 11:31:36.991122] [WARNING] Large row ignored from table: no5mf_options - Size: 25 - Increase allowed values on server
+[2019-04-23 11:31:36.991203] [WARNING] Large row ignored from table: no5mf_options - Size: 37 - Increase allowed values on server
+[2019-04-23 11:31:36.991283] [WARNING] Large row ignored from table: no5mf_options - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:36.991364] [WARNING] Large row ignored from table: no5mf_options - Size: 45 - Increase allowed values on server
+[2019-04-23 11:31:36.991444] [WARNING] Large row ignored from table: no5mf_options - Size: 44 - Increase allowed values on server
+[2019-04-23 11:31:36.991524] [WARNING] Large row ignored from table: no5mf_options - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:36.991979] [WARNING] Large row ignored from table: no5mf_options - Size: 5727 - Increase allowed values on server
+[2019-04-23 11:31:36.992063] [WARNING] Large row ignored from table: no5mf_options - Size: 26 - Increase allowed values on server
+[2019-04-23 11:31:36.992161] [WARNING] Large row ignored from table: no5mf_options - Size: 95 - Increase allowed values on server
+[2019-04-23 11:31:36.992262] [WARNING] Large row ignored from table: no5mf_options - Size: 120 - Increase allowed values on server
+[2019-04-23 11:31:36.992945] [WARNING] Large row ignored from table: no5mf_options - Size: 123 - Increase allowed values on server
+[2019-04-23 11:31:36.993044] [WARNING] Large row ignored from table: no5mf_options - Size: 136 - Increase allowed values on server
+[2019-04-23 11:31:36.993132] [WARNING] Large row ignored from table: no5mf_options - Size: 94 - Increase allowed values on server
+[2019-04-23 11:31:36.993231] [WARNING] Large row ignored from table: no5mf_options - Size: 275 - Increase allowed values on server
+[2019-04-23 11:31:36.993317] [WARNING] Large row ignored from table: no5mf_options - Size: 62 - Increase allowed values on server
+[2019-04-23 11:31:36.993401] [WARNING] Large row ignored from table: no5mf_options - Size: 65 - Increase allowed values on server
+[2019-04-23 11:31:36.993485] [WARNING] Large row ignored from table: no5mf_options - Size: 68 - Increase allowed values on server
+[2019-04-23 11:31:36.993570] [WARNING] Large row ignored from table: no5mf_options - Size: 68 - Increase allowed values on server
+[2019-04-23 11:31:36.993654] [WARNING] Large row ignored from table: no5mf_options - Size: 70 - Increase allowed values on server
+[2019-04-23 11:31:36.993738] [WARNING] Large row ignored from table: no5mf_options - Size: 68 - Increase allowed values on server
+[2019-04-23 11:31:36.993822] [WARNING] Large row ignored from table: no5mf_options - Size: 66 - Increase allowed values on server
+[2019-04-23 11:31:36.993906] [WARNING] Large row ignored from table: no5mf_options - Size: 65 - Increase allowed values on server
+[2019-04-23 11:31:36.993990] [WARNING] Large row ignored from table: no5mf_options - Size: 68 - Increase allowed values on server
+[2019-04-23 11:31:36.994160] [WARNING] Large row ignored from table: no5mf_options - Size: 1607 - Increase allowed values on server
+[2019-04-23 11:31:36.994269] [WARNING] Large row ignored from table: no5mf_options - Size: 458 - Increase allowed values on server
+[2019-04-23 11:31:36.994311] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:37.536554] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:37.536711] [DEBUG] Lastrun in ms: 0.55224990844727 rows throttle: 60
+[2019-04-23 11:31:37.536956] [INFO] Database progress update: Total data: 0,4MB / 1,6MB - Total rows: 112 / 425
+[2019-04-23 11:31:37.561593] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_options` where `option_id` > 112 order by `option_id`  limit 60
+[2019-04-23 11:31:37.561690] [DEBUG] Marking table: no5mf_options as completed
+[2019-04-23 11:31:37.564490] [WARNING] Large row ignored from table: no5mf_options - Size: 922 - Increase allowed values on server
+[2019-04-23 11:31:37.564904] [WARNING] Large row ignored from table: no5mf_options - Size: 238 - Increase allowed values on server
+[2019-04-23 11:31:37.565220] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:37.565532] [WARNING] Large row ignored from table: no5mf_options - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:37.566500] [WARNING] Large row ignored from table: no5mf_options - Size: 461 - Increase allowed values on server
+[2019-04-23 11:31:37.567239] [WARNING] Large row ignored from table: no5mf_options - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:37.568081] [WARNING] Large row ignored from table: no5mf_options - Size: 71 - Increase allowed values on server
+[2019-04-23 11:31:37.568527] [WARNING] Large row ignored from table: no5mf_options - Size: 265 - Increase allowed values on server
+[2019-04-23 11:31:37.568989] [WARNING] Large row ignored from table: no5mf_options - Size: 462 - Increase allowed values on server
+[2019-04-23 11:31:37.569513] [WARNING] Large row ignored from table: no5mf_options - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:37.569892] [WARNING] Large row ignored from table: no5mf_options - Size: 169 - Increase allowed values on server
+[2019-04-23 11:31:37.570571] [WARNING] Large row ignored from table: no5mf_options - Size: 697 - Increase allowed values on server
+[2019-04-23 11:31:37.572260] [WARNING] Large row ignored from table: no5mf_options - Size: 3072 - Increase allowed values on server
+[2019-04-23 11:31:37.572858] [WARNING] Large row ignored from table: no5mf_options - Size: 671 - Increase allowed values on server
+[2019-04-23 11:31:37.573261] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:37.573909] [WARNING] Large row ignored from table: no5mf_options - Size: 73 - Increase allowed values on server
+[2019-04-23 11:31:37.574574] [WARNING] Large row ignored from table: no5mf_options - Size: 56 - Increase allowed values on server
+[2019-04-23 11:31:37.574959] [WARNING] Large row ignored from table: no5mf_options - Size: 73 - Increase allowed values on server
+[2019-04-23 11:31:37.575303] [WARNING] Large row ignored from table: no5mf_options - Size: 56 - Increase allowed values on server
+[2019-04-23 11:31:37.575656] [WARNING] Large row ignored from table: no5mf_options - Size: 56 - Increase allowed values on server
+[2019-04-23 11:31:37.576052] [WARNING] Large row ignored from table: no5mf_options - Size: 215 - Increase allowed values on server
+[2019-04-23 11:31:37.578510] [WARNING] Large row ignored from table: no5mf_options - Size: 86 - Increase allowed values on server
+[2019-04-23 11:31:37.578943] [WARNING] Large row ignored from table: no5mf_options - Size: 371 - Increase allowed values on server
+[2019-04-23 11:31:37.580622] [WARNING] Large row ignored from table: no5mf_options - Size: 8610 - Increase allowed values on server
+[2019-04-23 11:31:37.581058] [WARNING] Large row ignored from table: no5mf_options - Size: 413 - Increase allowed values on server
+[2019-04-23 11:31:37.581359] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:37.581750] [WARNING] Large row ignored from table: no5mf_options - Size: 252 - Increase allowed values on server
+[2019-04-23 11:31:37.582042] [WARNING] Large row ignored from table: no5mf_options - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:37.582373] [WARNING] Large row ignored from table: no5mf_options - Size: 68 - Increase allowed values on server
+[2019-04-23 11:31:37.582701] [WARNING] Large row ignored from table: no5mf_options - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:37.583073] [WARNING] Large row ignored from table: no5mf_options - Size: 187 - Increase allowed values on server
+[2019-04-23 11:31:37.583393] [WARNING] Large row ignored from table: no5mf_options - Size: 56 - Increase allowed values on server
+[2019-04-23 11:31:37.584226] [WARNING] Large row ignored from table: no5mf_options - Size: 97 - Increase allowed values on server
+[2019-04-23 11:31:37.585019] [WARNING] Large row ignored from table: no5mf_options - Size: 1312 - Increase allowed values on server
+[2019-04-23 11:31:37.591701] [WARNING] Large row ignored from table: no5mf_options - Size: 77279 - Increase allowed values on server
+[2019-04-23 11:31:37.592119] [WARNING] Large row ignored from table: no5mf_options - Size: 2334 - Increase allowed values on server
+[2019-04-23 11:31:37.592281] [WARNING] Large row ignored from table: no5mf_options - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:37.596859] [WARNING] Large row ignored from table: no5mf_options - Size: 77488 - Increase allowed values on server
+[2019-04-23 11:31:37.602307] [WARNING] Large row ignored from table: no5mf_options - Size: 77595 - Increase allowed values on server
+[2019-04-23 11:31:37.605683] [WARNING] Large row ignored from table: no5mf_options - Size: 24717 - Increase allowed values on server
+[2019-04-23 11:31:37.607916] [WARNING] Large row ignored from table: no5mf_options - Size: 24717 - Increase allowed values on server
+[2019-04-23 11:31:37.608093] [WARNING] Large row ignored from table: no5mf_options - Size: 89 - Increase allowed values on server
+[2019-04-23 11:31:37.609602] [WARNING] Large row ignored from table: no5mf_options - Size: 479 - Increase allowed values on server
+[2019-04-23 11:31:37.609771] [WARNING] Large row ignored from table: no5mf_options - Size: 91 - Increase allowed values on server
+[2019-04-23 11:31:37.609979] [WARNING] Large row ignored from table: no5mf_options - Size: 236 - Increase allowed values on server
+[2019-04-23 11:31:37.610135] [WARNING] Large row ignored from table: no5mf_options - Size: 89 - Increase allowed values on server
+[2019-04-23 11:31:37.612056] [WARNING] Large row ignored from table: no5mf_options - Size: 10144 - Increase allowed values on server
+[2019-04-23 11:31:37.612215] [WARNING] Large row ignored from table: no5mf_options - Size: 60 - Increase allowed values on server
+[2019-04-23 11:31:37.612433] [WARNING] Large row ignored from table: no5mf_options - Size: 124 - Increase allowed values on server
+[2019-04-23 11:31:37.613024] [WARNING] Large row ignored from table: no5mf_options - Size: 3792 - Increase allowed values on server
+[2019-04-23 11:31:37.616404] [WARNING] Large row ignored from table: no5mf_options - Size: 43811 - Increase allowed values on server
+[2019-04-23 11:31:37.616728] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:38.037537] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:38.037821] [DEBUG] Lastrun in ms: 0.48173403739929 rows throttle: 63
+[2019-04-23 11:31:38.038320] [INFO] Database progress update: Total data: 0,6MB / 1,6MB - Total rows: 163 / 425
+[2019-04-23 11:31:38.089352] [DEBUG] New table is started: no5mf_postmeta and setting new default rows per sync: 500
+[2019-04-23 11:31:38.091377] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_postmeta` where `meta_id` > 0 order by `meta_id`  limit 500
+[2019-04-23 11:31:38.091440] [DEBUG] Marking table: no5mf_postmeta as completed
+[2019-04-23 11:31:38.091697] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.091912] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.092114] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.092299] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 22 - Increase allowed values on server
+[2019-04-23 11:31:38.092495] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.094306] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.094519] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.094718] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.094944] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.095150] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.095347] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.095543] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.095738] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.095961] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.096071] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:38.096180] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:38.096296] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.096413] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:38.096548] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-23 11:31:38.096664] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.096779] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.096897] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.097006] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:38.097116] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:38.097231] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.097346] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:38.098319] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-23 11:31:38.098444] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.098561] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.098678] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.098787] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:38.098929] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:38.099184] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.099381] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:38.099708] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-23 11:31:38.100025] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.100206] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.100328] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.100465] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:38.100583] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:38.100702] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.100863] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 31 - Increase allowed values on server
+[2019-04-23 11:31:38.101097] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 51 - Increase allowed values on server
+[2019-04-23 11:31:38.101318] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.101525] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:38.101718] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:38.101898] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.103439] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.103570] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.103689] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.103825] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.103945] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.104061] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.104177] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:38.104285] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.104394] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.104510] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.104625] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.104754] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.104872] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.104987] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.105104] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:38.105213] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.105321] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.105437] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.105552] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.105679] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.105794] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.106793] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.106922] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.107033] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.107142] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.107258] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.107374] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.107505] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.107621] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.107737] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:38.107846] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 42 - Increase allowed values on server
+[2019-04-23 11:31:38.107963] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.108072] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.108179] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.108294] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.108510] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.108647] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 65 - Increase allowed values on server
+[2019-04-23 11:31:38.108764] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.108883] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 53 - Increase allowed values on server
+[2019-04-23 11:31:38.108999] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.109108] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.109216] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.110329] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.110737] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.111046] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 65 - Increase allowed values on server
+[2019-04-23 11:31:38.111169] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.111287] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 54 - Increase allowed values on server
+[2019-04-23 11:31:38.111407] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.111517] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.111626] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.111743] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.111859] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.111994] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 64 - Increase allowed values on server
+[2019-04-23 11:31:38.112110] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.112230] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 111 - Increase allowed values on server
+[2019-04-23 11:31:38.112345] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 43 - Increase allowed values on server
+[2019-04-23 11:31:38.112454] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 42 - Increase allowed values on server
+[2019-04-23 11:31:38.112569] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 37 - Increase allowed values on server
+[2019-04-23 11:31:38.112677] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 24 - Increase allowed values on server
+[2019-04-23 11:31:38.112786] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.112903] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:38.113012] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.113120] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.114311] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.114733] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.115025] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.115148] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.115265] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.115382] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:38.115496] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.115615] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.115733] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.115851] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.115995] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.116124] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.116337] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.116614] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 39 - Increase allowed values on server
+[2019-04-23 11:31:38.116765] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.116954] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.117159] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.117398] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.117644] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.117845] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.118043] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.120324] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:38.120578] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 41 - Increase allowed values on server
+[2019-04-23 11:31:38.120809] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:38.121177] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:38.121532] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:38.121732] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 52 - Increase allowed values on server
+[2019-04-23 11:31:38.121855] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:38.121998] [WARNING] Large row ignored from table: no5mf_postmeta - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:38.122066] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:38.721647] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:38.721734] [DEBUG] Lastrun in ms: 0.63229894638062 rows throttle: 525
+[2019-04-23 11:31:38.721890] [INFO] Database progress update: Total data: 1,2MB / 1,6MB - Total rows: 302 / 425
+[2019-04-23 11:31:38.759411] [DEBUG] New table is started: no5mf_posts and setting new default rows per sync: 407
+[2019-04-23 11:31:38.760419] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_posts` where `ID` > 0 order by `ID`  limit 407
+[2019-04-23 11:31:38.760446] [DEBUG] Marking table: no5mf_posts as completed
+[2019-04-23 11:31:38.760816] [WARNING] Large row ignored from table: no5mf_posts - Size: 356 - Increase allowed values on server
+[2019-04-23 11:31:38.761152] [WARNING] Large row ignored from table: no5mf_posts - Size: 1505 - Increase allowed values on server
+[2019-04-23 11:31:38.761532] [WARNING] Large row ignored from table: no5mf_posts - Size: 5748 - Increase allowed values on server
+[2019-04-23 11:31:38.761925] [WARNING] Large row ignored from table: no5mf_posts - Size: 5756 - Increase allowed values on server
+[2019-04-23 11:31:38.762318] [WARNING] Large row ignored from table: no5mf_posts - Size: 659 - Increase allowed values on server
+[2019-04-23 11:31:38.762635] [WARNING] Large row ignored from table: no5mf_posts - Size: 298 - Increase allowed values on server
+[2019-04-23 11:31:38.763898] [WARNING] Large row ignored from table: no5mf_posts - Size: 277 - Increase allowed values on server
+[2019-04-23 11:31:38.764758] [WARNING] Large row ignored from table: no5mf_posts - Size: 296 - Increase allowed values on server
+[2019-04-23 11:31:38.765296] [WARNING] Large row ignored from table: no5mf_posts - Size: 286 - Increase allowed values on server
+[2019-04-23 11:31:38.765859] [WARNING] Large row ignored from table: no5mf_posts - Size: 302 - Increase allowed values on server
+[2019-04-23 11:31:38.766504] [WARNING] Large row ignored from table: no5mf_posts - Size: 283 - Increase allowed values on server
+[2019-04-23 11:31:38.767016] [WARNING] Large row ignored from table: no5mf_posts - Size: 300 - Increase allowed values on server
+[2019-04-23 11:31:38.767558] [WARNING] Large row ignored from table: no5mf_posts - Size: 292 - Increase allowed values on server
+[2019-04-23 11:31:38.768116] [WARNING] Large row ignored from table: no5mf_posts - Size: 306 - Increase allowed values on server
+[2019-04-23 11:31:38.768713] [WARNING] Large row ignored from table: no5mf_posts - Size: 209 - Increase allowed values on server
+[2019-04-23 11:31:38.769142] [WARNING] Large row ignored from table: no5mf_posts - Size: 292 - Increase allowed values on server
+[2019-04-23 11:31:38.769600] [WARNING] Large row ignored from table: no5mf_posts - Size: 306 - Increase allowed values on server
+[2019-04-23 11:31:38.770060] [WARNING] Large row ignored from table: no5mf_posts - Size: 286 - Increase allowed values on server
+[2019-04-23 11:31:38.770533] [WARNING] Large row ignored from table: no5mf_posts - Size: 302 - Increase allowed values on server
+[2019-04-23 11:31:38.771068] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.771748] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.772157] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.772504] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.772785] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.773159] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.773413] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.773667] [WARNING] Large row ignored from table: no5mf_posts - Size: 209 - Increase allowed values on server
+[2019-04-23 11:31:38.774522] [WARNING] Large row ignored from table: no5mf_posts - Size: 241 - Increase allowed values on server
+[2019-04-23 11:31:38.774780] [WARNING] Large row ignored from table: no5mf_posts - Size: 225 - Increase allowed values on server
+[2019-04-23 11:31:38.775052] [WARNING] Large row ignored from table: no5mf_posts - Size: 223 - Increase allowed values on server
+[2019-04-23 11:31:38.775315] [WARNING] Large row ignored from table: no5mf_posts - Size: 677 - Increase allowed values on server
+[2019-04-23 11:31:38.775575] [WARNING] Large row ignored from table: no5mf_posts - Size: 468 - Increase allowed values on server
+[2019-04-23 11:31:38.775867] [WARNING] Large row ignored from table: no5mf_posts - Size: 363 - Increase allowed values on server
+[2019-04-23 11:31:38.776130] [WARNING] Large row ignored from table: no5mf_posts - Size: 246 - Increase allowed values on server
+[2019-04-23 11:31:38.776385] [WARNING] Large row ignored from table: no5mf_posts - Size: 368 - Increase allowed values on server
+[2019-04-23 11:31:38.776638] [WARNING] Large row ignored from table: no5mf_posts - Size: 209 - Increase allowed values on server
+[2019-04-23 11:31:38.776886] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.777138] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.777387] [WARNING] Large row ignored from table: no5mf_posts - Size: 210 - Increase allowed values on server
+[2019-04-23 11:31:38.777638] [WARNING] Large row ignored from table: no5mf_posts - Size: 217 - Increase allowed values on server
+[2019-04-23 11:31:38.777676] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:39.237760] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:39.237947] [DEBUG] Lastrun in ms: 0.47843503952026 rows throttle: 428
+[2019-04-23 11:31:39.238157] [INFO] Database progress update: Total data: 1,3MB / 1,6MB - Total rows: 342 / 425
+[2019-04-23 11:31:39.280333] [DEBUG] New table is started: no5mf_term_relationships and setting new default rows per sync: 457
+[2019-04-23 11:31:39.281805] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_term_relationships` where `object_id` > 0 order by `object_id`  limit 457
+[2019-04-23 11:31:39.281844] [DEBUG] Marking table: no5mf_term_relationships as completed
+[2019-04-23 11:31:39.282017] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:39.283423] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.283532] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.283615] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.283734] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.283853] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.283932] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284010] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284085] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284159] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284237] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284314] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284431] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284559] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284702] [WARNING] Large row ignored from table: no5mf_term_relationships - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:39.284797] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:39.684389] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:39.684497] [DEBUG] Lastrun in ms: 0.40409708023071 rows throttle: 480
+[2019-04-23 11:31:39.684670] [INFO] Database progress update: Total data: 1,4MB / 1,6MB - Total rows: 357 / 425
+[2019-04-23 11:31:39.725985] [DEBUG] New table is started: no5mf_term_taxonomy and setting new default rows per sync: 122
+[2019-04-23 11:31:39.726526] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_term_taxonomy` where `term_taxonomy_id` > 0 order by `term_taxonomy_id`  limit 122
+[2019-04-23 11:31:39.726558] [DEBUG] Marking table: no5mf_term_taxonomy as completed
+[2019-04-23 11:31:39.727679] [WARNING] Large row ignored from table: no5mf_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-23 11:31:39.727918] [WARNING] Large row ignored from table: no5mf_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-23 11:31:39.728146] [WARNING] Large row ignored from table: no5mf_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-23 11:31:39.728373] [WARNING] Large row ignored from table: no5mf_term_taxonomy - Size: 24 - Increase allowed values on server
+[2019-04-23 11:31:39.728466] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:40.214422] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:40.214591] [DEBUG] Lastrun in ms: 0.48851490020752 rows throttle: 129
+[2019-04-23 11:31:40.214852] [INFO] Database progress update: Total data: 1,4MB / 1,6MB - Total rows: 361 / 425
+[2019-04-23 11:31:40.243575] [DEBUG] New table is started: no5mf_termmeta and setting new default rows per sync: 500
+[2019-04-23 11:31:40.244936] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_termmeta` where `meta_id` > 0 order by `meta_id`  limit 500
+[2019-04-23 11:31:40.245025] [DEBUG] Marking table: no5mf_termmeta as completed
+[2019-04-23 11:31:40.245153] [DEBUG] Lastrun in ms: 0.0014421939849854 rows throttle: 525
+[2019-04-23 11:31:40.245424] [INFO] Database progress update: Total data: 1,4MB / 1,6MB - Total rows: 361 / 425
+[2019-04-23 11:31:40.270347] [DEBUG] New table is started: no5mf_terms and setting new default rows per sync: 122
+[2019-04-23 11:31:40.271872] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_terms` where `term_id` > 0 order by `term_id`  limit 122
+[2019-04-23 11:31:40.271968] [DEBUG] Marking table: no5mf_terms as completed
+[2019-04-23 11:31:40.272370] [WARNING] Large row ignored from table: no5mf_terms - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:40.272948] [WARNING] Large row ignored from table: no5mf_terms - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:40.273563] [WARNING] Large row ignored from table: no5mf_terms - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:40.273943] [WARNING] Large row ignored from table: no5mf_terms - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:40.274102] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:40.686613] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:40.686714] [DEBUG] Lastrun in ms: 0.41625595092773 rows throttle: 129
+[2019-04-23 11:31:40.686930] [INFO] Database progress update: Total data: 1,4MB / 1,6MB - Total rows: 365 / 425
+[2019-04-23 11:31:40.733329] [DEBUG] New table is started: no5mf_usermeta and setting new default rows per sync: 500
+[2019-04-23 11:31:40.734470] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_usermeta` where `umeta_id` > 0 order by `umeta_id`  limit 500
+[2019-04-23 11:31:40.734528] [DEBUG] Marking table: no5mf_usermeta as completed
+[2019-04-23 11:31:40.734780] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 25 - Increase allowed values on server
+[2019-04-23 11:31:40.734977] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 22 - Increase allowed values on server
+[2019-04-23 11:31:40.735293] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 21 - Increase allowed values on server
+[2019-04-23 11:31:40.735557] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 23 - Increase allowed values on server
+[2019-04-23 11:31:40.735754] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:40.735945] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 35 - Increase allowed values on server
+[2019-04-23 11:31:40.736134] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 34 - Increase allowed values on server
+[2019-04-23 11:31:40.736322] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 28 - Increase allowed values on server
+[2019-04-23 11:31:40.736516] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 18 - Increase allowed values on server
+[2019-04-23 11:31:40.736629] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 38 - Increase allowed values on server
+[2019-04-23 11:31:40.736740] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 19 - Increase allowed values on server
+[2019-04-23 11:31:40.736873] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 64 - Increase allowed values on server
+[2019-04-23 11:31:40.736978] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 29 - Increase allowed values on server
+[2019-04-23 11:31:40.737090] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 50 - Increase allowed values on server
+[2019-04-23 11:31:40.737195] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 30 - Increase allowed values on server
+[2019-04-23 11:31:40.738403] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 1219 - Increase allowed values on server
+[2019-04-23 11:31:40.738622] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 53 - Increase allowed values on server
+[2019-04-23 11:31:40.738782] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 73 - Increase allowed values on server
+[2019-04-23 11:31:40.738917] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 88 - Increase allowed values on server
+[2019-04-23 11:31:40.739046] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 68 - Increase allowed values on server
+[2019-04-23 11:31:40.739153] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 36 - Increase allowed values on server
+[2019-04-23 11:31:40.739267] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 43 - Increase allowed values on server
+[2019-04-23 11:31:40.739373] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 45 - Increase allowed values on server
+[2019-04-23 11:31:40.739490] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 40 - Increase allowed values on server
+[2019-04-23 11:31:40.739671] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 549 - Increase allowed values on server
+[2019-04-23 11:31:40.739780] [WARNING] Large row ignored from table: no5mf_usermeta - Size: 32 - Increase allowed values on server
+[2019-04-23 11:31:40.739840] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:41.146268] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:41.146307] [DEBUG] Lastrun in ms: 0.41291689872742 rows throttle: 525
+[2019-04-23 11:31:41.146366] [INFO] Database progress update: Total data: 1,5MB / 1,6MB - Total rows: 391 / 425
+[2019-04-23 11:31:41.179021] [DEBUG] New table is started: no5mf_users and setting new default rows per sync: 30
+[2019-04-23 11:31:41.179403] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_users` where `ID` > 0 order by `ID`  limit 30
+[2019-04-23 11:31:41.179423] [DEBUG] Marking table: no5mf_users as completed
+[2019-04-23 11:31:41.179580] [WARNING] Large row ignored from table: no5mf_users - Size: 118 - Increase allowed values on server
+[2019-04-23 11:31:41.179615] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:41.784612] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:41.786451] [DEBUG] Lastrun in ms: 0.60732293128967 rows throttle: 32
+[2019-04-23 11:31:41.786785] [INFO] Database progress update: Total data: 1,5MB / 1,6MB - Total rows: 392 / 425
+[2019-04-23 11:31:41.830578] [DEBUG] New table is started: no5mf_yoast_seo_links and setting new default rows per sync: 500
+[2019-04-23 11:31:41.833527] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_yoast_seo_links` where `id` > 0 order by `id`  limit 500
+[2019-04-23 11:31:41.833565] [DEBUG] Marking table: no5mf_yoast_seo_links as completed
+[2019-04-23 11:31:41.833613] [DEBUG] Lastrun in ms: 0.0029809474945068 rows throttle: 525
+[2019-04-23 11:31:41.833720] [INFO] Database progress update: Total data: 1,5MB / 1,6MB - Total rows: 392 / 425
+[2019-04-23 11:31:41.844667] [DEBUG] New table is started: no5mf_yoast_seo_meta and setting new default rows per sync: 500
+[2019-04-23 11:31:41.845408] [DEBUG] Getting data from local DB with SQL query: select * from `no5mf_yoast_seo_meta` limit 0,500
+[2019-04-23 11:31:41.845443] [DEBUG] Marking table: no5mf_yoast_seo_meta as completed
+[2019-04-23 11:31:41.845556] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:41.845637] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:41.845715] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:41.845792] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:41.845868] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:41.845944] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 8 - Increase allowed values on server
+[2019-04-23 11:31:41.846021] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.846097] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.846173] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.846249] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.846351] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.847427] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.847700] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.847986] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.848192] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.848284] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.848389] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.848527] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.848760] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.848992] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849208] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849303] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849383] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849460] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849538] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849615] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849692] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849771] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849851] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.849932] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.850014] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.850097] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.851338] [WARNING] Large row ignored from table: no5mf_yoast_seo_meta - Size: 9 - Increase allowed values on server
+[2019-04-23 11:31:41.851411] [DEBUG] Calling remote service 'clientsyncdatabase' with request body length: 57
+[2019-04-23 11:31:42.523563] [DEBUG] Got a proper response from 'clientsyncdatabase' with response length: 1
+[2019-04-23 11:31:42.523636] [DEBUG] Lastrun in ms: 0.67891716957092 rows throttle: 525
+[2019-04-23 11:31:42.523744] [INFO] Database progress update: Total data: 1,6MB / 1,6MB - Total rows: 425 / 425
+[2019-04-23 11:31:42.536838] [INFO] Database progress update: Total data: 1,6MB / 1,6MB - Total rows: 425 / 425
+[2019-04-23 11:31:42.536888] [INFO] Ending database synchronization loop with remaining time: 8.5763220787048 seconds
+[2019-04-23 11:31:43.052467] [DEBUG] Running sync controller loop - With subjob allotted time: 47.961517095566 seconds
+[2019-04-23 11:31:43.562855] [DEBUG] Running sync controller loop - With subjob allotted time: 47.985873937607 seconds
+[2019-04-23 11:31:43.563364] [INFO] Starting finalize - Allotted time: 47.985873937607
+[2019-04-23 11:31:43.564707] [INFO] Starting database finalize with allotted time: 47.985873937607
+[2019-04-23 11:31:43.564744] [DEBUG] Add sql statement to delete WP Synchro options: delete from `wpsyntmp_no5mf_options`  where option_name like 'wpsynchro_%'
+[2019-04-23 11:31:43.564784] [DEBUG] Add sql statement to copy current WP Synchro options to temp table: insert into `wpsyntmp_no5mf_options` (option_name,option_value,autoload) select option_name,option_value,autoload from no5mf_options where option_name like 'wpsynchro_%'
+[2019-04-23 11:31:43.564814] [DEBUG] Add sql statement to delete active plugin setting: delete from `wpsyntmp_no5mf_options`  where option_name = 'active_plugins'
+[2019-04-23 11:31:43.564836] [DEBUG] Add sql statement to copy current active plugin setting to temp table: insert into `wpsyntmp_no5mf_options` (option_name,option_value,autoload) select option_name,option_value,autoload from no5mf_options where option_name = 'active_plugins'
+[2019-04-23 11:31:43.565781] [DEBUG] Retrieving new masterdata from target
+[2019-04-23 11:31:43.565832] [DEBUG] Calling masterdata service on: http://php.indpro.se/voy-wp/wp-json/wpsynchro/v1/masterdata/?type[]=dbdetails&token=d7d82a549fb931f0274aa2bd95def8e32dd790d2 with intent to user as 'to'
+[2019-04-23 11:31:44.255207] [DEBUG] Retrieving new masterdata completed
+[2019-04-23 11:31:44.255451] [ERROR] Finalize: Error in database synchronization for table no5mf_comments - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.255571] [ERROR] Finalize: Error in database synchronization for table no5mf_options - No rows has been transferred, but should contain 162 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.255658] [ERROR] Finalize: Error in database synchronization for table no5mf_postmeta - No rows has been transferred, but should contain 139 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.255742] [ERROR] Finalize: Error in database synchronization for table no5mf_posts - No rows has been transferred, but should contain 40 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.255826] [ERROR] Finalize: Error in database synchronization for table no5mf_term_relationships - No rows has been transferred, but should contain 15 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.255911] [ERROR] Finalize: Error in database synchronization for table no5mf_term_taxonomy - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.256014] [ERROR] Finalize: Error in database synchronization for table no5mf_terms - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.256098] [ERROR] Finalize: Error in database synchronization for table no5mf_usermeta - No rows has been transferred, but should contain 26 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.256180] [ERROR] Finalize: Error in database synchronization for table no5mf_users - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.256281] [ERROR] Finalize: Error in database synchronization for table no5mf_yoast_seo_meta - No rows has been transferred, but should contain 33 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+[2019-04-23 11:31:44.256322] [DEBUG] Add drop table in database on no5mf_commentmeta
+[2019-04-23 11:31:44.257599] [DEBUG] Add rename in database from wpsyntmp_no5mf_commentmeta to: no5mf_commentmeta
+[2019-04-23 11:31:44.257676] [DEBUG] Add drop table in database on no5mf_comments
+[2019-04-23 11:31:44.257750] [DEBUG] Add rename in database from wpsyntmp_no5mf_comments to: no5mf_comments
+[2019-04-23 11:31:44.257848] [DEBUG] Add drop table in database on no5mf_links
+[2019-04-23 11:31:44.257889] [DEBUG] Add rename in database from wpsyntmp_no5mf_links to: no5mf_links
+[2019-04-23 11:31:44.257930] [DEBUG] Add drop table in database on no5mf_options
+[2019-04-23 11:31:44.257963] [DEBUG] Add rename in database from wpsyntmp_no5mf_options to: no5mf_options
+[2019-04-23 11:31:44.258001] [DEBUG] Add drop table in database on no5mf_postmeta
+[2019-04-23 11:31:44.258033] [DEBUG] Add rename in database from wpsyntmp_no5mf_postmeta to: no5mf_postmeta
+[2019-04-23 11:31:44.258072] [DEBUG] Add drop table in database on no5mf_posts
+[2019-04-23 11:31:44.258104] [DEBUG] Add rename in database from wpsyntmp_no5mf_posts to: no5mf_posts
+[2019-04-23 11:31:44.258142] [DEBUG] Add drop table in database on no5mf_term_relationships
+[2019-04-23 11:31:44.258175] [DEBUG] Add rename in database from wpsyntmp_no5mf_term_relationships to: no5mf_term_relationships
+[2019-04-23 11:31:44.258213] [DEBUG] Add drop table in database on no5mf_term_taxonomy
+[2019-04-23 11:31:44.258245] [DEBUG] Add rename in database from wpsyntmp_no5mf_term_taxonomy to: no5mf_term_taxonomy
+[2019-04-23 11:31:44.258283] [DEBUG] Add drop table in database on no5mf_termmeta
+[2019-04-23 11:31:44.258316] [DEBUG] Add rename in database from wpsyntmp_no5mf_termmeta to: no5mf_termmeta
+[2019-04-23 11:31:44.258354] [DEBUG] Add drop table in database on no5mf_terms
+[2019-04-23 11:31:44.258386] [DEBUG] Add rename in database from wpsyntmp_no5mf_terms to: no5mf_terms
+[2019-04-23 11:31:44.258424] [DEBUG] Add drop table in database on no5mf_usermeta
+[2019-04-23 11:31:44.258456] [DEBUG] Add rename in database from wpsyntmp_no5mf_usermeta to: no5mf_usermeta
+[2019-04-23 11:31:44.259746] [DEBUG] Add drop table in database on no5mf_users
+[2019-04-23 11:31:44.259810] [DEBUG] Add rename in database from wpsyntmp_no5mf_users to: no5mf_users
+[2019-04-23 11:31:44.259853] [DEBUG] Add drop table in database on no5mf_yoast_seo_links
+[2019-04-23 11:31:44.259887] [DEBUG] Add rename in database from wpsyntmp_no5mf_yoast_seo_links to: no5mf_yoast_seo_links
+[2019-04-23 11:31:44.259926] [DEBUG] Add drop table in database on no5mf_yoast_seo_meta
+[2019-04-23 11:31:44.259958] [DEBUG] Add rename in database from wpsyntmp_no5mf_yoast_seo_meta to: no5mf_yoast_seo_meta
+[2019-04-23 11:31:44.260003] [CRITICAL] No need calling remote client db, because we have errors: 
+
+Array
+(
+    [0] => Finalize: Error in database synchronization for table no5mf_comments - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [1] => Finalize: Error in database synchronization for table no5mf_options - No rows has been transferred, but should contain 162 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [2] => Finalize: Error in database synchronization for table no5mf_postmeta - No rows has been transferred, but should contain 139 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [3] => Finalize: Error in database synchronization for table no5mf_posts - No rows has been transferred, but should contain 40 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [4] => Finalize: Error in database synchronization for table no5mf_term_relationships - No rows has been transferred, but should contain 15 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [5] => Finalize: Error in database synchronization for table no5mf_term_taxonomy - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [6] => Finalize: Error in database synchronization for table no5mf_terms - No rows has been transferred, but should contain 4 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [7] => Finalize: Error in database synchronization for table no5mf_usermeta - No rows has been transferred, but should contain 26 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [8] => Finalize: Error in database synchronization for table no5mf_users - No rows has been transferred, but should contain 1 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+    [9] => Finalize: Error in database synchronization for table no5mf_yoast_seo_meta - No rows has been transferred, but should contain 33 rows. Normally this is because the ressource limits has been hit and the database content is too large. Consult documentation.
+)
+
+[2019-04-23 11:31:44.276340] [INFO] Completed finalize - used time: 0.71293091773987

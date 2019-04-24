@@ -1,5 +1,5 @@
 # ignore everything the wp uploads 
-wp-content/uploads
+# wp-content/uploads
 
 
 # ignore files or folder in DEVELOPMENT
