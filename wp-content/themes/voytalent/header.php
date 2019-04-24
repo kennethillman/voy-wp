@@ -122,9 +122,11 @@
 </header>
 
 <?php
-    echo "<img src='".get_the_post_thumbnail_url(get_the_ID())."' />";
-    echo get_the_title(get_the_ID())."<br />";
-    echo get_the_subtitle(get_the_ID());
+    if(is_page()):
+        echo "<img src='".get_the_post_thumbnail_url(get_the_ID())."' />";
+        echo get_the_title(get_the_ID())."<br />";
+        echo get_the_subtitle(get_the_ID());
+    endif;
 ?>
 
 <?php get_template_part( 'parts/s-breadcrumbs' );?>
