@@ -20,7 +20,7 @@ get_header();
     <section id="primary" class="content-area">
         <main id="main" class="site-main">
 
-            Site Content Here
+            <!--Site Content Here-->
 
         </main><!-- .site-main -->
     </section><!-- .content-area -->
