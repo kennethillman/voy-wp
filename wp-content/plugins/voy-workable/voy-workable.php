@@ -1,0 +1,79 @@
+<?php
+    /*
+     * Plugin Name: Voy Workable
+     * Description: Voy Workable, For Fetching Data from API (jobs, candidates etc...)
+     */
+    define('API_URL','https://voy-talent.workable.com/spi/v3/');
+
+    class VoyWorkableAPI
+    {
+        private static $apiKey = 'd7225728f0aee01d73efa04b6c74fee0caf320871ec029ee6e4f021fa2bade45';
+        private static $db;
+        private static $args =  array();
+        private static $apiUrl;
+
+        /*
+         * Connect to wordpress database through global variable $wpdb
+         * to custom handle errors, they are hidden from displaying and are suppressed
+         * Fatal errors are exceptional
+         * */
+        public static function dbInitialize(){
+            global $wpdb;
+            self::$db = $wpdb;
+            self::$db->hide_errors();
+            self::$db->suppress_errors();
+        }
+
+        /*
+         * initializing curl header content with required parameters
+         * */
+        public static function init($url, $postData=''){
+            self::$apiUrl = $url;
+            self::$args = array(
+                'headers'=> array(
+                    'Content-Type' => 'application/json',
+                    'Content-Length' => strlen($postData),
+                    'Authorization' => 'Bearer '.self::$apiKey
+                ),
+                'body'=>$postData,
+                'timeout' => 1000,
+                'connecttimeout' => 0,
+            );
+        }
+
+        /*
+         * Getting JSON data either using GET or POST Method
+         * $postData will be null for GET method
+         * */
+        public static function getJsonResponse($url='', $postData='', $method = ''){
+            self::init($url, $postData);
+            if($method === 'POST'){
+                $result =  (array) wp_remote_post( self::$apiUrl, self::$args ); //wp_remote_retrieve_body
+            }else{
+                $result =  (array) wp_remote_get( self::$apiUrl, self::$args ); //wp_remote_retrieve_body
+            }
+
+            if (is_array($result) && !empty($result['body'])) {
+                return wp_remote_retrieve_body($result);
+            }else{
+                return "Error in API";
+            }
+        }
+
+        public static function getJobs($limit=0){
+            $url = API_URL;
+            if($limit!=0){
+                $url = $url.'jobs?limit='.$limit;
+            }
+            $json = self::getJsonResponse($url, '', 'GET');
+            return $json;
+        }
+
+        public static function getJobDetails ($shortcode){
+            $url = API_URL;
+            $url = $url.'jobs/'.$shortcode;
+            $json = self::getJsonResponse($url, '', 'GET');
+            return $json;
+        }
+    }
+?>
