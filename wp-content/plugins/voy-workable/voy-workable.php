@@ -60,13 +60,40 @@
             }
         }
 
-        public static function getJobs($limit=0){
+        public static function getJobs($limit=0, $since_id=''){
             $url = API_URL;
             if($limit!=0){
-                $url = $url.'jobs?limit='.$limit;
+                $url = $url.'jobs?state=published&limit='.$limit;
+            }else{
+                $url = $url.'jobs?state=published';
             }
+
+            if($since_id!=''){
+                $url = $url.'&since_id='.$since_id;
+            }
+
             $json = self::getJsonResponse($url, '', 'GET');
             return $json;
+        }
+
+        public static function getNextJobs($limit=0, $since_id=''){
+            $url = API_URL;
+            $url = $url.'jobs?state=published';
+
+            $json = self::getJsonResponse($url, '', 'GET');
+            $json = json_decode($json);
+
+            $i=1;
+            $nextIds = [];
+            foreach ($json->jobs as $key=>$job){
+                $c = (($limit * $i));
+                if($key==$c){
+                    $nextIds[] = $job->id;
+                    $i++;
+                }
+            }
+
+            return $nextIds;
         }
 
         public static function getJobDetails ($shortcode){

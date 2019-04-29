@@ -3,7 +3,11 @@
  * Template Name: Jobs
  * */
 get_header();
-$jobOpportunities = json_decode(VoyWorkableAPI::getJobs(8), false);
+$pageLimit = 2;
+$jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit,$_REQUEST['since_id']), false);
+$jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
+$totalNoOfPages = floor(count($jobOpportunitiesTotal->jobs)/$pageLimit);
+$nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
 ?>
     <article class="content">
         <?php get_template_part( 'parts/s-featured-image' ); ?>
@@ -18,7 +22,7 @@ $jobOpportunities = json_decode(VoyWorkableAPI::getJobs(8), false);
                                 $jDetail = json_decode(VoyWorkableAPI::getJobDetails($job->shortcode), false);
                             ?>
                                 <li>
-                                    <a href="<?echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$job->shortcode;?>">
+                                    <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$job->shortcode;?>">
                                     <div class="text">
                                             <!--<strong>Creative director /</strong> Swisscom-->
                                             <strong><?php echo (isset($jDetail->function)?$jDetail->function.', ':''); echo $jDetail->title; ?></strong>
@@ -38,11 +42,39 @@ $jobOpportunities = json_decode(VoyWorkableAPI::getJobs(8), false);
                     </div>
 
                     <div class="m-paginate">
-                        <a class="prev page-numbers" href="#"> << Prev</a>
-                        <span class="page-numbers current">1</span>
-                        <a class="page-numbers" href="#">2</a>
-                        <a class="page-numbers" href="#">3</a>
-                        <a class="next page-numbers" href="#">Next >> </a>
+                        <?php
+                            $currentPageNo = isset($_REQUEST['link'])?$_REQUEST['link']:1;
+
+                            if(isset($_REQUEST['link']) && $_REQUEST['link']>1){
+                                echo  '<a class="prev page-numbers" href="#"> << Prev</a>';
+                            }
+
+                            for ($p=1;$p<=$totalNoOfPages;$p++){
+
+                                $_SESSION['previousJob'] = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.($currentPageNo-1).'&since_id='.$nextJobID[$currentPageNo-1];
+                                $_SESSION['nextJob'] = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.($currentPageNo+1).'&since_id='.$nextJobID[$currentPageNo];
+
+
+                                $currentPage = ($p==$currentPageNo)?'current':'';
+
+                                if(($p==$currentPageNo)){
+                                    $purl = '#';
+                                }elseif($p==1){
+                                    $purl = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.$p;
+                                }else{
+                                    $purl = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.$p.'&since_id='.$nextJobID[$p-1];
+                                }
+
+                            ?>
+                                <a class="page-numbers <?php echo $currentPage;?>" href="<?php echo $purl;?>"><?php echo $p; ?></a>
+                            <?php } ?>
+                            <?php
+
+                                if($currentPageNo!=$totalNoOfPages ){
+                                    echo  '<a class="prev page-numbers" href="'.$_SESSION['nextJob'].'"> Next >> </a>';
+                                }
+                            ?>
+
                     </div>
                 </div>
             </div>

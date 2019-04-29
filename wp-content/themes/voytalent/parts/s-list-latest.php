@@ -27,7 +27,7 @@
                                 $jDetail = json_decode(VoyWorkableAPI::getJobDetails($latestOpportunity->shortcode), false);
                         ?>
                             <li>
-                                <a href="<?echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$latestOpportunity->shortcode;?>">
+                                <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$latestOpportunity->shortcode;?>">
                                     <div class="text"><strong><?php echo (isset($jDetail->function)?$jDetail->function.', ':''); echo $jDetail->title; ?></strong></div>
                                     <span class="btn -orange -icon-only">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
@@ -38,7 +38,7 @@
                             endforeach;
                         ?>
                     </ul>
-				<a class="btn -black -icon -block -text-left" href="<?echo get_the_permalink(url_to_postid( site_url('jobs') ));?>">See all<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg></a>
+				<a class="btn -black -icon -block -text-left" href="<?php echo get_the_permalink(url_to_postid( site_url('jobs') ));?>">See all<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg></a>
 			</div>
 		</div>
 	</div>
