@@ -145,4 +145,8 @@
     </div>
 </header>
 
-<?php get_template_part( 'parts/s-breadcrumbs' );?>
+<?php if(!is_front_page()) : ?>
+  <?php get_template_part( 'parts/s-breadcrumbs' );?>
+<?php  endif; ?>
+
+
