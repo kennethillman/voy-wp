@@ -3,11 +3,12 @@
  * Template Name: Jobs
  * */
 get_header();
-$pageLimit = 4;
+$pageLimit = 5;
 $jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit,$_REQUEST['since_id']), false);
 $jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
-$totalNoOfPages = floor(count($jobOpportunitiesTotal->jobs)/$pageLimit);
+$totalNoOfPages = ceil(count($jobOpportunitiesTotal->jobs)/$pageLimit);
 $nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
+//print_r($nextJobID);
 ?>
     <article class="content">
         <?php get_template_part( 'parts/s-featured-image' ); ?>

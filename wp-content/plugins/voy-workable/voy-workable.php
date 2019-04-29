@@ -76,7 +76,7 @@
             return $json;
         }
 
-        public static function getNextJobs($limit=0, $since_id=''){
+        public static function getNextJobs($limit=0){
             $url = API_URL;
             $url = $url.'jobs?state=published';
 
@@ -88,7 +88,7 @@
             foreach ($json->jobs as $key=>$job){
                 $c = (($limit * $i));
                 if($key==$c){
-                    $nextIds[] = $job->id;
+                    $nextIds[$i] = $job->id;
                     $i++;
                 }
             }
