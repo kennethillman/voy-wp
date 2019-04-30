@@ -3,11 +3,12 @@
  * Template Name: Jobs
  * */
 get_header();
-$pageLimit = 2;
+$pageLimit = 5;
 $jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit,$_REQUEST['since_id']), false);
 $jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
-$totalNoOfPages = floor(count($jobOpportunitiesTotal->jobs)/$pageLimit);
+$totalNoOfPages = ceil(count($jobOpportunitiesTotal->jobs)/$pageLimit);
 $nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
+//print_r($nextJobID);
 ?>
     <article class="content">
         <?php get_template_part( 'parts/s-featured-image' ); ?>
@@ -45,15 +46,18 @@ $nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
                         <?php
                             $currentPageNo = isset($_REQUEST['link'])?$_REQUEST['link']:1;
 
+                            if($currentPageNo==2){
+                                $_SESSION['previousJob'] = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.($currentPageNo-1);
+                            }else{
+                                $_SESSION['previousJob'] = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.($currentPageNo-1).'&since_id='.$nextJobID[$currentPageNo-2];
+                            }
+
                             if(isset($_REQUEST['link']) && $_REQUEST['link']>1){
-                                echo  '<a class="prev page-numbers" href="#"> << Prev</a>';
+                                echo  '<a class="prev page-numbers" href="'.$_SESSION['previousJob'].'"> << Prev</a>';
                             }
 
                             for ($p=1;$p<=$totalNoOfPages;$p++){
-
-                                $_SESSION['previousJob'] = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.($currentPageNo-1).'&since_id='.$nextJobID[$currentPageNo-1];
                                 $_SESSION['nextJob'] = get_the_permalink(url_to_postid( site_url('jobs') )).'?link='.($currentPageNo+1).'&since_id='.$nextJobID[$currentPageNo];
-
 
                                 $currentPage = ($p==$currentPageNo)?'current':'';
 
