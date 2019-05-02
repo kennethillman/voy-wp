@@ -12,7 +12,7 @@ global $jobDetails;
 
 <div class="job-details -pattern-stripe-light">
 
-    <div class="company">Swisscom</div>
+    <!-- <div class="company">Details</div> -->
     <div class="detail">
         <span class="header">Job:</span>
         <span class="text"><?php echo (isset($jobDetails->function)?$jobDetails->function.', ':''); echo $jobDetails->title; ?></span>
