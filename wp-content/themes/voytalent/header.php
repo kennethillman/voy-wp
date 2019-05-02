@@ -146,7 +146,31 @@
 </header>
 
 <?php if(!is_front_page()) : ?>
-  <?php get_template_part( 'parts/s-breadcrumbs' );?>
+  <?php// get_template_part( 'parts/s-breadcrumbs' );?>
 <?php  endif; ?>
+
+<?php if(is_front_page()) : ?>
+
+<style type="text/css">
+  .s-featured-image .image {
+      background-image: url('http://voy-wp:8888/wp-content/uploads/2019/04/temp-featured-1568x859.jpg');
+  }
+</style>
+
+<section class="s-featured-image -text-pos-center -text-large">
+        <figure class="image -focus-center-center"></figure>
+        <div class="text">
+        <div class="gc">
+            <div class="g-12">
+                <div class="headers">
+                  <h2 class="header">Startpage</h2>
+                  <h3 class="sub-header">Featured image pending</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php  endif; ?>
+
 
 
