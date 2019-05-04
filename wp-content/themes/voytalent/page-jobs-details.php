@@ -13,7 +13,7 @@
 
         <div class="s- p-job">
             <div class="gc job-content">
-                <div class="g-8 g-t-12 g-push-4 g-m-push-0 g-t-push-0  ds-typography">
+                <div class="g-7 g-push-4 g-m-12 g-m-push-0 g-t-10 g-t-push-1">
                     <h1><?php echo (isset($jobDetails->function)?$jobDetails->function.', ':''); echo $jobDetails->title; ?></span>!</h1>
 
                     <?php get_template_part( 'parts/jobs/job-details' ); ?>
