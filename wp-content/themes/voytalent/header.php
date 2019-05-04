@@ -114,11 +114,13 @@
                     'theme_location' => 'menu-1',
                     'container' => false,
                     'echo' => false,
-                    'items_wrap' => '%3$s',
+                    'items_wrap' => '<span>%3$s</span>',
                     'depth' => 0,
+                    'link_before' => '<span>',
+                    'link_after' => '</span>',
                 );
 
-                echo strip_tags(wp_nav_menu($menuParameters), '<a>');
+                echo strip_tags(wp_nav_menu($menuParameters), '<a><span>');
             ?>
         </nav>
 
@@ -130,17 +132,18 @@
 
 <!-- TOGGLE ICONS -->
 
-        <div id="search-toggle">
+        <div id="toggle-search">
           <svg role="img" title="icon" class="svg-icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-magnifier"  svg=""></use>
           </svg>
         </div>
 
-        <div id="mobile-menu-toggle">
+        <div id="toggle-mobile-menu">
           <svg role="img" title="icon" class="svg-icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-menu-thin"  svg=""></use>
           </svg>
         </div>
+
 
     </div>
 </header>
