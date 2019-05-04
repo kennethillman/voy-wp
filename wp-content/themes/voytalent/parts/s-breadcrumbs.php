@@ -11,7 +11,8 @@
 ?>
 
 <section class="s-breadcrumbs">
-    <div class="gc">
+  <div class="body">
+      <div class="gc">
         <!--<div class="g-12"><a href="">Voy</a><a href="">Jobs</a>Creative director</div>-->
         <div class="g-12">
             <?php
@@ -21,4 +22,6 @@
             ?>
         </div>
     </div>
+  </div>
+
 </section>
