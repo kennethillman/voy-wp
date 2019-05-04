@@ -28,8 +28,8 @@
 	VOY.ui = VOY.ui || {},
 	VOY.helpers = VOY.helpers || {},
 	VOY.initial = VOY.initial || {};
-	VOY.partials = VOY.partials || {},
-	VOY.templates = VOY.templates || {},
+	VOY.modules = VOY.modules || {},
+	VOY.sections = VOY.sections || {},
 	VOY.components = VOY.components || {},
 
 
@@ -93,7 +93,7 @@
 		docElement.className = docClass.replace(/\bno-touch\b/g, 'touch');
 	};
 
-	
+
 
 	/*///////////////////////////////////////////////////////////////////////////////////////////////////////
 		VOY INITIAL
@@ -145,7 +145,7 @@
 // CONSOLE EVENT TRIGGERS
 
 /*
-	
+
 	VOY.fn.listen('afterCoreJS', function() {
 		 console.log('VOY -> afterCoreJS');
 	});
