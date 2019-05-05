@@ -152,22 +152,42 @@
   <?php// get_template_part( 'parts/s-breadcrumbs' );?>
 <?php  endif; ?>
 
-<?php if(is_front_page()) : ?>
+<?php
+    if(is_front_page()) :
+        $front_page_ID = get_option('page_on_front');
+
+        $front_page_featuredImage = get_the_post_thumbnail_url($front_page_ID);
+        $front_page_theTitle = get_the_title($front_page_ID);
+        $front_page_theSubTitle = get_post_meta( $front_page_ID, 'wps_subtitle', true );
+
+        $getPageImagesAndTexting = getPageImagesAndTexting($front_page_ID);
+        $front_page_image_position = $getPageImagesAndTexting['image_position'];
+        $front_page_text_position = $getPageImagesAndTexting['text_position'];
+        $front_page_text_size = $getPageImagesAndTexting['text_size'];
+?>
 
 <style type="text/css">
   .s-featured-image .image {
-      background-image: url('http://voy-wp:8888/wp-content/uploads/2019/04/temp-featured-1568x859.jpg');
+      background-image: url('<?php echo $front_page_featuredImage; ?>');
   }
 </style>
 
-<section class="s-featured-image -text-pos-center -text-large">
-        <figure class="image -focus-center-center"></figure>
+<section class="s-featured-image <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : '-text-pos-left'; ?>">
+        <figure class="image <?php echo ($front_page_image_position!='')?$front_page_image_position : '-focus-center-center'; ?>"></figure>
         <div class="text">
         <div class="gc">
             <div class="g-12">
                 <div class="headers">
-                  <h2 class="header">Startpage</h2>
-                  <h3 class="sub-header">Featured image pending</h3>
+                    <?php if(!empty($front_page_theTitle)) : ?>
+                        <h2 class="header">
+                            <?php echo $front_page_theTitle;?>
+                        </h2>
+                    <?php  endif; ?>
+                    <?php if(!empty($front_page_theSubTitle)) : ?>
+                        <h3 class="sub-header">
+                            <?php echo $front_page_theSubTitle;?>
+                        </h3>
+                    <?php  endif; ?>
                 </div>
             </div>
         </div>

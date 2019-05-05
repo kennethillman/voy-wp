@@ -13,6 +13,10 @@ if(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_I
     $theTitle = get_the_title(get_the_ID());
     $theSubTitle = get_post_meta( get_the_ID(), 'wps_subtitle', true );
 endif;
+$getPageImagesAndTexting = getPageImagesAndTexting(get_the_ID());
+$image_position = $getPageImagesAndTexting['image_position'];
+$text_position = $getPageImagesAndTexting['text_position'];
+$text_size = $getPageImagesAndTexting['text_size'];
 ?>
 <style type="text/css">
     .s-featured-image .image {
@@ -20,9 +24,9 @@ endif;
     }
 </style>
 
-<section class="s-featured-image">
+<section class="s-featured-image <?php echo ($text_position!='')?$text_position : '-text-pos-left'; ?> <?php echo ($text_size!='')?$text_size : '-text-pos-left'; ?>">
     <?php if(!empty($featuredImage)) : ?>
-        <figure class="image" class="-focus-center-center">
+        <figure class="image" class="<?php echo ($image_position!='')?$image_position : '-focus-center-center'; ?>">
             <!-- <img src="assets/images/temp-featured.jpg"> -->
         </figure>
     <?php  endif; ?>

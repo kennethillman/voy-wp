@@ -238,3 +238,12 @@ if ( ! function_exists( 'voy_the_posts_navigation' ) ) :
         );
     }
 endif;
+
+function getPageImagesAndTexting($pageId){
+    $images_text = array();
+    $images_text['image_position'] = get_post_meta( $pageId, 'image_position', true );
+    $images_text['text_position'] = get_post_meta( $pageId, 'text_position', true );
+    $images_text['text_size'] = get_post_meta( $pageId, 'text_size', true );
+
+    return $images_text;
+}
