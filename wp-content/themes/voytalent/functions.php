@@ -203,7 +203,8 @@ function voy_hsl_hex( $h, $s, $l, $to_hex = true ) {
 
 function add_theme_scripts() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
-    //wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
+    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom.js', array ( 'jquery' ), 1.1, true);
+    wp_localize_script( 'voy_scripts', 'voy_ajax', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
@@ -246,4 +247,15 @@ function getPageImagesAndTexting($pageId){
     $images_text['text_size'] = get_post_meta( $pageId, 'text_size', true );
 
     return $images_text;
+}
+
+add_action('wp_ajax_post_candidate',  'post_candidate'  );
+add_action('wp_ajax_nopriv_post_candidate',  'post_candidate');
+
+function post_candidate(){
+    if(isset($_POST)){
+        print_r($_POST);
+        VoyWorkableAPI::post_candidate();
+    }
+    wp_die();
 }

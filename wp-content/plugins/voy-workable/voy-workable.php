@@ -4,10 +4,11 @@
      * Description: Voy Workable, For Fetching Data from API (jobs, candidates etc...)
      */
     define('API_URL','https://voy-talent.workable.com/spi/v3/');
+    define('API_KEY','d7225728f0aee01d73efa04b6c74fee0caf320871ec029ee6e4f021fa2bade45');
 
     class VoyWorkableAPI
     {
-        private static $apiKey = 'd7225728f0aee01d73efa04b6c74fee0caf320871ec029ee6e4f021fa2bade45';
+        private static $apiKey = API_KEY;
         private static $db;
         private static $args =  array();
         private static $apiUrl;
@@ -17,6 +18,7 @@
          * to custom handle errors, they are hidden from displaying and are suppressed
          * Fatal errors are exceptional
          * */
+
         public static function dbInitialize(){
             global $wpdb;
             self::$db = $wpdb;
@@ -102,5 +104,12 @@
             $json = self::getJsonResponse($url, '', 'GET');
             return $json;
         }
+
+        public static function post_candidate($data = array()){
+            echo "Workable called";
+            wp_die();
+        }
     }
+
+    //$VoyWorkableAPI = new VoyWorkableAPI();
 ?>
