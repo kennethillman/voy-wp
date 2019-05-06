@@ -172,7 +172,7 @@
   }
 </style>
 
-<section class="s-featured-image <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : '-text-pos-left'; ?>">
+<section class="s-featured-image <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : ''; ?>">
         <figure class="image <?php echo ($front_page_image_position!='')?$front_page_image_position : '-focus-center-center'; ?>"></figure>
         <div class="text">
         <div class="gc">
