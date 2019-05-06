@@ -1,27 +1,19 @@
 <?php
     get_header();
 ?>
-
-
-
-<article class="content">
-
-  <div class="gc">
-    <?php
-        while (have_posts()) :
-            the_post();
-
-            //the_title();
-            the_content();
-        endwhile;
-    ?>
-  </div>
+<article class="content" style="background-color: white;">
+    <?php get_template_part('parts/s-featured-image'); ?>
+    <?php get_template_part('parts/s-breadcrumbs'); ?>
+    <div class="gc">
+        <?php
+            while (have_posts()) :
+                the_post();
+                the_content();
+            endwhile;
+        ?>
+    </div>
 
 </article>
-
-
-
-
 <?php
     get_footer();
 ?>
