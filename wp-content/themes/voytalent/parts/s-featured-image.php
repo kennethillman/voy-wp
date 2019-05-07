@@ -24,9 +24,9 @@ $text_size = $getPageImagesAndTexting['text_size'];
     }
 </style>
 
-<section class="s-featured-image <?php echo ($text_position!='')?$text_position : '-text-pos-left'; ?> <?php echo ($text_size!='')?$text_size : '-text-pos-left'; ?>">
+<section class="s-featured-image <?php echo ($text_position!='')?$text_position : '-text-pos-left'; ?> <?php echo ($text_size!='')?$text_size : ''; ?>">
     <?php if(!empty($featuredImage)) : ?>
-        <figure class="image" class="<?php echo ($image_position!='')?$image_position : '-focus-center-center'; ?>">
+        <figure class="image <?php echo ($image_position!='')?$image_position : '-focus-center-center'; ?>">
             <!-- <img src="assets/images/temp-featured.jpg"> -->
         </figure>
     <?php  endif; ?>
