@@ -148,10 +148,6 @@
     </div>
 </header>
 
-
-
-
-
 <?php
     if(is_front_page()) :
         $front_page_ID = get_option('page_on_front');
