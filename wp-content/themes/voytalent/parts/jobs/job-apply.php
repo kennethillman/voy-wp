@@ -51,10 +51,10 @@ global $jobID;
         </div>
 
         <div class="g-6">
-            <input class="-full-width" name="linked_email" type="email" placeholder="Linked in Profile">
+            <input class="-full-width" name="social_profiles[linkedin][name]" type="text" placeholder="Linked in Profile">
         </div>
         <div class="g-6">
-            <input class="-full-width" name="linked_phone" type="phone" placeholder="Portfolio Link">
+            <input class="-full-width" name="social_profiles[linkedin][url]" type="phone" placeholder="Portfolio Link">
         </div>
 
         <div class="g-12 ds-typography">
@@ -76,7 +76,7 @@ global $jobID;
             </label>
         </div>
 
-        <div class="g-12">
+        <div class="g-12" style="border: 1px solid red;">
             <label class="checkbox-holder">Recive emails from Voy
                 <input type="checkbox" name="cSubscribe" checked="checked">
                 <span class="checkmark"></span>
@@ -84,7 +84,9 @@ global $jobID;
         </div>
 
         <div class="g-12">
-            <button type="submit" class="btn -orange -icon">Send<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></button>
+            <button type="submit" class="btn -orange -icon" id="submitCandidate">Send<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></button>
         </div>
+
+        <div id="showPostCandidateResult"></div>
     </form>
 </div>

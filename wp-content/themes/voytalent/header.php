@@ -74,8 +74,17 @@
     <?php wp_head(); ?>
 </head>
 
+<?php
+    $bodyClass = '';
+    if(is_page() || is_front_page()){
+        $pid = (is_front_page())? get_option('page_on_front'): get_the_ID();
+        $CheckHasFeaturedImage = getPageImagesAndTexting($pid);
+        $hasFeaturedImage = $CheckHasFeaturedImage['image_position'];
+        $bodyClass = ($hasFeaturedImage!='')? '-has-featured-image': '';
+    }
+?>
 
-<body <?php body_class( 'ds-grid ds-typography' ); ?>>
+<body <?php body_class( array( "ds-grid", "ds-typography", $bodyClass ) ); ?>>
 
 <script type="text/javascript">
   VOY.initial.loadGoogleFONTS();
@@ -91,9 +100,7 @@
 
 <header class="s-header">
     <div class="gc">
-
-<!-- LOGO -->
-
+        <!-- LOGO -->
         <a href="<?php echo get_site_url(); ?>" class="logo">
             <svg id="Lager_2" data-name="Lager 2" xmlns="http://www.w3.org/2000/svg" width="361" height="101.18"
                  viewBox="0 0 361 101.18"><title>voy-talent</title>
