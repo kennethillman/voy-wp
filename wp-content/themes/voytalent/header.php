@@ -155,10 +155,6 @@
     </div>
 </header>
 
-<?php if(!is_front_page()) : ?>
-  <?php// get_template_part( 'parts/s-breadcrumbs' );?>
-<?php  endif; ?>
-
 <?php
     global $featuredImage;
     $featuredImage = [];
