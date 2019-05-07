@@ -160,10 +160,17 @@
 <?php  endif; ?>
 
 <?php
+    global $featuredImage;
+    $featuredImage = [];
+
     if(is_front_page()) :
         $front_page_ID = get_option('page_on_front');
 
-        $front_page_featuredImage = get_the_post_thumbnail_url($front_page_ID);
+        $featuredImage ['featured_image_480'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_480' );
+        $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url($front_page_ID, 'large' );
+        $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_1440' );
+        $featuredImage ['featured_image_2048'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_2048' );
+
         $front_page_theTitle = get_the_title($front_page_ID);
         $front_page_theSubTitle = get_post_meta( $front_page_ID, 'wps_subtitle', true );
 
@@ -173,11 +180,7 @@
         $front_page_text_size = $getPageImagesAndTexting['text_size'];
 ?>
 
-<style type="text/css">
-  .s-featured-image .image {
-      background-image: url('<?php echo $front_page_featuredImage; ?>');
-  }
-</style>
+<?php get_template_part('parts/s-featured-image-style'); ?>
 
 <section class="s-featured-image <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : ''; ?>">
         <figure class="image <?php echo ($front_page_image_position!='')?$front_page_image_position : '-focus-center-center'; ?>"></figure>

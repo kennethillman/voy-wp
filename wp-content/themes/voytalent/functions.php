@@ -6,6 +6,10 @@ if ( ! function_exists( 'theme_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1568, 9999 );
 
+        add_image_size( 'featured_image_480', 480, 9999 );
+        add_image_size( 'featured_image_1440', 1440, 9999 );
+        add_image_size( 'featured_image_2048', 2048, 9999 );
+
 		register_nav_menus(
 			array(
 				'menu-1' => __( 'Primary', 'voytalent' ),

@@ -32,6 +32,10 @@ function post_candidates() {
             }
             document.getElementById("showPostCandidateResult").innerHTML = resMsg;
             document.getElementById("submitCandidate").disabled = false;
+
+            setTimeout(function() {
+                document.getElementById("showPostCandidateResult").style.display = "none";
+            }, 2500);
         } else {
             // If fail
             console.log(this.response);
