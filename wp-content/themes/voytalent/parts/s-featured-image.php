@@ -8,21 +8,25 @@
  * @version 1.0
  */
 
-if(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_ID())) && !empty(get_post_meta( get_the_ID(), 'wps_subtitle', true ))):
-    $featuredImage = get_the_post_thumbnail_url(get_the_ID());
-    $theTitle = get_the_title(get_the_ID());
-    $theSubTitle = get_post_meta( get_the_ID(), 'wps_subtitle', true );
-endif;
-$getPageImagesAndTexting = getPageImagesAndTexting(get_the_ID());
-$image_position = $getPageImagesAndTexting['image_position'];
-$text_position = $getPageImagesAndTexting['text_position'];
-$text_size = $getPageImagesAndTexting['text_size'];
+global $featuredImage,$theTitle,$theSubTitle ;
+$featuredImage = [];
+
+$theTitle = get_the_title(get_the_ID());
+$theSubTitle = get_post_meta( get_the_ID(), 'wps_subtitle', true );
+
+if(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_ID())) && !empty(get_post_meta( get_the_ID(), 'wps_subtitle', true )) && get_the_post_thumbnail_url(get_the_ID())!=''):
+    $featuredImage ['featured_image_480'] = get_the_post_thumbnail_url(get_the_ID(), 'featured_image_480' );
+    $featuredImage ['large'] = get_the_post_thumbnail_url(get_the_ID(), 'large' );
+    $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url(get_the_ID(), 'featured_image_1440' );
+    $featuredImage ['featured_image_2048'] = get_the_post_thumbnail_url(get_the_ID(), 'featured_image_2048' );
+
+    $getPageImagesAndTexting = getPageImagesAndTexting(get_the_ID());
+    $image_position = $getPageImagesAndTexting['image_position'];
+    $text_position = $getPageImagesAndTexting['text_position'];
+    $text_size = $getPageImagesAndTexting['text_size'];
 ?>
-<style type="text/css">
-    .s-featured-image .image {
-        background-image: url('<?php echo $featuredImage;?>');
-    }
-</style>
+
+<?php get_template_part('parts/s-featured-image-style'); ?>
 
 <section class="s-featured-image <?php echo ($text_position!='')?$text_position : '-text-pos-left'; ?> <?php echo ($text_size!='')?$text_size : ''; ?>">
     <?php if(!empty($featuredImage)) : ?>
@@ -49,3 +53,4 @@ $text_size = $getPageImagesAndTexting['text_size'];
         </div>
     </div>
 </section>
+<?php endif; ?>

@@ -1,11 +1,17 @@
 function post_candidates() {
+    document.getElementById("submitCandidate").disabled = true;
     var formEl = document.forms.postCandidates;
     var formData = new FormData(formEl);
-    //console.log(formData.get('first_name'));
     var actionData = 'action=post_candidate' ;
     actionData+='&shortcode='+formData.get('cShortcode');
     actionData+='&name='+formData.get('first_name')+ ' '+formData.get('last_name');
-    actionData+='&first_name='+formData.get('first_name')+ ' '+formData.get('last_name');
+    actionData+='&first_name='+formData.get('first_name');
+    actionData+='&last_name='+formData.get('last_name');
+    actionData+='&email='+formData.get('cEmail');
+    actionData+='&phone='+formData.get('cPhone');
+    actionData+='&summary='+formData.get('cSummary');
+    actionData+='&social_profiles[linkedin][url]='+formData.get('social_profiles[linkedin][url]');
+    actionData+='&social_profiles[linkedin][name]='+formData.get('social_profiles[linkedin][name]');
 
     var xhr = new XMLHttpRequest();
     var apiUrl = voy_ajax.ajax_url ;
@@ -14,7 +20,22 @@ function post_candidates() {
     xhr.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // If successful
-            console.log("API RESPONSE ",this.response);
+            var result = JSON.parse(this.response);
+            var resMsg = '';
+            //console.log("API RESPONSE ",result);
+
+            if(result.hasOwnProperty('status') && result.status == "created"){
+                resMsg = '<span style="color:green; font-weight: bold;">Submitted Successfully</span>';
+            }
+            if(result.hasOwnProperty('error')){
+                resMsg = '<span style="color:red; font-weight: bold;">'+result.error+'</span>';
+            }
+            document.getElementById("showPostCandidateResult").innerHTML = resMsg;
+            document.getElementById("submitCandidate").disabled = false;
+
+            setTimeout(function() {
+                document.getElementById("showPostCandidateResult").style.display = "none";
+            }, 2500);
         } else {
             // If fail
             console.log(this.response);
@@ -23,8 +44,8 @@ function post_candidates() {
     xhr.onerror = function() {
         // Connection error
     };
-    xhr.send('action=post_candidate&work_hours_start=Indpro');
-    //xhr.send(actionData);
+    //xhr.send('action=post_candidate&work_hours_start=Indpro');
+    xhr.send(actionData);
 
     return false;
 }
