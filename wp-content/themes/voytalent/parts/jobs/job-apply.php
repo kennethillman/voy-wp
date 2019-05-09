@@ -11,6 +11,7 @@ global $jobDetails;
 global $jobID;
 ?>
 
+<form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
 <div class="gc job-apply">
     <div class="g-12">
         <div class="component-divider">
@@ -21,12 +22,12 @@ global $jobID;
         </div>
     </div>
 
-    <div class="g-12 ds-typography">
+    <div class="g-12 ds-typography ">
         <h2 class="header-section">Interested!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem. Donec dapibus neque in venenatis pulvinar. Pellentesque sit amet leo ac erat ornare venenatis pulvinar bibendum nibh. Quisque pharetra finibus velit non luctus.</p>
+        <p class="-wip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem. Donec dapibus neque in venenatis pulvinar. Pellentesque sit amet leo ac erat ornare venenatis pulvinar bibendum nibh. Quisque pharetra finibus velit non luctus.</p>
     </div>
 
-    <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
+
         <div class="g-12 ds-typography">
             <h2 class="header-number -solid"><figure></figure><span class="number">1.</span><span class="text">So, let's get to know eachother?</span></h2>
         </div>
@@ -65,7 +66,7 @@ global $jobID;
             <textarea class="-full-width" name="cSummary" required placeholder="Describe your dreams and ambitions"></textarea>
         </div>
 
-        <div class="g-12">
+        <div class="g-12 -wip">
             <p>Voy privacy text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem.</p>
         </div>
 
@@ -76,7 +77,7 @@ global $jobID;
             </label>
         </div>
 
-        <div class="g-12" style="border: 1px solid red;">
+        <div class="g-12 -wip">
             <label class="checkbox-holder">Recive emails from Voy
                 <input type="checkbox" name="cSubscribe" checked="checked">
                 <span class="checkmark"></span>
@@ -88,5 +89,6 @@ global $jobID;
         </div>
 
         <div id="showPostCandidateResult"></div>
-    </form>
+
 </div>
+</form>

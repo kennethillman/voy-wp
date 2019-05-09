@@ -10,7 +10,7 @@
 
 ?>
 
-<section class="s-join-email">
+<section class="s-join-email -wip">
 	<div class="gc -g-shift-vp600">
 		<div class="g-9 g-m-12">
 			Sign up and receive the latest announcements, tips, networking invitations and more

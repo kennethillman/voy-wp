@@ -12,11 +12,14 @@ if (count($jobOpportunities) > 0):
     //print_r($nextJobID);
 endif;
 ?>
-<article class="content">
-    <?php get_template_part('parts/s-featured-image'); ?>
-    <?php get_template_part('parts/s-breadcrumbs'); ?>
+
+  <?php get_template_part('parts/s-featured-image'); ?>
+  <?php get_template_part('parts/s-breadcrumbs'); ?>
+
+<article class="s- content">
+
     <?php get_template_part('parts/s-no-featured-image'); ?>
-    <div class="s- p-jobs">
+    <div class=" p-jobs">
         <div class="gc">
             <div class="g-12">
                 <div class="m-list">
