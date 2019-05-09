@@ -52,8 +52,6 @@
                     </div>
                 </form>
 
-
-
                 <div class="gc">
                     <div class="g-6">
 
