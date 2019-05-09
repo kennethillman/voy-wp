@@ -48,7 +48,7 @@ define('WP_HOME','http://127.0.0.1:8888/voy-wp/');
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'Gdy>JmcNFj_[F.nk&D!=jjM44B:U[L{n^/5%n]&VU/.j./VCz,!!ip;?pqZ#6kym' );
+define( 'AUTH_KEY',         'Gdy>JmcNFj_pppp[F.nk&D!=jjM44B:U[L{n^/5%n]&VU/.j./VCz,!!ip;?pqZ#6kym' );
 define( 'SECURE_AUTH_KEY',  'rsa$ETS[GhH$Jl1X2EFVYXZY?fi{+zt)+-nzV+2cIAje?SO9I#;9N=HSnWY..vQq' );
 define( 'LOGGED_IN_KEY',    '4 ~^S#{|_W}H.dI/]|7SPb`CWP:qR4.T] $(u1Bgj$<=e,e*KSYv:5eDGgkB_.*<' );
 define( 'NONCE_KEY',        'fT,U2a$kZ=}~k-fV <:x)]VKerzA{Ym{$G*qhg6}+oI:KyR3aCu[T;Tmio=[ud3`' );

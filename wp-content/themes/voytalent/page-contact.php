@@ -93,9 +93,7 @@
                     </div>
                 </div>
             </section>
-
     </article>
-
 <?php
     get_footer();
 ?>

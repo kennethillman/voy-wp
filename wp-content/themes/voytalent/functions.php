@@ -285,7 +285,6 @@ function send_email_contact(){
         $toAddress = get_option( 'my_option_name' );
         $toAddress = $toAddress['voy_contact_email'];
 
-        //php mailer variables
         $to = $toAddress;
         $headers = array('Content-Type: text/html; charset=UTF-8');
         $headers[] = 'From: '. $c_email . "\r\n" ;

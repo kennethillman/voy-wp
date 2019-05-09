@@ -81,7 +81,6 @@ function submit_contact(){
             }
             document.getElementById("contactSubmitResult").innerHTML = resMsg;
             document.getElementById("send_email").disabled = false;
-
             setTimeout(function() {
                 document.getElementById("contactSubmitResult").style.display = "none";
             }, 2500);
