@@ -63,6 +63,14 @@ class VoyOtionsPage
             'my-setting-admin',
             'setting_section_id'
         );
+
+        add_settings_field(
+            'voy_contact_email',
+            'Contact Email',
+            array( $this, 'voy_contact_email_callback' ),
+            'my-setting-admin',
+            'setting_section_id'
+        );
     }
     public function print_section_info()
     {
@@ -76,21 +84,31 @@ class VoyOtionsPage
         if( isset( $input['voy_address'] ) )
             $new_input['voy_address'] =  $input['voy_address'] ;
 
+        if( isset( $input['voy_contact_email'] ) )
+            $new_input['voy_contact_email'] =  $input['voy_contact_email'] ;
+        //print_r($new_input);exit;
         return $new_input;
     }
 
     public function address_callback()
     {
+
         /*printf(
             '<textarea rows="6" cols="45" id="address" name="my_option_name[address]"/>%s</textarea>',
             isset( $this->options['address'] ) ? esc_attr( $this->options['address']) : ''
         );*/
 
-        wp_editor( (isset( $this->options['voy_address'] ) ? ( $this->options['voy_address']) : ''), 'voy_address', array(
+        wp_editor((isset($this->options['voy_address']) ? ($this->options['voy_address']) : ''), 'voy_address', array(
             'textarea_name' => 'my_option_name[voy_address]',
             'textarea_rows' => 5,
             'textarea_cols' => 10,
-        ) );
+        ));
+
+    }
+
+    public function voy_contact_email_callback(){
+        printf('<input type="text" name="my_option_name[voy_contact_email]" value="%s" size="45"/>',
+            isset( $this->options['voy_contact_email'] ) ? esc_attr( $this->options['voy_contact_email']) : '');
     }
 }
 

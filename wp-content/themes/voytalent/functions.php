@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ( ! function_exists( 'theme_setup' ) ) :
 	function theme_setup() {
 		add_theme_support( 'automatic-feed-links' );
@@ -264,3 +265,60 @@ function post_candidate(){
     }
     wp_die();
 }
+
+//Contact Email
+/*add_action('wp_ajax_send_email',  'send_email_contact'  );
+add_action('wp_ajax_nopriv_send_email',  'send_email_contact');
+
+function send_email_contact(){
+    if(isset($_POST) && $_SESSION['mailalreadysent']==''){
+        $pData = $_POST;
+        array_shift($pData);
+
+        $subject = $_POST['subject'];
+        $comment = $_POST['comment'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $c_email = $_POST['c_email'];
+        $c_phone = $_POST['c_phone'];
+
+        $toAddress = get_option( 'my_option_name' );
+        $toAddress = $toAddress['voy_contact_email'];
+
+        //php mailer variables
+        $to = $toAddress;
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $headers[] = 'From: '. $c_email . "\r\n" ;
+        $headers[] = 'Reply-To: ' . $c_email . "\r\n";
+
+        $message = "Hi,<br />";
+        $message.= "There is message from below contact detail: <br /><br />";
+        $message.= "<strong>Name:</strong> ".$fname. ' '.$lname ." <br />";
+        $message.= "<strong>Email:</strong> ".$c_email." <br />";
+        $message.= "<strong>Phone:</strong> ".$c_phone." <br />";
+        $message.= "<strong>Message:</strong> ".$comment." <br />";
+
+        $status = [];
+
+        $sent = wp_mail($to, $subject, $message, $headers);
+
+        if($sent) {
+            $_SESSION['mailalreadysent'] = $c_email;
+            $status['status'] = 'success';
+            $status['msg'] = 'Mail Sent Successfully';
+        }
+        else{
+            $status['status'] = 'error';
+            $status['msg'] = 'Mail Not Sent';
+        }
+
+        echo json_encode($status);
+
+    }else{
+        $status['status'] = 'error';
+        $status['msg'] = 'Mail Aleardy Sent';
+
+        echo json_encode($status);
+    }
+    wp_die();
+}*/
