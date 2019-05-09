@@ -267,7 +267,7 @@ function post_candidate(){
 }
 
 //Contact Email
-/*add_action('wp_ajax_send_email',  'send_email_contact'  );
+add_action('wp_ajax_send_email',  'send_email_contact'  );
 add_action('wp_ajax_nopriv_send_email',  'send_email_contact');
 
 function send_email_contact(){
@@ -321,4 +321,4 @@ function send_email_contact(){
         echo json_encode($status);
     }
     wp_die();
-}*/
+}

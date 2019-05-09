@@ -50,11 +50,9 @@ function post_candidates() {
     return false;
 }
 
-
 //Send contact mail
 function submit_contact(){
     document.getElementById("send_email").disabled = true;
-
     var formContact = document.forms.submitContact;
     var formContactData = new FormData(formContact);
     var actionData = 'action=send_email' ;
