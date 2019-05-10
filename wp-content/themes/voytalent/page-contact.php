@@ -18,10 +18,12 @@
                     <div class="g-12 ds-typography">
                         <h2 class="header-section">Get in touch!</h2>
                         <?php
-                        while (have_posts()) :
-                            the_post();
-                            the_content();
-                        endwhile;
+                            if ( have_posts() ) :
+                                while ( have_posts() ) :
+                                    the_post();
+                                    the_content();
+                                endwhile;
+                            endif;
                         ?>
                     </div>
                 </div>
@@ -55,7 +57,12 @@
                 </form>
             </section>
 
-            <?php get_template_part( 'parts/s-team' ); ?>
+            <?php
+                if ( is_active_sidebar( 'voy-sidebar-1' ) ) :
+                    dynamic_sidebar( 'voy-sidebar-1' );
+                endif;
+                //get_template_part( 'parts/s-team' );
+            ?>
 
     </article>
 <?php

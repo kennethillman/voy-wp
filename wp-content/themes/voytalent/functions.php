@@ -113,18 +113,29 @@ add_action( 'after_setup_theme', 'theme_setup' );
  * Register widget area.
  */
 function voytalent_widgets_init() {
+    register_sidebar(
+        array(
+            'name'          => __( 'Sidebar 1', 'voytalent' ),
+            'id'            => 'voy-sidebar-1',
+            'description'   => __( 'Add widgets here to appear in Sidebar 1.' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
 
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer', 'voytalent' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'voytalent' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+    register_sidebar(
+        array(
+            'name'          => __( 'Sidebar 2', 'voytalent' ),
+            'id'            => 'voy-sidebar-2',
+            'description'   => __( 'Add widgets here to appear in Sidebar 3.'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
 
 }
 add_action( 'widgets_init', 'voytalent_widgets_init' );
@@ -321,3 +332,56 @@ function send_email_contact(){
     }
     wp_die();
 }
+
+// custom category for voyteam post type
+add_action('init', 'team_categories');
+function team_categories(){
+    register_taxonomy("voyfields",
+        array("voyteam"),
+        array(
+            "hierarchical" => true,
+            "label" => "Voy Fields",
+            "singular_label" => "Voy Field",
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'show_in_nav_menus' => true,
+            'show_in_rest' => true,
+            'public' => true,
+            "rewrite" => array( 'slug' => 'voyfields', 'with_front'=> false )
+        )
+    );
+}
+
+//Display Voytalent tempalte part using shortcode
+
+function voytalentteam_shortcode( $atts ) {
+    global $queryTeam;
+    $params = shortcode_atts( array(
+        'count' => 2,
+        'postid' => ''
+    ), $atts );
+
+    $query_args = array(
+        'post_type' => 'voyteam',
+        'post_status' => array( 'publish' ),
+        'posts_per_page' => $params['count'],
+        'orderby' => 'ID',
+        'order'   => 'ASC'
+    );
+
+    if($params['postid']!= ''){
+        $postid = explode(",", $params['postid']);
+        $query_args ['post__in'] = $postid;
+    }
+
+    //echo "<pre>"; print_r($query_args);
+    $queryTeam = new WP_Query( $query_args );
+
+    if(!is_admin()){
+        $team = get_template_part( 'parts/s-team' );
+    }
+
+    wp_reset_postdata();
+}
+add_shortcode( 'voytalentteam', 'voytalentteam_shortcode' );
