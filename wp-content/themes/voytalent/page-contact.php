@@ -6,9 +6,11 @@
     get_header();
 ?>
 
-<article class="s-content content" style="background-color: white;">
     <?php get_template_part('parts/s-featured-image'); ?>
     <?php get_template_part('parts/s-breadcrumbs'); ?>
+
+<article class="s- content" style="background-color: white;">
+
     <?php get_template_part('parts/s-no-featured-image'); ?>
 
             <section class="p-getInTouch">
@@ -51,48 +53,10 @@
                         </div>
                     </div>
                 </form>
-
-                <div class="gc">
-                    <div class="g-6">
-
-                        <div class="m-teaser-person">
-                            <div class="body -pattern-striped-light">
-                                <div class="header">
-                                    <h4 class="header-name">Jane Doe</h4>
-                                    <h5 class="header-title">CEO & Co-founder</h5>
-                                </div>
-                                <figure class="image">
-                                    <img src="assets/images/woman.jpg">
-                                </figure>
-
-                            </div>
-                            <div class="links">
-                                <a href="#">jane.doe@gmail.com</a><br>
-                                <a href="#">Connect with Jane on LinkedIn</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="g-6">
-
-                        <div class="m-teaser-person">
-                            <div class="body -pattern-striped-light">
-                                <div class="header">
-                                    <h4 class="header-name">Jane Doe</h4>
-                                    <h5 class="header-title">CEO & Co-founder</h5>
-                                </div>
-                                <figure class="image">
-                                    <img src="assets/images/woman.jpg">
-                                </figure>
-
-                            </div>
-                            <div class="links">
-                                <a href="#">jane.doe@gmail.com</a><br>
-                                <a href="#">Connect with Jane on LinkedIn</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
+
+            <?php get_template_part( 'parts/s-team' ); ?>
+
     </article>
 <?php
     get_footer();
