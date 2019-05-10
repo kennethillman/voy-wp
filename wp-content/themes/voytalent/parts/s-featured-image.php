@@ -41,7 +41,7 @@ if(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_I
                     <?php if(!empty($theTitle)) : ?>
                         <h2 class="header">
                             <?php echo $theTitle;?>
-                        </h2>
+                        </h2><br>
                     <?php  endif; ?>
                     <?php if(!empty($theSubTitle)) : ?>
                         <h3 class="sub-header">
