@@ -1,0 +1,1 @@
+import './easy-forms-block/dev-easy-forms-block.js';
