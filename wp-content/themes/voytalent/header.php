@@ -78,10 +78,10 @@
     $bodyClass = '';
     if(is_page() || is_front_page()){
         $pid = (is_front_page())? get_option('page_on_front'): get_the_ID();
-        $CheckHasFeaturedImage = getPageImagesAndTexting($pid);
-        $hasFeaturedImage = $CheckHasFeaturedImage['image_position'];
+        $hasFeaturedImage = get_the_post_thumbnail_url($pid);
         $bodyClass = ($hasFeaturedImage!='')? '-has-featured-image': '';
     }
+
 ?>
 
 <body <?php body_class( array( "ds-grid", "ds-typography", $bodyClass ) ); ?>>
@@ -163,7 +163,7 @@
         $front_page_ID = get_option('page_on_front');
 
         $featuredImage ['featured_image_480'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_480' );
-        $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url($front_page_ID, 'large' );
+        $featuredImage ['large'] = get_the_post_thumbnail_url($front_page_ID, 'large' );
         $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_1440' );
         $featuredImage ['featured_image_2048'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_2048' );
 
@@ -178,7 +178,7 @@
 
 <?php get_template_part('parts/s-featured-image-style'); ?>
 
-<section class="s-featured-image <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : ''; ?>">
+<section class="<?php echo (get_the_post_thumbnail_url($front_page_ID)!='')? 's-featured-image' : 's-no-featured-image'; ?> <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : ''; ?>">
         <figure class="image <?php echo ($front_page_image_position!='')?$front_page_image_position : '-focus-center-center'; ?>"></figure>
         <div class="text">
         <div class="gc">
