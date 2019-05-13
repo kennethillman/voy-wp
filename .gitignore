@@ -1,12 +1,11 @@
-# ignore everything the wp uploads
-# wp-content/uploads
-
-
-
 
 # ignore all files starting with . or ~
 .*
 ~*
+
+# ignore files or folder in DEVELOPMENT
+.htaccess
+wp-config.php
 
 
 # Ignore Mac DS_Store files
