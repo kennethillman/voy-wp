@@ -92,19 +92,27 @@ function voyDebounce(func, wait = 10, immediate = true) {
 
                 if (wy < hh) {
                   h.classList.remove('-is-tight');
+                  document.body.classList.remove('-header-is-tight');
+                  document.body.classList.remove('-breadcrumb-no-image');
                   document.body.classList.remove('-visible-search');
                 } else {
                   h.classList.add('-is-tight');
+                  document.body.classList.add('-header-is-tight');
                 }
 
                 scrollPos = wy;
 
               } else {
                 h.classList.remove('-is-tight');
+                document.body.classList.remove('-breadcrumb-no-image');
+                document.body.classList.remove('-header-is-tight');
               }
 
             },
+
+
             stickyBreadcrumbs() {
+
 
               h = document.querySelector('.s-header')
               hh = h.offsetHeight
@@ -114,26 +122,41 @@ function voyDebounce(func, wait = 10, immediate = true) {
               ft = 0
               wy = window.scrollY
 
-              if (f) {
-                fh = f.offsetHeight
-                ft = f.offsetTop
-              }
+              if (document.body.classList.contains('-has-featured-image')){
 
-              trigger = (ft + fh) - hh
 
-              if(!VOY.helpers.isMobile()) {
-
-                if (wy < trigger) {
-                  b.classList.remove('-sticky');
-                } else {
-                  b.classList.add('-sticky');
+                // IF IMAGE
+                if (f) {
+                  fh = f.offsetHeight
+                  ft = f.offsetTop
                 }
 
-                scrollPos = wy;
+                trigger = (ft + fh) - hh
+
+                if(!VOY.helpers.isMobile()) {
+
+                  if (wy < trigger) {
+                    b.classList.remove('-sticky');
+                  } else {
+                    b.classList.add('-sticky');
+                  }
+
+                  scrollPos = wy;
+
+                } else {
+                  h.classList.remove('-sticky');
+                }
+
+
 
               } else {
-                h.classList.remove('-sticky');
+
+                // IF NO IMAGE
+                document.body.classList.add('-breadcrumb-no-image');
+
               }
+
+
 
             },
 
