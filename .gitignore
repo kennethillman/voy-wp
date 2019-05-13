@@ -1,10 +1,8 @@
-# ignore everything the wp uploads 
+# ignore everything the wp uploads
 # wp-content/uploads
 
 
-# ignore files or folder in DEVELOPMENT
-.htaccess
-wp-config.php
+
 
 # ignore all files starting with . or ~
 .*
@@ -47,7 +45,7 @@ Thumbs.db
 *.zip
 
 
-### Node 
+### Node
 
 # Logs
 logs
