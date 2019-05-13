@@ -5,7 +5,7 @@
 get_header();
 $pageLimit = 5;
 $jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit, $_REQUEST['since_id']), false);
-if (count($jobOpportunities) > 0):
+if (count($jobOpportunities->jobs) > 0):
     $jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
     $totalNoOfPages = ceil(count($jobOpportunitiesTotal->jobs) / $pageLimit);
     $nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
@@ -27,7 +27,7 @@ endif;
                     <h3 class="m-list-header">See all our open positions</h3>
                     <ul>
                         <?php
-                            if (count($jobOpportunities) > 0):
+                            if (count($jobOpportunities->jobs) > 0):
                                 foreach ($jobOpportunities->jobs as $job):
                                     $jDetail = json_decode(VoyWorkableAPI::getJobDetails($job->shortcode), false);
                         ?>
