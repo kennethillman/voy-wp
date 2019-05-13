@@ -30,14 +30,22 @@ get_header();
 <?php //get_template_part( 'parts/s-inspiration-week' ); ?>
 <?php //get_template_part( 'parts/s-inspiration-teasers' ); ?>
 
-<?php
-    if ( have_posts() ) :
-        while ( have_posts() ) :
-            the_post();
-            the_content();
-        endwhile;
-    endif;
-?>
+
+<article class="s- content">
+    <div class="gc">
+        <div class="g-8 g-push-2 g-m-12 g-m-push-0 g-t-10 g-t-push-1" >
+          <?php
+              if ( have_posts() ) :
+                  while ( have_posts() ) :
+                      the_post();
+                      the_content();
+                  endwhile;
+              endif;
+          ?>
+        </div>
+    </div>
+</article>
+
 <?php
     if ( is_active_sidebar( 'voy-sidebar-1' ) ) :
         dynamic_sidebar( 'voy-sidebar-1' );
