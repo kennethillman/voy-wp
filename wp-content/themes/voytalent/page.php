@@ -5,7 +5,7 @@
   <?php get_template_part('parts/s-featured-image'); ?>
   <?php get_template_part('parts/s-breadcrumbs'); ?>
 
-<article class="s-content content" style="background-color: white;">
+<article class="s- content" style="background-color: white;">
 
     <?php get_template_part('parts/s-no-featured-image'); ?>
 

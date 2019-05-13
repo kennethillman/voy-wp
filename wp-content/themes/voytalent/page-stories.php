@@ -8,7 +8,7 @@
     <?php get_template_part( 'parts/s-featured-image' ); ?>
     <?php get_template_part( 'parts/s-breadcrumbs' );?>
 
-    <article class=" content p-stories">
+    <article class="s-content p-stories">
 
       <?php get_template_part('parts/s-no-featured-image'); ?>
 

@@ -19,6 +19,7 @@ endif;
 <article class="s- content">
 
     <?php get_template_part('parts/s-no-featured-image'); ?>
+
     <div class=" p-jobs">
         <div class="gc">
             <div class="g-12">
