@@ -20,7 +20,7 @@
                                   <a href="<?php echo get_permalink(); ?>">
                                     <!-- <?php  the_post_thumbnail('medium') ?> -->
                                     <div class="text"><strong class="-block"><?php the_title();  ?> </strong> <?php echo substr(get_the_excerpt(), 0,200); ?></div>
-                                    <span class="btn -orange -icon-only">
+                                    <span class="btn -green -icon-only">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
                                     </span>
                                   </a>

@@ -10,13 +10,14 @@
 
 ?>
 
-<section class="s-join-email -wip">
-	<div class="gc -g-shift-vp600">
-		<div class="g-9 g-m-12">
-			Sign up and receive the latest announcements, tips, networking invitations and more
-		</div>
-		<div class="g-3 g-m-12">
-			<a class="btn -black -block">Join Voy</a>
-		</div>
-	</div>
+
+<section class="s-join-email">
+  <div class="gc -g-shift-vp600">
+    <div class="g-9 g-m-12">
+      Sign up and recive the latest announcements, tips, networking invitations and more
+    </div>
+    <div class="g-3 g-m-12">
+      <a class="btn -black -block">Join Voy</a>
+    </div>
+  </div>
 </section>
