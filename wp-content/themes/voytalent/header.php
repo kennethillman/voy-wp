@@ -81,10 +81,9 @@
         $hasFeaturedImage = get_the_post_thumbnail_url($pid);
         $bodyClass = ($hasFeaturedImage!='')? '-has-featured-image': '';
     }
-
 ?>
 
-<body <?php body_class( array( "ds-grid", "ds-typography", $bodyClass ) ); ?>>
+<body <?php body_class( array( "ds-grid", "ds-typography", $bodyClass, $bodyClassVideo ) ); ?>>
 
 <script type="text/javascript">
   VOY.initial.loadGoogleFONTS();

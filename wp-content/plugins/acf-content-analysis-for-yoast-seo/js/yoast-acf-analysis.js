@@ -824,7 +824,9 @@ Scraper.prototype.scrape = function( fields ) {
 			return field;
 		}
 
-		field.content = field.$el.find( "input[type=url][id^=acf]" ).val();
+		var content = field.$el.find( "input[type=url][id^=acf]" ).val();
+
+		field.content = content ? '<a href="' + content + '">' + content + "</a>" : "";
 
 		return field;
 	} );

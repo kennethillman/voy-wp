@@ -353,6 +353,7 @@ function team_categories(){
     );
 }
 
+//SHORTCODES -S
 //Display Voytalent tempalte part using shortcode
 
 function voytalentteam_shortcode( $atts ) {
@@ -385,3 +386,32 @@ function voytalentteam_shortcode( $atts ) {
     wp_reset_postdata();
 }
 add_shortcode( 'voytalentteam', 'voytalentteam_shortcode' );
+
+//join voy
+function joinvoy_shortcode(){
+    if(!is_admin() && is_front_page()){
+        get_template_part( 'parts/s-join-voy' );
+    }
+}
+add_shortcode( 'joinvoy', 'joinvoy_shortcode' );
+
+//SHORTCODES -E
+
+//ACF Fields
+function register_acf_block_types() {
+    // register a testimonial block.
+    acf_register_block_type(array(
+        'name'              => 'indpro-test',
+        'title'             => __('Indpro Testimonial'),
+        'description'       => __('A custom testimonial block.'),
+        'render_template'   => 'template-parts/blocks/testimonial/testimonial.php',
+        'category'          => 'formatting',
+        'icon'              => 'admin-comments',
+        'keywords'          => array( 'quotessss' ),
+    ));
+}
+
+// Check if function exists and hook into setup.
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'register_acf_block_types');
+}
