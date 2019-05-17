@@ -24,29 +24,36 @@ endif;
         <div class="gc">
             <div class="g-12">
                 <div class="m-list">
-                    <h3 class="m-list-header">See all our open positions</h3>
+                    <h3 class="special-header -border-bottom">See all our open positions</h3>
                     <ul>
                         <?php
                             if (count($jobOpportunities->jobs) > 0):
                                 foreach ($jobOpportunities->jobs as $job):
                                     $jDetail = json_decode(VoyWorkableAPI::getJobDetails($job->shortcode), false);
                         ?>
-                                <li>
-                                    <a href="<?php echo get_the_permalink(url_to_postid(site_url('jobs/job-details'))) . "?jid=" . $job->shortcode; ?>">
-                                        <div class="text">
-                                            <!--<strong>Creative director /</strong> Swisscom-->
-                                            <strong><?php echo(isset($jDetail->function) ? $jDetail->function . ', ' : '');
-                                                echo $jDetail->title; ?></strong>
-                                            <!--<div class="type">Full time / 23 employees</div>-->
-                                            <!-- <div class="type"><?php echo $jobDetails->employment_type; ?></div> -->
-                                        </div>
-                                        <span class="btn -green -icon-only">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                             viewBox="0 0 24 24"><path
-                                                    d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+
+                            <li>
+                                <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$latestOpportunity->shortcode;?>">
+
+                                    <div class="text">
+                                     <?php if(isset($jDetail->function)) : ?>
+                                        <strong><?php echo (isset($jDetail->function)?$jDetail->function.'':''); ?></strong>
+                                      <?php  endif; ?>
+                                      <?php if(!empty($jDetail->title)) : ?>
+                                        <?php echo $jDetail->title; ?>
+                                      <?php  endif; ?>
+                                    </div>
+
+                                    <?php if(!empty($jDetail->location->region)) : ?>
+                                        <div class="box"><?php  echo $jDetail->location->region; ?></div>
+                                    <?php  endif; ?>
+
+                                    <span class="btn -yellow -icon-only">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
                                     </span>
-                                    </a>
-                                </li>
+                                </a>
+                            </li>
+
                         <?php
                                 endforeach;
                             endif;
@@ -64,9 +71,9 @@ endif;
                     $_SESSION['previousJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo-1).'&since_id='.$nextJobID[$currentPageNo-2];
                     }
 
-                    if (isset($_REQUEST['link']) && $_REQUEST['link']>1){
-                    echo '<a class="prev page-numbers" href="'.$_SESSION['previousJob'].'"> << Prev</a>';
-                    }
+                    // if (isset($_REQUEST['link']) && $_REQUEST['link']>1){
+                    // echo '<a class="prev page-numbers" href="'.$_SESSION['previousJob'].'"> << Prev</a>';
+                    // }
 
                     for ($p = 1;
                     $p<=$totalNoOfPages;
@@ -89,9 +96,10 @@ endif;
                     <?php } ?>
                             <?php
 
-                    if ($currentPageNo!=$totalNoOfPages){
-                    echo '<a class="prev page-numbers" href="'.$_SESSION['nextJob'].'"> Next >> </a>';
-                    }
+                    // if ($currentPageNo!=$totalNoOfPages){
+                    // echo '<a class="prev page-numbers" href="'.$_SESSION['nextJob'].'"> Next >> </a>';
+                    // }
+
                     ?>
 
                 </div>
