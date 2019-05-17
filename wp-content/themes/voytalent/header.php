@@ -185,9 +185,9 @@
             <div class="g-12">
                 <div class="headers">
                     <?php if(!empty($front_page_theTitle)) : ?>
-                        <h2 class="header">
+                        <h1 class="header">
                             <?php echo $front_page_theTitle;?>
-                        </h2>
+                        </h1>
                     <?php  endif; ?>
                     <?php if(!empty($front_page_theSubTitle)) : ?>
                         <h3 class="sub-header">
