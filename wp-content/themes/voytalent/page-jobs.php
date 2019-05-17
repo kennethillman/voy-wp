@@ -33,7 +33,7 @@ endif;
                         ?>
 
                             <li>
-                                <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$latestOpportunity->shortcode;?>">
+                                <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$jDetail->shortcode;?>">
 
                                     <div class="text">
                                      <?php if(isset($jDetail->function)) : ?>

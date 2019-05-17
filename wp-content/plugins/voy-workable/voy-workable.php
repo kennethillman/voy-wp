@@ -107,6 +107,7 @@
 
         public static function post_candidate($data = array()){
             //echo "Workable called";
+            //print_r($data);exit;
             $pData = [];
             $shortcode = array_shift($data);
             foreach ($data as $key => $value){
@@ -115,7 +116,6 @@
                 }else{
                     $pData [$key] = $value;
                 }
-
             }
 
             $url = API_URL;

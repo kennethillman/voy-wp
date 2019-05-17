@@ -137,6 +137,18 @@ function voytalent_widgets_init() {
         )
     );
 
+    register_sidebar(
+        array(
+            'name'          => __( 'Start Page', 'voytalent' ),
+            'id'            => 'voy-start-page',
+            'description'   => __( 'Add widgets here to appear in Start Page.'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
 }
 add_action( 'widgets_init', 'voytalent_widgets_init' );
 
@@ -415,3 +427,5 @@ function register_acf_block_types() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
+
+require_once 'widgets.php';

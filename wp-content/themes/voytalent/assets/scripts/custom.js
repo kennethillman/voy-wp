@@ -1,4 +1,12 @@
 function post_candidates() {
+    var x = document.getElementsByClassName("selectable");
+    var cSkills = [];
+    for(c=0; c < x.length;c++){
+        cSkills.push(x[c].getAttribute("id"));
+    }
+
+    console.log(cSkills.join());
+
     document.getElementById("submitCandidate").disabled = true;
     var formEl = document.forms.postCandidates;
     var formData = new FormData(formEl);
@@ -10,6 +18,7 @@ function post_candidates() {
     actionData+='&email='+formData.get('cEmail');
     actionData+='&phone='+formData.get('cPhone');
     actionData+='&summary='+formData.get('cSummary');
+    actionData+='&cSkills='+cSkills.join();
     actionData+='&social_profiles[linkedin][url]='+formData.get('social_profiles[linkedin][url]');
     actionData+='&social_profiles[linkedin][name]='+formData.get('social_profiles[linkedin][name]');
 
@@ -20,9 +29,10 @@ function post_candidates() {
     xhr.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // If successful
+            console.log("API RESPONSE ",this.response);
+            return false;
             var result = JSON.parse(this.response);
             var resMsg = '';
-            //console.log("API RESPONSE ",result);
 
             if(result.hasOwnProperty('status') && result.status == "created"){
                 resMsg = '<span style="color:green; font-weight: bold;">Submitted Successfully</span>';

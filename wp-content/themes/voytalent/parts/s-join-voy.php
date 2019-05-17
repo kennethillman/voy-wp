@@ -1,6 +1,38 @@
 <section class="s-welcome">
-
-    <form>
+    <style>
+        .selectable{
+            border: 1px solid red;
+        }
+    </style>
+    <?php
+        $areaOfExpertice = array(
+            'Digital Statergy / Planning',
+            'Digital / Conceptual Designer',
+            'Digital Art Director',
+            'Digital Copywriter',
+            'Digital Producer',
+            'Digital Project Manager',
+            'Digital Product Owner',
+            'UX Designer',
+            'UX Designer / Visual Designer',
+            'Brand / Graphic Designer',
+            'Content Producer',
+            'Content Manager',
+            'Motion Designer',
+            '3D Designer',
+            'Creative Director',
+            'Software Developer',
+            'Web Developer',
+            'Data / Analytics',
+            'Programmatic & Technology',
+            'Ad operations',
+            'Socail Media',
+            'SEO',
+            'Paid Search',
+            'Video',
+        );
+    ?>
+    <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
         <div class="gc">
             <div class="g-12">
                 <h2 class="header-section">Welcome</h2>
@@ -12,50 +44,40 @@
             </div>
 
             <div class="g-6">
-                <input class="-full-width" type="text" placeholder="First name">
+                <input name="first_name" class="-full-width" type="text" placeholder="First name" required>
+                <input name="cShortcode" type="hidden" value="<?php echo 'DF3F17BC4C'; ?>">
             </div>
             <div class="g-6">
-                <input class="-full-width" type="text" placeholder="Last name">
+                <input name="last_name" class="-full-width" type="text" placeholder="Last name" required>
             </div>
 
             <div class="g-6">
-                <input class="-full-width" type="email" placeholder="Email">
+                <input name="cEmail" class="-full-width" type="email" placeholder="Email" required>
             </div>
             <div class="g-6">
-                <input class="-full-width" type="phone" placeholder="Phone">
+                <input name="cPhone"  class="-full-width" type="phone" placeholder="Phone" required>
             </div>
 
-            <!--<div class="g-12">
+            <div class="g-12">
                 <h2 class="header-number"><figure></figure><span class="number">2.</span><span class="text">And what's your area of expertice?</span></h2>
             </div>
 
             <div class="m-form-expertice-choices">
+                <?php foreach($areaOfExpertice as $jobtype): ?>
+                    <div class="btn-choice" onclick="this.classList.toggle('selectable');" id="<?php echo strtolower($jobtype); ?>"><?php echo $jobtype; ?></div>
+                <?php endforeach; ?>
 
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-                <div class="btn-choice">Job type</div>
-
-            </div>-->
+            </div>
 
         <div class="g-12">
             <h2 class="header-number"><figure></figure><span class="number">3.</span><span class="text">So, let's get to know eachother?</span></h2>
         </div>
 
         <div class="g-6">
-            <input class="-full-width" type="email" placeholder="Linked in Profile">
+            <input class="-full-width" name="social_profiles[linkedin][name]" type="text" placeholder="Linked in Profile">
         </div>
         <div class="g-6">
-            <input class="-full-width" type="phone" placeholder="Portfolio Link">
+            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" pattern="http://.*" placeholder="Portfolio Link">
         </div>
 
         <div class="g-12">
@@ -63,7 +85,7 @@
         </div>
 
         <div class="g-12">
-            <textarea class="-full-width" placeholder="Describe your dreams and ambitions"></textarea>
+            <textarea name="cSummary" class="-full-width" placeholder="Describe your dreams and ambitions" required></textarea>
         </div>
 
         <div class="g-12">
@@ -72,12 +94,12 @@
 
         <div class="g-12">
             <label class="checkbox-holder">I approve
-                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="checked" required>
                 <span class="checkmark"></span>
             </label>
         </div>
 
-        <div class="g-12">
+        <div class="g-12 -wip">
             <label class="checkbox-holder">Recive emails from Voy
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
@@ -85,7 +107,7 @@
         </div>
 
         <div class="g-12">
-            <a class="btn -orange -icon">Send<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></a>
+            <button type="submit" class="btn -orange -icon" id="submitCandidate">Send<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></button>
         </div>
 
         </div>

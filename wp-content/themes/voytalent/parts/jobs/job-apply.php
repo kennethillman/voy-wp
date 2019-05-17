@@ -55,7 +55,7 @@ global $jobID;
             <input class="-full-width" name="social_profiles[linkedin][name]" type="text" placeholder="Linked in Profile">
         </div>
         <div class="g-6">
-            <input class="-full-width" name="social_profiles[linkedin][url]" type="phone" placeholder="Portfolio Link">
+            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" pattern="http://.*" placeholder="Portfolio Link">
         </div>
 
         <div class="g-12 ds-typography">
