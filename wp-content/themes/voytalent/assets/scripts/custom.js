@@ -4,9 +4,7 @@ function post_candidates() {
     for(c=0; c < x.length;c++){
         cSkills.push(x[c].getAttribute("id"));
     }
-
-    console.log(cSkills.join());
-
+    //console.log(cSkills.join());
     document.getElementById("submitCandidate").disabled = true;
     var formEl = document.forms.postCandidates;
     var formData = new FormData(formEl);
@@ -18,7 +16,7 @@ function post_candidates() {
     actionData+='&email='+formData.get('cEmail');
     actionData+='&phone='+formData.get('cPhone');
     actionData+='&summary='+formData.get('cSummary');
-    actionData+='&cSkills='+cSkills.join();
+    actionData+='&skills='+cSkills.join();
     actionData+='&social_profiles[linkedin][url]='+formData.get('social_profiles[linkedin][url]');
     actionData+='&social_profiles[linkedin][name]='+formData.get('social_profiles[linkedin][name]');
 

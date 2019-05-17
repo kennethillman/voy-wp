@@ -427,5 +427,3 @@ function register_acf_block_types() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
-
-require_once 'widgets.php';

@@ -107,16 +107,25 @@
 
         public static function post_candidate($data = array()){
             //echo "Workable called";
-            //print_r($data);exit;
+
             $pData = [];
             $shortcode = array_shift($data);
             foreach ($data as $key => $value){
                 if($key == 'social_profiles'){
                     $pData [$key][] = ['type' => key($value), 'name' => $value[key($value)]['name'], 'url' => $value[key($value)]['url']];
+                }elseif ($key == 'skills'){
+                    $skills = explode(",",$value);
+                    foreach ($skills as $skill){
+                        $pData [$key][] = ['name' => $skill];
+                    }
                 }else{
                     $pData [$key] = $value;
                 }
             }
+
+            //print_r($pData);
+            //print_r(json_encode($pData));
+            //exit;
 
             $url = API_URL;
             $url = $url.'jobs/'.$shortcode.'/candidates';
