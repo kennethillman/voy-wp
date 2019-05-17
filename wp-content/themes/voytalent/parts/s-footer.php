@@ -30,5 +30,6 @@
 		<div class="g-6 g-m-12 hide-tab-desktop">
 			<a href="<?php echo get_privacy_policy_url();?>">Voy talent Privacy</a>
 	 	</div>
+     <div class="pattern"></div>
 	 </div>
  </section>
