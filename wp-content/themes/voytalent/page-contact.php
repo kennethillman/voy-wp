@@ -33,7 +33,7 @@
                             <input name="subject" class="-full-width" type="text" placeholder="Subject" required>
                         </div>
                         <div class="g-12">
-                            <textarea name="comment" class="-full-width" placeholder="Describe your dreams and ambitions" required></textarea>
+                            <textarea name="comment" class="-full-width" placeholder="How can we help?" required></textarea>
                         </div>
                         <div class="g-6">
                             <input name="fname" class="-full-width" type="text" placeholder="First name" required>
