@@ -410,16 +410,33 @@ add_shortcode( 'joinvoy', 'joinvoy_shortcode' );
 //SHORTCODES -E
 
 //ACF Fields
+
+/*function voytalent_block_category( $categories, $post ) {
+    //print_r($categories);
+    if ( $post->post_type !== 'post' ) {
+        return $categories;
+    }
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'voy-catgeory',
+                'title' => 'VOY Category'
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'voytalent_block_category', 10, 2);*/
+
 function register_acf_block_types() {
-    // register a testimonial block.
     acf_register_block_type(array(
-        'name'              => 'indpro-test',
-        'title'             => __('Indpro Testimonial'),
+        'name'              => 'voy-testimonial',
+        'title'             => __('Voy Testimonial'),
         'description'       => __('A custom testimonial block.'),
         'render_template'   => 'template-parts/blocks/testimonial/testimonial.php',
-        'category'          => 'formatting',
+        'category'          => 'widgets',
         'icon'              => 'admin-comments',
-        'keywords'          => array( 'quotessss' ),
+        'keywords'          => array( 'testimonial' ),
     ));
 }
 
