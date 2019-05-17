@@ -9,7 +9,6 @@ get_header();
 <?php get_template_part('parts/s-breadcrumbs'); ?>
 
 <article class="s-content p-stories">
-
     <?php get_template_part('parts/s-no-featured-image'); ?>
     <?php
         while (have_posts()) :

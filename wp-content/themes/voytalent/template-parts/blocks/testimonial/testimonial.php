@@ -20,6 +20,8 @@
     $testimonialdesignation = get_field('testimonialdesignation') ?: 'Designation';
     $description = get_field('description') ?: 'Designation';
     $image = get_field('image') ?: 295;
+    $image_align = get_field('image_align') ?: '';
+    $link = get_field('link') ?: '';
 ?>
 <article class="s-content p-stories">
     <section>
@@ -31,6 +33,13 @@
                         <?php echo $testimonialdesignation. ", ".$testimonialemail; ?>
                     </div>
                     <p><?php echo $description; ?></p>
+                    <?php
+                        if(!empty($link)){
+                    ?>
+                        <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="g-4">
                     <figure class="-round">
