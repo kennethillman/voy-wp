@@ -105,6 +105,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 			)
 		);
 		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'theme_setup' );
@@ -444,3 +445,4 @@ function register_acf_block_types() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
+

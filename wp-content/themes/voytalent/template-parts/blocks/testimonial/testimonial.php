@@ -2,16 +2,19 @@
 
 /**
  * Testimonial Block Template.
- *
- * @param   array $block The block settings and attributes.
- * @param   string $content The block inner HTML (empty).
- * @param   bool $is_preview True during AJAX preview.
- * @param   (int|string) $post_id The post ID this block is saved to.
  */
 
     $id = 'testimonial-' . $block['id'];
     if( !empty($block['anchor']) ) {
         $id = $block['anchor'];
+    }
+
+    $className = 'testimonial';
+    if( !empty($block['className']) ) {
+        $className .= ' ' . $block['className'];
+    }
+    if( !empty($block['align']) ) {
+        $className .= ' align' . $block['align'];
     }
 
     // Load values and assing defaults.
@@ -23,7 +26,7 @@
     $image_align = get_field('image_align') ?: '';
     $link = get_field('link') ?: '';
 ?>
-<article class="s-content p-stories">
+<article class="s-content p-stories <?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
     <section>
         <div id="<?php echo esc_attr($id); ?>" class="m-stories-teaser-big <?php echo esc_attr($className); ?>">
             <div class="gc">
