@@ -21,25 +21,27 @@
   <div class="gc">
     <div class="g-12">
       <h3 class="special-header"><?php echo $header;?></h3>
+    </div>
 
-      <?php
-          foreach ($teaser as $rt):
-      ?>
-          <div class="g-4 g-t-6 g-4 g-m-12">
-              <a href="<?php echo $rt['link']['url']; ?>" class="b-repeater-teaser">
-                  <figure>
-                      <img src="<?php echo $rt['image']['size']['medium']; ?>" />
-                  </figure>
-                  <div class="text">
-                      <h4><?php echo $rt['header']; ?></h4>
-                      <p><?php echo $rt['text']; ?></p>
-                  </div>
-              </a>
-          </div>
+
+    <?php
+        foreach ($teaser as $rt):
+    ?>
+        <div class="g-4 g-t-6 g-4 g-m-12">
+            <a href="<?php echo $rt['link']['url']; ?>" class="b-repeater-teaser -wp-content">
+                <figure>
+                    <img src="<?php echo $rt['image']['sizes']['medium']; ?>" />
+                </figure>
+                <div class="text">
+                    <h4><?php echo $rt['header']; ?></h4>
+                    <p><?php echo $rt['text']; ?></p>
+                </div>
+            </a>
+        </div>
 
       <?php
           endforeach;
       ?>
     </div>
-  </div>
+
 </div>

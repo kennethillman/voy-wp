@@ -557,3 +557,25 @@ function block_b_repeater_teasers() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_b_repeater_teasers');
 }
+
+
+function block_b_repeater_team() {
+    acf_register_block_type(
+        array(
+            'name'              => 'Voy repeater team',
+            'title'             => __('Voy repeater team'),
+            'description'       => __(''),
+            'render_template'   => 'template-parts/blocks/b-repeater-team.php',
+            'category'          => 'widgets',
+            'icon'              => 'menu',
+            'keywords'          => array( 'repeater' , 'team' ),
+            'supports'          => array(
+                'align' => false,
+            )
+        ));
+}
+
+// b-repeater team block
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'block_b_repeater_team');
+}
