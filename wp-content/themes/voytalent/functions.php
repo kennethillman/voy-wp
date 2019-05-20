@@ -410,6 +410,11 @@ add_shortcode( 'joinvoy', 'joinvoy_shortcode' );
 
 //SHORTCODES -E
 
+function gutenbergtheme_editor_styles() {
+    wp_enqueue_style( 'voytheme-style', get_template_directory_uri() . '/indpro.css');
+}
+add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );
+
 //ACF Fields
 
 /*function voytalent_block_category( $categories, $post ) {
@@ -438,6 +443,9 @@ function register_acf_block_types() {
         'category'          => 'widgets',
         'icon'              => 'admin-comments',
         'keywords'          => array( 'testimonial' ),
+        'supports'          => array(
+                                    'align' => false,
+                                )
     ));
 }
 
@@ -447,19 +455,41 @@ if( function_exists('acf_register_block_type') ) {
 }
 
 
-function block_join_mail() {
+function block_b_divider_pusher() {
     acf_register_block_type(array(
-        'name'              => 'voy-join-mail',
-        'title'             => __('Voy Join Mail'),
-        'description'       => __('A Voy Join Mail block.'),
-        'render_template'   => 'template-parts/blocks/join-mail.php',
+        'name'              => 'b-divider-pusher',
+        'title'             => __('b-divider-pusher'),
+        'description'       => __('b-divider-pusher.'),
+        'render_template'   => 'template-parts/blocks/b-divider-pusher.php',
         'category'          => 'widgets',
-        'icon'              => 'email',
-        'keywords'          => array( 'join', 'mail' ),
+        'keywords'          => array( 'divider', 'pusher' ),
+        'supports'          => array(
+            'align' => false,
+        )
     ));
 }
 
 // Join mail block
 if( function_exists('acf_register_block_type') ) {
-    add_action('acf/init', 'block_join_mail');
+    add_action('acf/init', 'block_b_divider_pusher');
+}
+
+function block_b_header() {
+    acf_register_block_type(array(
+        'name'              => 'b-header',
+        'title'             => __('b-header'),
+        'description'       => __(''),
+        'render_template'   => 'template-parts/blocks/b-header.php',
+        'category'          => 'widgets',
+        'icon'              => 'menu',
+        'keywords'          => array( 'b-header' ),
+        'supports'          => array(
+            'align' => false,
+        )
+    ));
+}
+
+// b-header block
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'block_b_header');
 }

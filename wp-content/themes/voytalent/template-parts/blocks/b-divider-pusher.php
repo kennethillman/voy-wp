@@ -1,9 +1,4 @@
 <?php
-
-/**
- * Testimonial Block Template.
- */
-
 $id = $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
