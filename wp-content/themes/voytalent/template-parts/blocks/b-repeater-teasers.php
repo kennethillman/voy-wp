@@ -18,11 +18,16 @@
 ?>
 
 <div class="b-repeater-teasers <?php echo esc_attr($className); ?> <?php echo esc_attr($class_margins_options_); ?>">
+
   <div class="gc">
     <div class="g-12">
-      <h3 class="special-header"><?php echo $header;?></h3>
-    </div>
+          <?php
+        if(!empty($header) && $header!=''):
+    ?>
+        <h3 class="special-header -border-bottom"><?php echo $header; ?></h3>
+    <?php endif; ?>
 
+    </div>
 
     <?php
         foreach ($teaser as $rt):
