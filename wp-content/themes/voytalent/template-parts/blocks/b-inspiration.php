@@ -24,7 +24,7 @@
 
 <section class="b-inspiration <?php echo esc_attr($className); ?> <?php echo esc_attr($class_divider_options_); ?> <?php echo esc_attr($class_margins_options); ?>">
     <div class="gc">
-        <div class="g-4 g-t-6 text-col">
+        <div class="g-4 g-m-12 g-t-6 text-col">
             <h3 class="special-header"> <?php echo $header; ?></h3>
             <?php echo $text; ?>
             <?php
@@ -35,7 +35,7 @@
                 }
             ?>
         </div>
-        <div class="g-8 g-t-6 video-col">
+        <div class="g-8 g-m-12 g-t-6 video-col">
             <img src="<?php echo $media['sizes']['medium']; ?>">
         </div>
     </div>
