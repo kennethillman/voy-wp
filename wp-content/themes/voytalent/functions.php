@@ -463,14 +463,3 @@ function block_join_mail() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_join_mail');
 }
-
-
-// EDITOR STYLES
-
-function gutenbergtheme_editor_styles() {
-    wp_enqueue_style( 'voytheme-style', get_template_directory_uri() . '/indpro.css');
-}
-
-add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );
-
-

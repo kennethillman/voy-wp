@@ -24,7 +24,7 @@ $_background_color = get_field('_background_color') ?: '';
 $margins = get_field('margins') ?: '';
 ?>
 
-<section class="b-divder-pusher -wp-block <?php echo esc_attr($margins); ?> <?php echo esc_attr($_background_color); ?> <?php echo esc_attr($className); ?>">
+<section class="b-divider-pusher -wp-block <?php echo esc_attr($margins); ?> <?php echo esc_attr($_background_color); ?> <?php echo esc_attr($className); ?>">
     <div class="gc -g-shift-vp600">
         <div class="g-9 g-m-12">
             <?php
