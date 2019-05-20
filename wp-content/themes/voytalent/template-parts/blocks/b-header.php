@@ -12,7 +12,6 @@
         $className .= ' align' . $block['align'];
     }
 
-    // Load values and assing defaults.
     $header = get_field('header') ?: '';
     $class_header_options = get_field('class_header_options') ?: '';
     $class_header_size = get_field('class_header_size') ?: '';

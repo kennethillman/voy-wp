@@ -12,7 +12,6 @@
         $className .= ' align' . $block['align'];
     }
 
-    // Load values and assing defaults.
     $header = get_field('header') ?: '';
     $text = get_field('text') ?: '';
     $link = get_field('link') ?: '';
