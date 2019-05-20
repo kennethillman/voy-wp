@@ -22,7 +22,7 @@
 
 ?>
 
-<div class="b-testamonials <?php echo esc_attr($className); ?> <?php echo esc_attr($class_margins_options_); ?> <?php echo esc_attr($class_image_align_options_); ?>">
+<div class="b-testamonials  <?php echo esc_attr($className); ?>  <?php echo esc_attr($class_image_align_options_); ?>">
     <div class="gc">
         <div class="g-4">
             <figure class="-round">
