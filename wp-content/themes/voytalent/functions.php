@@ -454,7 +454,6 @@ if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
 
-
 function block_b_divider_pusher() {
     acf_register_block_type(array(
         'name'              => 'b-divider-pusher',
