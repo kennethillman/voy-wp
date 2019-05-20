@@ -22,6 +22,6 @@
 ?>
 
 
-<div class="b-header -wp-block <?php echo esc_attr($className); ?> <?php echo esc_attr($margins); ?> <?php echo esc_attr($class_header_options); ?> <?php echo esc_attr($class_header_size); ?>">
-    <<?php echo esc_attr($class_seo_header); ?>><?php echo $header; ?></<?php echo esc_attr($class_seo_header); ?>>
+<div class="b-header -wp-content <?php echo esc_attr($className); ?> <?php echo esc_attr($margins); ?> <?php echo esc_attr($class_header_options); ?> <?php echo esc_attr($class_header_size); ?>">
+    <<?php echo esc_attr($class_seo_header); ?> class="header"><?php echo $header; ?></<?php echo esc_attr($class_seo_header); ?>>
 </div>
