@@ -12,7 +12,6 @@ if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
 
-// Load values and assing defaults.
 $link_text = get_field('link_text') ?: '';
 $link = get_field('link') ?: '';
 $_background_color = get_field('_background_color') ?: '';

@@ -514,3 +514,24 @@ function block_b_inspiration() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_b_inspiration');
 }
+
+function block_b_repeater_list() {
+    acf_register_block_type(
+        array(
+            'name'              => 'Voy repeater list',
+            'title'             => __('Voy repeater list'),
+            'description'       => __(''),
+            'render_template'   => 'template-parts/blocks/b-repeater-list.php',
+            'category'          => 'widgets',
+            'icon'              => 'menu',
+            'keywords'          => array( 'repeater' , 'list' ),
+            'supports'          => array(
+                'align' => false,
+            )
+        ));
+}
+
+// b-header block
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'block_b_repeater_list');
+}
