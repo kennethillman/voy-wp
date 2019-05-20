@@ -454,7 +454,6 @@ if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
 
-
 function block_b_divider_pusher() {
     acf_register_block_type(array(
         'name'              => 'Voy divider pusher',
@@ -476,6 +475,7 @@ if( function_exists('acf_register_block_type') ) {
 
 function block_b_header() {
     acf_register_block_type(array(
+
         'name'              => 'Voy header',
         'title'             => __('Voy header'),
         'description'       => __('Two header options, raster ot border. Both with two different sizes.'),
