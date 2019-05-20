@@ -457,9 +457,9 @@ if( function_exists('acf_register_block_type') ) {
 
 function block_b_divider_pusher() {
     acf_register_block_type(array(
-        'name'              => 'b-divider-pusher',
-        'title'             => __('b-divider-pusher'),
-        'description'       => __('b-divider-pusher.'),
+        'name'              => 'Voy divider pusher',
+        'title'             => __('Voy divider pusher'),
+        'description'       => __('ex. pusher for people to join Voy with a link to workable join job post'),
         'render_template'   => 'template-parts/blocks/b-divider-pusher.php',
         'category'          => 'widgets',
         'keywords'          => array( 'divider', 'pusher' ),
@@ -476,9 +476,9 @@ if( function_exists('acf_register_block_type') ) {
 
 function block_b_header() {
     acf_register_block_type(array(
-        'name'              => 'b-header',
-        'title'             => __('b-header'),
-        'description'       => __(''),
+        'name'              => 'Voy header',
+        'title'             => __('Voy header'),
+        'description'       => __('Two header options, raster ot border. Both with two different sizes.'),
         'render_template'   => 'template-parts/blocks/b-header.php',
         'category'          => 'widgets',
         'icon'              => 'menu',
