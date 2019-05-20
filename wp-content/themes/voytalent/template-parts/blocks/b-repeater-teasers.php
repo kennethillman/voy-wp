@@ -26,7 +26,7 @@
         <div class="g-4 g-t-6 g-4 g-m-12">
             <a href="<?php echo $rt['link']['url']; ?>" class="b-repeater-teaser">
                 <figure>
-                    <img src="<?php echo $rt['image']['size']['medium']; ?>" />
+                    <img src="<?php echo $rt['image']['sizes']['medium']; ?>" />
                 </figure>
                 <div class="text">
                     <h4><?php echo $rt['header']; ?></h4>
