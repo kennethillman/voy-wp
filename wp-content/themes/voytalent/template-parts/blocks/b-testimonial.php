@@ -19,10 +19,11 @@
     $link = get_field('link') ?: '';
     $class_image_align_options_ = get_field('class_image_align_options_') ?: '';
     $class_margins_options_ = get_field('class_margins_options_') ?: '';
+    $class_divider_options = get_field('class_divider_options') ?: '';
 
 ?>
 
-<div class="b-testamonials  <?php echo esc_attr($className); ?>  <?php echo esc_attr($class_image_align_options_); ?>">
+<div class="b-testamonials <?php echo esc_attr($className); ?> <?php echo esc_attr($class_divider_options); ?> <?php echo esc_attr($class_margins_options_); ?> <?php echo esc_attr($class_image_align_options_); ?>">
     <div class="gc">
         <div class="g-4">
             <figure class="-round">
