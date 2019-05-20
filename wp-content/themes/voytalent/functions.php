@@ -434,12 +434,12 @@ add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );
 }
 add_filter( 'block_categories', 'voytalent_block_category', 10, 2);*/
 
-function register_acf_block_types() {
+function block_b_testimonial() {
     acf_register_block_type(array(
         'name'              => 'voy-testimonial',
         'title'             => __('Voy Testimonial'),
         'description'       => __('A custom testimonial block.'),
-        'render_template'   => 'template-parts/blocks/testimonial/testimonial.php',
+        'render_template'   => 'template-parts/blocks/b-testimonial.php',
         'category'          => 'widgets',
         'icon'              => 'admin-comments',
         'keywords'          => array( 'testimonial' ),
@@ -451,7 +451,7 @@ function register_acf_block_types() {
 
 // Check if function exists and hook into setup.
 if( function_exists('acf_register_block_type') ) {
-    add_action('acf/init', 'register_acf_block_types');
+    add_action('acf/init', 'block_b_testimonial');
 }
 
 function block_b_divider_pusher() {
