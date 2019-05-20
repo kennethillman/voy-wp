@@ -32,7 +32,7 @@ $margins = get_field('margins') ?: '';
             <?php
                 if(!empty($link)){
             ?>
-                    <a class="btn" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+                    <a class="btn" target="<?php echo $link['target']; ?>" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
             <?php
                 }
             ?>

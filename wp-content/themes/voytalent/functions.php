@@ -493,3 +493,24 @@ function block_b_header() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_b_header');
 }
+
+function block_b_inspiration() {
+    acf_register_block_type(
+        array(
+            'name'              => 'Voy inspiration',
+            'title'             => __('Voy inspiration'),
+            'description'       => __(''),
+            'render_template'   => 'template-parts/blocks/b-inspiration.php',
+            'category'          => 'widgets',
+            'icon'              => 'menu',
+            'keywords'          => array( 'b-inspiration' ),
+            'supports'          => array(
+                'align' => false,
+            )
+    ));
+}
+
+// b-header block
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'block_b_inspiration');
+}
