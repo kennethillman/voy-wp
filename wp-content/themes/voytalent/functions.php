@@ -105,6 +105,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
 			)
 		);
 		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'theme_setup' );
@@ -444,3 +445,9 @@ function register_acf_block_types() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
+
+function gutenbergtheme_editor_styles() {
+    wp_enqueue_style( 'voytheme-style', get_template_directory_uri() . '/indpro.css');
+}
+
+add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );

@@ -83,7 +83,7 @@
     }
 ?>
 
-<body <?php body_class( array( "ds-grid", "ds-typography", $bodyClass, $bodyClassVideo ) ); ?>>
+<body <?php body_class( array( "ds-grid", "-grid", $bodyClass, $bodyClassVideo ) ); ?>>
 
 <script type="text/javascript">
   VOY.initial.loadGoogleFONTS();
