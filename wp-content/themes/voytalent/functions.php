@@ -476,8 +476,8 @@ if( function_exists('acf_register_block_type') ) {
 
 function block_b_header() {
     acf_register_block_type(array(
-        'name'              => 'b-header',
-        'title'             => __('b-header'),
+        'name'              => 'voy-header',
+        'title'             => __('Voy Header'),
         'description'       => __(''),
         'render_template'   => 'template-parts/blocks/b-header.php',
         'category'          => 'widgets',
