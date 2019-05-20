@@ -510,7 +510,7 @@ function block_b_inspiration() {
     ));
 }
 
-// b-header block
+// b-insipration block
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_b_inspiration');
 }
@@ -531,7 +531,29 @@ function block_b_repeater_list() {
         ));
 }
 
-// b-header block
+// b-repeater list block
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_b_repeater_list');
+}
+
+
+function block_b_repeater_teasers() {
+    acf_register_block_type(
+        array(
+            'name'              => 'Voy repeater teasers',
+            'title'             => __('Voy repeater teasers'),
+            'description'       => __(''),
+            'render_template'   => 'template-parts/blocks/b-repeater-teasers.php',
+            'category'          => 'widgets',
+            'icon'              => 'menu',
+            'keywords'          => array( 'repeater' , 'teasers' ),
+            'supports'          => array(
+                'align' => false,
+            )
+        ));
+}
+
+// b-repeater teasers block
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'block_b_repeater_teasers');
 }
