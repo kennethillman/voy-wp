@@ -446,3 +446,20 @@ if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
 
+
+function block_join_mail() {
+    acf_register_block_type(array(
+        'name'              => 'voy-join-mail',
+        'title'             => __('Voy Join Mail'),
+        'description'       => __('A Voy Join Mail block.'),
+        'render_template'   => 'template-parts/blocks/join-mail.php',
+        'category'          => 'widgets',
+        'icon'              => 'email',
+        'keywords'          => array( 'join', 'mail' ),
+    ));
+}
+
+// Join mail block
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'block_join_mail');
+}
