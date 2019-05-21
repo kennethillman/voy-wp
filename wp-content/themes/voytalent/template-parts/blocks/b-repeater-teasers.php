@@ -24,7 +24,7 @@
           <?php
         if(!empty($header) && $header!=''):
     ?>
-        <h3 class="special-header -border-bottom"><?php echo $header; ?></h3>
+        <h3 class="special-header "><?php echo $header; ?></h3>
     <?php endif; ?>
 
     </div>

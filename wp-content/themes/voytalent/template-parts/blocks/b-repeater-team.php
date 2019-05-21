@@ -19,8 +19,12 @@
 ?>
 
 <div class="b-repeater-team <?php echo esc_attr($className); ?> <?php echo esc_attr($class_margins_options_); ?>">
-    <h2 class="header-section"><?php echo $header;?></h2>
-    <p><?php echo $text;?></p>
+    <div class="gc">
+      <div class="g-12">
+        <h2 class="header-section"><?php echo $header;?></h2>
+        <p><?php echo $text;?></p>
+      </div>
+    </div>
 
     <?php
         foreach ($teams as $team):
