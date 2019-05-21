@@ -1,30 +1,15 @@
 <section class="s-welcome">
     <?php
         $areaOfExpertice = array(
-            'Digital Statergy / Planning',
-            'Digital / Conceptual Designer',
-            'Digital Art Director',
-            'Digital Copywriter',
-            'Digital Producer',
-            'Digital Project Manager',
-            'Digital Product Owner',
-            'UX Designer',
-            'UX Designer / Visual Designer',
-            'Brand / Graphic Designer',
-            'Content Producer',
-            'Content Manager',
-            'Motion Designer',
-            '3D Designer',
-            'Creative Director',
-            'Software Developer',
-            'Web Developer',
-            'Data / Analytics',
-            'Programmatic & Technology',
-            'Ad operations',
-            'Socail Media',
-            'SEO',
-            'Paid Search',
-            'Video',
+            '3D design', '3D Designer', 'Account management', 'Ad operations',
+            'AR/VR', 'Back-end development', 'Blockchain', 'Brand / Graphic Designer',
+            'Content', 'Content Manager', 'Content Producer', 'Copywriting', 'Creative Director', 'CRM',
+            'Data & analytics', 'Data / Analytics', 'Digital / Conceptual Designer', 'Digital Art Director', 'Digital Copywriter', 'Digital design',
+            'Digital Product Owner', 'Digital Project Manager', 'Digital Statergy / Planning', 'eCommerce', 'Front-end development', 'Fullstack development', 'Gaming',
+            'Graphic/brand design', 'Management', 'Mobile', 'Motion design', 'Motion Designer', 'Online marketing', 'Paid Search', 'Planing & stragety',
+            'PR & comms', 'Product design', 'Programmatic & tech', 'Programmatic & Technology', 'Project management', 'SEM/SEO',
+            'Service design', 'Socail Media', 'Software Developer', 'Software development', 'UI design', 'UX',
+            'UX Designer / Visual Designer', 'Video', 'Video & photography', 'Web design', 'Web Developer'
         );
     ?>
     <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
