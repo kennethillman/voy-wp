@@ -1,21 +1,21 @@
 <?php
-$id = $block['id'];
-if( !empty($block['anchor']) ) {
-    $id = $block['anchor'];
-}
+    $id = $block['id'];
+    if( !empty($block['anchor']) ) {
+        $id = $block['anchor'];
+    }
 
-$className = '';
-if( !empty($block['className']) ) {
-    $className .= ' ' . $block['className'];
-}
-if( !empty($block['align']) ) {
-    $className .= ' align' . $block['align'];
-}
+    $className = '';
+    if( !empty($block['className']) ) {
+        $className .= ' ' . $block['className'];
+    }
+    if( !empty($block['align']) ) {
+        $className .= ' align' . $block['align'];
+    }
 
-$link_text = get_field('link_text') ?: '';
-$link = get_field('link') ?: '';
-$_background_color = get_field('_background_color') ?: '';
-$margins = get_field('margins') ?: '';
+    $link_text = get_field('link_text') ?: '';
+    $link = get_field('link') ?: '';
+    $_background_color = get_field('_background_color') ?: '';
+    $margins = get_field('margins') ?: '';
 ?>
 
 <section class="b-divider-pusher -wp-block <?php echo esc_attr($margins); ?> <?php echo esc_attr($_background_color); ?> <?php echo esc_attr($className); ?>">

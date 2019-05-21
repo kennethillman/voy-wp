@@ -27,25 +27,34 @@
     </div>
 
     <?php
-        foreach ($teams as $team):
+        if(!empty($teams)):
+            foreach ($teams as $team):
     ?>
-        <div class="g-6 g-m-12">
-            <div class="b-teammate">
-                <div class="body -pattern-striped-light">
-                    <div class="header">
-                        <h4 class="header-name"><?php echo $team['name'];?></h4>
-                        <h5 class="header-title"><?php echo $team['title'];?></h5>
-                    </div>
-                    <figure class="image">
-                        <img src="<?php echo $team['image']['sizes']['medium'];?>" />
-                    </figure>
-                </div>
-                <div class="links">
-                    <a href="mailto:<?php echo $team['email'];?>"><?php echo $team['email'];?></a>
+                <div class="g-6 g-m-12">
+                    <div class="b-teammate">
+                        <div class="body -pattern-striped-light">
+                            <div class="header">
+                                <h4 class="header-name"><?php echo $team['name'];?></h4>
+                                <h5 class="header-title"><?php echo $team['title'];?></h5>
+                            </div>
+                            <?php
+                                if(!empty($team['image'])):
+                            ?>
+                                <figure class="image">
+                                    <img src="<?php echo $team['image']['sizes']['medium'];?>" />
+                                </figure>
+                            <?php endif; ?>
+                        </div>
+                        <div class="links">
+                            <a href="mailto:<?php echo $team['email'];?>"><?php echo $team['email'];?></a>
 
-                    <a href="<?php echo $team['link']['url'];?>" target="<?php echo $team['link']['target'];?>"><?php echo $team['link']['title'];?></a>
+                            <?php
+                                if(!empty($team['link'])):
+                            ?>
+                                <a href="<?php echo $team['link']['url'];?>" target="<?php echo $team['link']['target'];?>"><?php echo $team['link']['title'];?></a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    <?php endforeach; ?>
+    <?php endforeach; endif; ?>
 </div>
