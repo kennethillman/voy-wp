@@ -44,7 +44,7 @@
 
             <div class="m-form-expertice-choices">
                 <?php foreach($areaOfExpertice as $jobtype): ?>
-                    <div class="btn-choice" onclick="this.classList.toggle('selectable');" id="<?php echo strtolower($jobtype); ?>"><?php echo $jobtype; ?></div>
+                    <div class="btn-w"><div class="btn-choice" onclick="this.classList.toggle('selectable');" id="<?php echo strtolower($jobtype); ?>"><?php echo $jobtype; ?></div></div>
                 <?php endforeach; ?>
 
             </div>
