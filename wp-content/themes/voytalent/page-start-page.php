@@ -44,8 +44,8 @@ get_header();
 </article>
 
 <?php
-    if ( is_active_sidebar( 'voy-sidebar-1' ) ) :
-        dynamic_sidebar( 'voy-sidebar-1' );
+    if ( is_active_sidebar( 'voy-start-page' ) ) :
+        dynamic_sidebar( 'voy-start-page' );
     endif;
 ?>
 

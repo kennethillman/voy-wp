@@ -58,10 +58,9 @@
             </section>
 
             <?php
-                if ( is_active_sidebar( 'voy-sidebar-1' ) ) :
-                    dynamic_sidebar( 'voy-sidebar-1' );
+                if ( is_active_sidebar( 'voy-contact-page' ) ) :
+                    dynamic_sidebar( 'voy-contact-page' );
                 endif;
-                //get_template_part( 'parts/s-team' );
             ?>
 
     </article>

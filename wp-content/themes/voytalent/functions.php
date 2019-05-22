@@ -116,9 +116,9 @@ add_action( 'after_setup_theme', 'theme_setup' );
 function voytalent_widgets_init() {
     register_sidebar(
         array(
-            'name'          => __( 'Sidebar 1', 'voytalent' ),
+            'name'          => __( 'Community Page', 'voytalent' ),
             'id'            => 'voy-sidebar-1',
-            'description'   => __( 'Add widgets here to appear in Sidebar 1.' ),
+            'description'   => __( 'Add widgets here to appear in Community Page.' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -128,9 +128,9 @@ function voytalent_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => __( 'Sidebar 2', 'voytalent' ),
+            'name'          => __( 'Employer Page', 'voytalent' ),
             'id'            => 'voy-sidebar-2',
-            'description'   => __( 'Add widgets here to appear in Sidebar 3.'),
+            'description'   => __( 'Add widgets here to appear in Employer Page.'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -143,6 +143,18 @@ function voytalent_widgets_init() {
             'name'          => __( 'Start Page', 'voytalent' ),
             'id'            => 'voy-start-page',
             'description'   => __( 'Add widgets here to appear in Start Page.'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name'          => __( 'Contact Page', 'voytalent' ),
+            'id'            => 'voy-contact-page',
+            'description'   => __( 'Add widgets here to appear in Contact Page.'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',

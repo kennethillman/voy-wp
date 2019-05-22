@@ -3,7 +3,7 @@
  * Template Name: Jobs
  * */
 get_header();
-$pageLimit = 5;
+$pageLimit = 10;
 $jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit, $_REQUEST['since_id']), false);
 if (count($jobOpportunities->jobs) > 0):
     $jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
@@ -62,44 +62,31 @@ endif;
 
             <div class="m-paginate">
                 <?php
-                $currentPageNo = isset($_REQUEST['link'])?$_REQUEST['link']:1;
+                    $currentPageNo = isset($_REQUEST['link'])?$_REQUEST['link']:1;
 
-                if ($currentPageNo==2){
-                $_SESSION['previousJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo-1);
-                }else{
-                $_SESSION['previousJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo-1).'&since_id='.$nextJobID[$currentPageNo-2];
-                }
+                    if ($currentPageNo==2){
+                        $_SESSION['previousJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo-1);
+                    }else{
+                        $_SESSION['previousJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo-1).'&since_id='.$nextJobID[$currentPageNo-2];
+                    }
 
-                // if (isset($_REQUEST['link']) && $_REQUEST['link']>1){
-                // echo '<a class="prev page-numbers" href="'.$_SESSION['previousJob'].'"> << Prev</a>';
-                // }
+                    for ($p = 1; $p<=$totalNoOfPages; $p++){
+                        $_SESSION['nextJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo+1).'&since_id='.$nextJobID[$currentPageNo];
 
-                for ($p = 1;
-                $p<=$totalNoOfPages;
-                $p++){
-                $_SESSION['nextJob'] = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.($currentPageNo+1).'&since_id='.$nextJobID[$currentPageNo];
+                        $currentPage = ($p==$currentPageNo)?'current':'';
 
-                $currentPage = ($p==$currentPageNo)?'current':'';
-
-                if (($p==$currentPageNo)){
-                $purl = '#';
-                }elseif ($p==1){
-                $purl = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.$p;
-                }else{
-                $purl = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.$p.'&since_id='.$nextJobID[$p-1];
-                }
+                        if (($p==$currentPageNo)){
+                            $purl = '#';
+                        }elseif ($p==1){
+                            $purl = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.$p;
+                        }else{
+                            $purl = get_the_permalink(url_to_postid(site_url('jobs'))).'?link='.$p.'&since_id='.$nextJobID[$p-1];
+                        }
 
                 ?>
                 <a class="page-numbers <?php echo $currentPage; ?>"
                    href="<?php echo $purl; ?>"><?php echo $p; ?></a>
                 <?php } ?>
-                        <?php
-
-                // if ($currentPageNo!=$totalNoOfPages){
-                // echo '<a class="prev page-numbers" href="'.$_SESSION['nextJob'].'"> Next >> </a>';
-                // }
-
-                ?>
 
             </div>
         </div>
