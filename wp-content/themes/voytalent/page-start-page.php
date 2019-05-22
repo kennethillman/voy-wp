@@ -27,9 +27,6 @@ get_header();
 
 
 <?php get_template_part( 'parts/s-list-latest' ); ?>
-<?php //get_template_part( 'parts/s-inspiration-week' ); ?>
-<?php //get_template_part( 'parts/s-inspiration-teasers' ); ?>
-
 
 <article class="content">
     <div class="gc">
@@ -50,7 +47,6 @@ get_header();
     if ( is_active_sidebar( 'voy-sidebar-1' ) ) :
         dynamic_sidebar( 'voy-sidebar-1' );
     endif;
-    //get_template_part( 'parts/s-team' );
 ?>
 
 <?php
