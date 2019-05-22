@@ -16,9 +16,10 @@
     $list_repeater = get_field('list_repeater') ?: '';
     $bottom_link = get_field('bottom_link') ?: '';
     $class_margins_options_ = get_field('class_margins_options_') ?: '';
+    $class_divider_options = get_field('class_divider_options') ?: '';
 ?>
 
-<div class="b-repeater-list <?php echo esc_attr($className); ?> <?php echo esc_attr($class_margins_options_); ?>">
+<div class="b-repeater-list <?php echo esc_attr($className); ?> <?php echo esc_attr($class_margins_options_); ?> <?php echo esc_attr($class_divider_options); ?>">
     <div class="gc">
         <div class="g-12">
 

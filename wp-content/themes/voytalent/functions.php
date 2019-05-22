@@ -414,7 +414,7 @@ add_shortcode( 'voytalentteam', 'voytalentteam_shortcode' );
 
 //join voy
 function joinvoy_shortcode(){
-    if(!is_admin() && is_front_page()){
+    if(!is_admin()){
         get_template_part( 'parts/s-join-voy' );
     }
 }
