@@ -14,6 +14,14 @@
     ?>
     <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
         <div class="gc">
+          <div class="g-12">
+                <div class="component-divider">
+                    <span class="text">Join Voy talent</span>
+                    <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg>
+            </span>
+                </div>
+            </div>
             <div class="g-12">
                 <h2 class="header-section">Welcome</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis metus eu felis cursus imperdiet. Donec porttitor ac diam eu lobortis. Nam sed diam tristique, pharetra felis sed, ultrices ligula. Pellentesque elementum mollis tincidunt. Curabitur sem libero, hendrerit vitae condimentum commodo.</p>
