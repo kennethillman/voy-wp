@@ -410,10 +410,10 @@ add_shortcode( 'joinvoy', 'joinvoy_shortcode' );
 
 //SHORTCODES -E
 
-function gutenbergtheme_editor_styles() {
-    wp_enqueue_style( 'voytheme-style', get_template_directory_uri() . '/assets/styles/voy-ds.css');
-}
-add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );
+// function gutenbergtheme_editor_styles() {
+//     wp_enqueue_style( 'voytheme-style', get_template_directory_uri() . '/assets/styles/voy-ds.css');
+// }
+// add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );
 
 //ACF Fields
 
