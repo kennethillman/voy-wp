@@ -51,7 +51,7 @@
                             <?php
                                 if(!empty($team['link'])):
                             ?>
-                                <a href="<?php echo $team['link']['url'];?>" target="<?php echo $team['link']['target'];?>"><?php echo $team['link']['title'];?></a>
+                                <br><a href="<?php echo $team['link']['url'];?>" target="<?php echo $team['link']['target'];?>"><?php echo $team['link']['title'];?></a>
                             <?php endif; ?>
                         </div>
                     </div>
