@@ -105,6 +105,21 @@ endif;
         </div>
     </div>
 
+    <article class="content">
+      <div class="gc">
+          <div class="g-8 g-push-2 g-m-12 g-m-push-0 g-t-10 g-t-push-1" >
+            <?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) :
+                        the_post();
+                        the_content();
+                    endwhile;
+                endif;
+            ?>
+          </div>
+      </div>
+  </article>
+
 </article>
 
 <?php
