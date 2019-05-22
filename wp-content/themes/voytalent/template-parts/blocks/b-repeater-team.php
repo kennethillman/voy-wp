@@ -31,7 +31,7 @@
             foreach ($teams as $team):
     ?>
                 <div class="g-6 g-m-12">
-                    <div class="b-teammate">
+                    <div class="b-teammate -wp-content">
                         <div class="body -pattern-striped-light">
                             <div class="header">
                                 <h4 class="header-name"><?php echo $team['name'];?></h4>
