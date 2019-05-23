@@ -21,7 +21,6 @@
                 $joblatestOpportunities[$i]['function'] = $jDetail->function;
                 $joblatestOpportunities[$i]['title'] = $jDetail->title;
                 $joblatestOpportunities[$i]['region'] = $jDetail->location->region;
-                $joblatestOpportunities[$i]['region'] = $jDetail->location->region;
                 $i++;
             }
         endif;
@@ -43,28 +42,29 @@
                             <?php
                                 foreach ($joblatestOpportunities as $joblatestOpportunity):
                             ?>
+                                <?php if(!empty($joblatestOpportunity['title'])): ?>
+                                    <li>
+                                        <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$joblatestOpportunity['shortcode'];?>">
 
-                                <li>
-                                    <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$joblatestOpportunity['shortcode'];?>">
+                                            <div class="text">
+                                             <?php if(!empty($joblatestOpportunity['function'])) : ?>
+                                                <strong><?php echo $joblatestOpportunity['function']; ?></strong>
+                                              <?php  endif; ?>
+                                              <?php if(!empty($joblatestOpportunity['title'])) : ?>
+                                                <?php echo $joblatestOpportunity['title']; ?>
+                                              <?php  endif; ?>
+                                            </div>
 
-                                        <div class="text">
-                                         <?php if(!empty($joblatestOpportunity['function'])) : ?>
-                                            <strong><?php echo $joblatestOpportunity['function']; ?></strong>
-                                          <?php  endif; ?>
-                                          <?php if(!empty($joblatestOpportunity['title'])) : ?>
-                                            <?php echo $joblatestOpportunity['title']; ?>
-                                          <?php  endif; ?>
-                                        </div>
+                                            <?php if(!empty($joblatestOpportunity['region'])) : ?>
+                                                <div class="box"><?php  echo $joblatestOpportunity['region']; ?></div>
+                                            <?php  endif; ?>
 
-                                        <?php if(!empty($joblatestOpportunity['region'])) : ?>
-                                            <div class="box"><?php  echo $joblatestOpportunity['region']; ?></div>
-                                        <?php  endif; ?>
-
-                                        <span class="btn -yellow -icon-only">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
-                                        </span>
-                                    </a>
-                                </li>
+                                            <span class="btn -yellow -icon-only">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
+                                            </span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
 
                             <?php
                                 endforeach;
