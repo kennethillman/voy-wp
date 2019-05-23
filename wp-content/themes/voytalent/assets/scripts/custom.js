@@ -4,7 +4,7 @@ function post_candidates() {
     for(c=0; c < x.length;c++){
         cSkills.push(x[c].getAttribute("id"));
     }
-    //console.log(cSkills.join());
+
     document.getElementById("submitCandidate").disabled = true;
     var formEl = document.forms.postCandidates;
     var formData = new FormData(formEl);
@@ -27,8 +27,6 @@ function post_candidates() {
     xhr.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // If successful
-            console.log("API RESPONSE ",this.response);
-            return false;
             var result = JSON.parse(this.response);
             var resMsg = '';
 
@@ -52,7 +50,7 @@ function post_candidates() {
     xhr.onerror = function() {
         // Connection error
     };
-    //xhr.send('action=post_candidate&work_hours_start=Indpro');
+
     xhr.send(actionData);
 
     return false;

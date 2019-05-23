@@ -243,7 +243,7 @@ function voy_hsl_hex( $h, $s, $l, $to_hex = true ) {
 }
 
 function add_theme_scripts() {
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
+    wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds.css');
     wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom.js', array ( 'jquery' ), 1.1, true);
     wp_localize_script( 'voy_scripts', 'voy_ajax', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 }
@@ -421,30 +421,6 @@ function joinvoy_shortcode(){
 add_shortcode( 'joinvoy', 'joinvoy_shortcode' );
 
 //SHORTCODES -E
-
-// function gutenbergtheme_editor_styles() {
-//     wp_enqueue_style( 'voytheme-style', get_template_directory_uri() . '/assets/styles/voy-ds.css');
-// }
-// add_action( 'enqueue_block_editor_assets', 'gutenbergtheme_editor_styles' );
-
-//ACF Fields
-
-/*function voytalent_block_category( $categories, $post ) {
-    //print_r($categories);
-    if ( $post->post_type !== 'post' ) {
-        return $categories;
-    }
-    return array_merge(
-        $categories,
-        array(
-            array(
-                'slug' => 'voy-catgeory',
-                'title' => 'VOY Category'
-            ),
-        )
-    );
-}
-add_filter( 'block_categories', 'voytalent_block_category', 10, 2);*/
 
 function block_b_testimonial() {
     acf_register_block_type(array(

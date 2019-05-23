@@ -132,7 +132,7 @@
 			);
 	};
 
-	VOY.initial.loadCSS(VOY_PRESET.path.styles);
+	//VOY.initial.loadCSS(VOY_PRESET.path.styles);
 
 	// VOY.fn.listen('onVOYReady', function() {
 	// 	VOY.initial.loadCoreJS(VOY_PRESET.path.scripts.VOY);

@@ -8,15 +8,15 @@
 
 	<?php
 
-  	// Cache busting for CSS/JS and SVG
-  	$getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.css';
-  	if ( file_exists( $getCacheBustFile ) ) {
-      	$getBustHash = '?' . filemtime( $getCacheBustFile );
-   	} else {
-        $getBustHash = '';
-    }
+        // Cache busting for CSS/JS and SVG
+        $getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.css';
+        if ( file_exists( $getCacheBustFile ) ) {
+            $getBustHash = '?' . filemtime( $getCacheBustFile );
+        } else {
+            $getBustHash = '';
+        }
 
-	  $svg_icon_path = get_template_directory_uri() . '/assets/svg/svg-sprite.svg' . $getBustHash;
+	    $svg_icon_path = get_template_directory_uri() . '/assets/svg/svg-sprite.svg' . $getBustHash;
 		$css_path = get_template_directory_uri() . '/assets/styles/voy-ds.css' . $getBustHash;
 		$js_path = get_template_directory_uri() . '/assets/scripts/voy.js' . $getBustHash;
 	?>

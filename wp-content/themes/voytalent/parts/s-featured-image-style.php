@@ -1,5 +1,5 @@
 <?php
-global $featuredImage;
+    global $featuredImage;
 ?>
 <style type="text/css">
 

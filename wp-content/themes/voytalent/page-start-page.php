@@ -17,15 +17,6 @@
 get_header();
 ?>
 
-<section id="primary" class="content-area">
-    <main id="main" class="site-main">
-
-        <!--Site Content Here-->
-
-    </main><!-- .site-main -->
-</section><!-- .content-area -->
-
-
 <?php get_template_part( 'parts/s-list-latest' ); ?>
 
 <article class="content">

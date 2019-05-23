@@ -2,7 +2,7 @@
 /*
  * Template Name: Community Page
  * */
-get_header();
+    get_header();
 ?>
 
 <?php get_template_part('parts/s-featured-image'); ?>
@@ -31,5 +31,5 @@ get_header();
 </article>
 
 <?php
-get_footer();
+    get_footer();
 ?>

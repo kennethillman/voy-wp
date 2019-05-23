@@ -2,15 +2,14 @@
 /*
  * Template Name: Jobs
  * */
-get_header();
-$pageLimit = 10;
-$jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit, $_REQUEST['since_id']), false);
-if (count($jobOpportunities->jobs) > 0):
-    $jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
-    $totalNoOfPages = ceil(count($jobOpportunitiesTotal->jobs) / $pageLimit);
-    $nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
-    //print_r($nextJobID);
-endif;
+    get_header();
+    $pageLimit = 10;
+    $jobOpportunities = json_decode(VoyWorkableAPI::getJobs($pageLimit, $_REQUEST['since_id']), false);
+    if (count($jobOpportunities->jobs) > 0):
+        $jobOpportunitiesTotal = json_decode(VoyWorkableAPI::getJobs(0), false);
+        $totalNoOfPages = ceil(count($jobOpportunitiesTotal->jobs) / $pageLimit);
+        $nextJobID = VoyWorkableAPI::getNextJobs($pageLimit);
+    endif;
 ?>
 
   <?php get_template_part('parts/s-featured-image'); ?>

@@ -11,8 +11,6 @@ global $jobDetails;
 ?>
 
 <div class="job-details -pattern-stripe-light">
-
-    <!-- <div class="company">Details</div> -->
     <div class="detail">
         <span class="header">Job:</span>
         <span class="text"><?php echo (isset($jobDetails->function)?$jobDetails->function.', ':''); echo $jobDetails->title; ?></span>
@@ -24,6 +22,5 @@ global $jobDetails;
     <div class="detail">
         <span class="header">Location:</span>
         <span class="text"><?php echo (isset($jobDetails->location->region)?$jobDetails->location->region.', ':''); echo $jobDetails->location->country; ?></span>
-</div>
-
+    </div>
 </div>
