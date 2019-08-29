@@ -16,10 +16,23 @@
             <section class="p-getInTouch">
 
               <div class="gc">
-                    <div class="g-12 ds-typography">
-                        <h2 class="header-section">Get in touch!</h2>
-                    </div>
+                  <div class="g-12 ds-typography">
+                      <?php
+                          if ( have_posts() ) :
+                              while ( have_posts() ) :
+                                  the_post();
+                                  the_content();
+                              endwhile;
+                          endif;
+                      ?>
+                  </div>
+              </div>
+
+              <div class="gc">
+                <div class="g-12 ds-typography">
+                    <h2 class="header-section">Get in touch!</h2>
                 </div>
+              </div>
 
                 <form id="submitContact" name="submitContact" onsubmit="return submit_contact();">
                     <div class="gc">
@@ -49,18 +62,9 @@
                         </div>
                     </div>
                 </form>
-                 <div class="gc">
-                    <div class="g-12 ds-typography">
-                        <?php
-                            if ( have_posts() ) :
-                                while ( have_posts() ) :
-                                    the_post();
-                                    the_content();
-                                endwhile;
-                            endif;
-                        ?>
-                    </div>
-                </div>
+
+
+
             </section>
 
             <?php
