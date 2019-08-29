@@ -38,7 +38,7 @@
         <div class="g-8 g-m-12 g-t-6 video-col">
 
             <?php if(!empty($media)): ?>
-                <img src="<?php echo $media['sizes']['medium']; ?>">
+                <img src="<?php echo $media['sizes']['large']; ?>">
             <?php endif; ?>
 
         </div>

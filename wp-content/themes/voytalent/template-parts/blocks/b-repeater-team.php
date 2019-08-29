@@ -41,7 +41,7 @@
                                 if(!empty($team['image'])):
                             ?>
                                 <figure class="image">
-                                    <img src="<?php echo $team['image']['sizes']['medium'];?>" />
+                                    <img src="<?php echo $team['image']['sizes']['large'];?>" />
                                 </figure>
                             <?php endif; ?>
                         </div>

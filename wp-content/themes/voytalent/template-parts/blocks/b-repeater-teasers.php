@@ -36,7 +36,7 @@ $teaser = get_field('teaser') ?: '';
                             if (!empty($rt['image'])):
                         ?>
                             <figure>
-                                <img src="<?php echo $rt['image']['sizes']['medium']; ?>"/>
+                                <img src="<?php echo $rt['image']['sizes']['large']; ?>"/>
                             </figure>
                         <?php endif; ?>
                         <div class="text">

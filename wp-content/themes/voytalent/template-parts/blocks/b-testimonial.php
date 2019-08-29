@@ -28,7 +28,7 @@
         <div class="g-4">
             <?php if(!empty($image)): ?>
                 <figure class="-round">
-                    <img src="<?php echo $image['sizes']['medium']; ?>" />
+                    <img src="<?php echo $image['sizes']['large']; ?>" />
                 </figure>
             <?php endif; ?>
         </div>
