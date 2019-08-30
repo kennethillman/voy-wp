@@ -29,7 +29,10 @@
             </div>
             <br />
             <br />
-            <?php get_template_part( 'parts/jobs/job-apply' ); ?>
+            <?php
+                //get_template_part( 'parts/jobs/job-apply' );
+                echo do_shortcode('[joinvoy]');
+            ?>
             <br />
 
         </div>
