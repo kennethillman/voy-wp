@@ -22,9 +22,10 @@
             </span>
                 </div>
             </div>
+
             <div class="g-12">
                 <h2 class="header-section">Welcome</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis metus eu felis cursus imperdiet. Donec porttitor ac diam eu lobortis. Nam sed diam tristique, pharetra felis sed, ultrices ligula. Pellentesque elementum mollis tincidunt. Curabitur sem libero, hendrerit vitae condimentum commodo.</p>
+               <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis metus eu felis cursus imperdiet. Donec porttitor ac diam eu lobortis. Nam sed diam tristique, pharetra felis sed, ultrices ligula. Pellentesque elementum mollis tincidunt. Curabitur sem libero, hendrerit vitae condimentum commodo.</p> -->
             </div>
 
             <div class="g-12">
@@ -77,7 +78,7 @@
         </div>
 
         <div class="g-12">
-            <p>Voy privacy text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem.</p>
+            <p>View Voy privacy policy <a href="#">here (Kavitah how to link it here "domain"/privacy-policy)</a>. <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem. --></p>
         </div>
 
         <div class="g-12">
