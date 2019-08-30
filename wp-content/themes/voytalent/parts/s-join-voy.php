@@ -78,7 +78,7 @@
         </div>
 
         <div class="g-12">
-            <p>View Voy privacy policy <a href="#">here (Kavitah how to link it here "domain"/privacy-policy)</a>. <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem. --></p>
+            <p>View Voy privacy policy <a href="<?php echo get_privacy_policy_url();?>">here</a>. <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem. --></p>
         </div>
 
         <div class="g-12">
