@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-global $featuredImage,$theTitle,$theSubTitle ;
+global $featuredImage,$theTitle,$theSubTitle,$jobID;
 $featuredImage = [];
 
 $theTitle = get_the_title(get_the_ID());
@@ -44,7 +44,12 @@ if(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_I
                     <?php  endif; ?>
                     <?php if(!empty($theSubTitle)) : ?>
                         <h3 class="sub-header">
-                            <?php echo $theSubTitle;?>
+                          <?php if($jobID == "DF3F17BC4C") { ?>
+                              Join us!
+                          <?php } else { ?>
+                              <?php echo $theSubTitle;?>
+                          <?php } ?>
+
                         </h3>
                     <?php  endif; ?>
                 </div>
