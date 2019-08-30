@@ -21,7 +21,7 @@
                 <div class="component-divider">
                     <span class="text">
                         <?php
-                            if ($jobID == "DF3F17BC4C") {
+                            if ($jobID == "DF3F17BC4C" || get_the_ID() == 40) {
                                 echo "Join Voy talent";
                             } else {
                                 echo "Apply";
@@ -35,7 +35,15 @@
             </div>
 
             <div class="g-12">
-                <h2 class="header-section">Welcome</h2>
+                <h2 class="header-section">
+                   <?php
+                      if ($jobID == "DF3F17BC4C" || get_the_ID() == 40) {
+                          echo "Welcome!";
+                      } else {
+                          echo "Interested!";
+                      }
+                  ?>
+                </h2>
                <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis metus eu felis cursus imperdiet. Donec porttitor ac diam eu lobortis. Nam sed diam tristique, pharetra felis sed, ultrices ligula. Pellentesque elementum mollis tincidunt. Curabitur sem libero, hendrerit vitae condimentum commodo.</p> -->
             </div>
 
