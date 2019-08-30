@@ -15,7 +15,15 @@ global $jobID;
 <div class="gc job-apply">
     <div class="g-12">
         <div class="component-divider">
-            <span class="text">Apply</span>
+            <span class="text">
+              <?php
+                if ($jobID == "DF3F17BC4C") {
+                    echo "Join Voy talent";
+                } else {
+                    echo "Apply";
+                }
+              ?>
+            </span>
             <span class="icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg>
 					</span>
