@@ -1,5 +1,6 @@
 <?php
     global $jobID;
+    $jobID = ($jobID == '')? 'DF3F17BC4C':$jobID;
 ?>
 <section class="s-welcome">
     <?php
@@ -113,5 +114,13 @@
         </div>
     </form>
 
-    <div id="showPostCandidateResult"></div>
+    <div class="g-12" id="showPostCandidateResult" style="display: none">
+        <div class="sent-result -sent" id="result_sent">
+            <h2 class="header">Sent! Thank you!</h2>
+        </div>
+        <div class="sent-result -error" id="result_error">
+            <h2 class="header">Something went wrong, sorry!</h2>
+        </div>
+    </div>
+
 </section>
