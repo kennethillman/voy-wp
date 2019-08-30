@@ -71,6 +71,14 @@ class VoyOtionsPage
             'my-setting-admin',
             'setting_section_id'
         );
+
+        add_settings_field(
+            'host_domain_email',
+            'Host Domain Email',
+            array( $this, 'host_domain_email_callback' ),
+            'my-setting-admin',
+            'setting_section_id'
+        );
     }
     public function print_section_info()
     {
@@ -86,6 +94,9 @@ class VoyOtionsPage
 
         if( isset( $input['voy_contact_email'] ) )
             $new_input['voy_contact_email'] =  $input['voy_contact_email'] ;
+
+        if( isset( $input['host_domain_email'] ) )
+            $new_input['host_domain_email'] =  $input['host_domain_email'] ;
         //print_r($new_input);exit;
         return $new_input;
     }
@@ -109,6 +120,12 @@ class VoyOtionsPage
     public function voy_contact_email_callback(){
         printf('<input type="text" name="my_option_name[voy_contact_email]" value="%s" size="45"/>',
             isset( $this->options['voy_contact_email'] ) ? esc_attr( $this->options['voy_contact_email']) : '');
+    }
+
+    public function host_domain_email_callback(){
+        printf('<input type="text" name="my_option_name[host_domain_email]" value="%s" size="45"/>',
+            isset( $this->options['host_domain_email'] ) ? esc_attr( $this->options['host_domain_email']) : '');
+        printf('<p><small>Domain email address for sending email(s)</small></p>');
     }
 }
 

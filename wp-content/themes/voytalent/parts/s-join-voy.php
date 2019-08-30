@@ -1,3 +1,6 @@
+<?php
+    global $jobID;
+?>
 <section class="s-welcome">
     <?php
         $areaOfExpertice = array(
@@ -16,7 +19,15 @@
         <div class="gc">
           <div class="g-12">
                 <div class="component-divider">
-                    <span class="text">Join Voy talent</span>
+                    <span class="text">
+                        <?php
+                            if ($jobID == "DF3F17BC4C") {
+                                echo "Join Voy talent";
+                            } else {
+                                echo "Apply";
+                            }
+                        ?>
+                    </span>
                     <span class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path></svg>
             </span>
@@ -34,7 +45,7 @@
 
             <div class="g-6">
                 <input name="first_name" class="-full-width" type="text" placeholder="First name" required>
-                <input name="cShortcode" type="hidden" value="<?php echo 'DF3F17BC4C'; ?>">
+                <input name="cShortcode" type="hidden" value="<?php echo $jobID; ?>">
             </div>
             <div class="g-6">
                 <input name="last_name" class="-full-width" type="text" placeholder="Last name" required>
@@ -63,10 +74,10 @@
         </div>
 
         <div class="g-6">
-            <input class="-full-width" name="social_profiles[linkedin][name]" type="text" placeholder="Linked in Profile">
+            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" placeholder="Linked in Profile">
         </div>
         <div class="g-6">
-            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" pattern="http://.*" placeholder="Portfolio Link">
+            <input class="-full-width" name="social_profiles[portfolio][url]" type="url" placeholder="Portfolio Link">
         </div>
 
         <div class="g-12">
@@ -82,8 +93,8 @@
         </div>
 
         <div class="g-12">
-            <label class="checkbox-holder">I approve
-                <input type="checkbox" checked="checked" required>
+            <label class="checkbox-holder">I approve Voy privacy policy
+                <input type="checkbox" required>
                 <span class="checkmark"></span>
             </label>
         </div>

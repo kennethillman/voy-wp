@@ -18,7 +18,7 @@ function post_candidates() {
     actionData+='&summary='+formData.get('cSummary');
     actionData+='&skills='+cSkills.join();
     actionData+='&social_profiles[linkedin][url]='+formData.get('social_profiles[linkedin][url]');
-    actionData+='&social_profiles[linkedin][name]='+formData.get('social_profiles[linkedin][name]');
+    actionData+='&social_profiles[portfolio][url]='+formData.get('social_profiles[portfolio][url]');
 
     var xhr = new XMLHttpRequest();
     var apiUrl = voy_ajax.ajax_url ;

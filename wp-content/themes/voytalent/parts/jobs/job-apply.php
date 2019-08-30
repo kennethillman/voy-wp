@@ -63,7 +63,7 @@ global $jobID;
             <input class="-full-width" name="social_profiles[linkedin][name]" type="text" placeholder="Linked in Profile">
         </div>
         <div class="g-6">
-            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" pattern="http://.*" placeholder="Portfolio Link">
+            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" placeholder="Portfolio Link">
         </div>
 
         <div class="g-12 ds-typography">
@@ -80,7 +80,7 @@ global $jobID;
 
         <div class="g-12">
             <label class="checkbox-holder">I approve
-                <input type="checkbox" name="cApprove" checked="checked" required>
+                <input type="checkbox" name="cApprove" required>
                 <span class="checkmark"></span>
             </label>
         </div>

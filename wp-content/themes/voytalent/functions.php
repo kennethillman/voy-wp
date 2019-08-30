@@ -307,24 +307,20 @@ add_action('wp_ajax_send_email',  'send_email_contact'  );
 add_action('wp_ajax_nopriv_send_email',  'send_email_contact');
 
 function send_email_contact(){
-    if(isset($_POST) && $_SESSION['mailalreadysent']==''){
+    if(isset($_POST)){
         $pData = $_POST;
         array_shift($pData);
+        list($subject, $comment, $fname, $lname, $c_email, $c_phone) = array_values($pData);
 
-        $subject = $_POST['subject'];
-        $comment = $_POST['comment'];
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $c_email = $_POST['c_email'];
-        $c_phone = $_POST['c_phone'];
+        $contactOptions = get_option( 'my_option_name' );
+        $toAddress = $contactOptions['voy_contact_email'];
 
-        $toAddress = get_option( 'my_option_name' );
-        $toAddress = $toAddress['voy_contact_email'];
+        $domainEmailAddress = $contactOptions['host_domain_email'];
 
         $to = $toAddress;
-        $headers = array('Content-Type: text/html; charset=UTF-8');
-        $headers[] = 'From: '. $c_email . "\r\n" ;
-        $headers[] = 'Reply-To: ' . $c_email . "\r\n";
+        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+        $headers[] = 'From: '. $domainEmailAddress . "\r\n" ;
+        $headers[] = 'Reply-To: ' . $domainEmailAddress . "\r\n";
 
         $message = "Hi,<br />";
         $message.= "There is message from below contact detail: <br /><br />";
@@ -334,7 +330,6 @@ function send_email_contact(){
         $message.= "<strong>Message:</strong> ".$comment." <br />";
 
         $status = [];
-
         $sent = wp_mail($to, $subject, $message, $headers);
 
         if($sent) {
@@ -350,6 +345,7 @@ function send_email_contact(){
         echo json_encode($status);
 
     }else{
+        $_SESSION['mailalreadysent']='';
         $status['status'] = 'error';
         $status['msg'] = 'Mail Aleardy Sent';
 

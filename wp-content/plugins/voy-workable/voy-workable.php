@@ -106,13 +106,14 @@
         }
 
         public static function post_candidate($data = array()){
-            //echo "Workable called";
-
             $pData = [];
             $shortcode = array_shift($data);
             foreach ($data as $key => $value){
                 if($key == 'social_profiles'){
-                    $pData [$key][] = ['type' => key($value), 'name' => $value[key($value)]['name'], 'url' => $value[key($value)]['url']];
+                    $pData [$key][] = [
+                        'type' => key($value),
+                        //'name' => $value[key($value)]['name'],
+                        'url' => stripslashes($value[key($value)]['url'])];
                 }elseif ($key == 'skills'){
                     $skills = explode(",",$value);
                     foreach ($skills as $skill){
@@ -123,16 +124,11 @@
                 }
             }
 
-            //print_r($pData);
-            //print_r(json_encode($pData));
-            //exit;
-
+            //print_r(json_encode($pData));print_r($url);exit;
             $url = API_URL;
             $url = $url.'jobs/'.$shortcode.'/candidates';
             $json = self::getJsonResponse($url, json_encode($pData), 'POST');
             return $json;
         }
     }
-
-    //$VoyWorkableAPI = new VoyWorkableAPI();
 ?>
