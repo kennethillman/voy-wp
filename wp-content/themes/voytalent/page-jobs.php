@@ -46,8 +46,14 @@
 
                         if (count($getAllJobs) > 0):
                             foreach ($getAllJobs as $key => $job):
+                                if($getAllJobs[$count]['shortcode'] == "DF3F17BC4C"){
+                                    $count++;
+                                    continue;
+                                }
                     ?>
-                            <?php if(!empty($getAllJobs[$count]['title'])): ?>
+                            <?php
+                                if(!empty($getAllJobs[$count]['title'])):
+                            ?>
                                 <li>
                                     <a href="<?php echo get_the_permalink(url_to_postid(site_url('jobs/job-details'))) . "?jid=" . $getAllJobs[$count]['shortcode']; ?>">
 

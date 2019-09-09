@@ -41,6 +41,9 @@
                         <ul>
                             <?php
                                 foreach ($joblatestOpportunities as $joblatestOpportunity):
+                                    if($joblatestOpportunity['shortcode'] == "DF3F17BC4C"){
+                                        continue;
+                                    }
                             ?>
                                 <?php if(!empty($joblatestOpportunity['title'])): ?>
                                     <li>
