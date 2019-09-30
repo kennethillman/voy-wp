@@ -58,9 +58,9 @@
                                     <a href="<?php echo get_the_permalink(url_to_postid(site_url('jobs/job-details'))) . "?jid=" . $getAllJobs[$count]['shortcode']; ?>">
 
                                         <div class="text">
-                                            <?php if (!empty($getAllJobs[$count]['function'])) : ?>
+                                            <!-- <?php if (!empty($getAllJobs[$count]['function'])) : ?>
                                                 <strong><?php echo $getAllJobs[$count]['function']; ?></strong>
-                                            <?php endif; ?>
+                                            <?php endif; ?> -->
                                             <?php if (!empty($getAllJobs[$count]['title'])) : ?>
                                                 <?php echo $getAllJobs[$count]['title']; ?>
                                             <?php endif; ?>

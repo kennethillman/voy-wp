@@ -50,9 +50,9 @@
                                         <a href="<?php echo get_the_permalink(url_to_postid( site_url('jobs/job-details') ))."?jid=".$joblatestOpportunity['shortcode'];?>">
 
                                             <div class="text">
-                                             <?php if(!empty($joblatestOpportunity['function'])) : ?>
+                                             <!-- <?php if(!empty($joblatestOpportunity['function'])) : ?>
                                                 <strong><?php echo $joblatestOpportunity['function']; ?></strong>
-                                              <?php  endif; ?>
+                                              <?php  endif; ?> -->
                                               <?php if(!empty($joblatestOpportunity['title'])) : ?>
                                                 <?php echo $joblatestOpportunity['title']; ?>
                                               <?php  endif; ?>
