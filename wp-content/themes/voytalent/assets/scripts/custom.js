@@ -47,7 +47,7 @@ function post_candidates() {
         // Connection error
     };
 
-    console.log('actionData -> ', actionData)
+   // console.log('actionData -> ', actionData)
 
     xhr.send(actionData);
 
