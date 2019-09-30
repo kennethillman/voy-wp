@@ -117,8 +117,10 @@ class VoyWorkableAPI
             }elseif ($key == 'skills'){
                 $skills = explode(",",$value);
                 foreach ($skills as $skill){
-                    $pData [$key][] = ['name' => $skill];
+                    $pData [$key][] = $skill;
                 }
+            }elseif ($key == 'sourced'){
+              $pData [$key] = false;
             }else{
                 $pData [$key] = $value;
             }

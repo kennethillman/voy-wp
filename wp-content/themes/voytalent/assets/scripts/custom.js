@@ -19,6 +19,7 @@ function post_candidates() {
     actionData+='&skills='+cSkills.join();
     actionData+='&social_profiles[linkedin][url]='+formData.get('social_profiles[linkedin][url]');
     actionData+='&social_profiles[portfolio][url]='+formData.get('social_profiles[portfolio][url]');
+    actionData+='&sourced=false';
 
     var xhr = new XMLHttpRequest();
     var apiUrl = voy_ajax.ajax_url ;
@@ -45,6 +46,8 @@ function post_candidates() {
     xhr.onerror = function() {
         // Connection error
     };
+
+    console.log('actionData -> ', actionData)
 
     xhr.send(actionData);
 
