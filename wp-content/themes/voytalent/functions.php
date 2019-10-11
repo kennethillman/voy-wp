@@ -244,7 +244,7 @@ function voy_hsl_hex( $h, $s, $l, $to_hex = true ) {
 
 function add_theme_scripts() {
     wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds.css');
-    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom.js', array ( 'jquery' ), 1.1, true);
+    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom-new.js', array ( 'jquery' ), 1.1, true);
     wp_localize_script( 'voy_scripts', 'voy_ajax', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
