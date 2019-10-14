@@ -8,8 +8,6 @@ function post_candidates() {
     document.getElementById("submitCandidate").disabled = true;
     var formEl = document.forms.postCandidates;
     var formData = new FormData(formEl);
-    var resume = document.getElementById("resume_url").files[0];  // file from input
-    formData.append("resume", resume); 
     var actionData = 'action=post_candidate' ;
     actionData+='&shortcode='+formData.get('cShortcode');
     actionData+='&name='+formData.get('first_name')+ ' '+formData.get('last_name');

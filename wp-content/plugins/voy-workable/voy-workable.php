@@ -116,7 +116,6 @@ class VoyWorkableAPI
                     //'name' => $value[key($value)]['name'],
                     'url' => stripslashes($value[key($value)]['url'])
                     ];*/
-
                 foreach($value as $k => $v){
                     if($k == 'linkedin' && $v['url']!=""){
                         $pData ['summary'] .= "\n \n Linkedin Link - ".stripslashes($v['url']); 

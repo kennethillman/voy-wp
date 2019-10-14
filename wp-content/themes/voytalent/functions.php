@@ -296,8 +296,6 @@ add_action('wp_ajax_nopriv_post_candidate',  'post_candidate');
 function post_candidate(){
     if(isset($_POST)){
         $postData = $_POST;
-        echo '<pre>'; print_r($postData);
-        print_r($_FILES); exit;
         array_shift($postData);
         echo VoyWorkableAPI::post_candidate($postData);
     }
