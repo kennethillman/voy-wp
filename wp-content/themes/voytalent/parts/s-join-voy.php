@@ -83,10 +83,10 @@
         </div>
 
         <div class="g-6">
-            <input class="-full-width" name="social_profiles[linkedin][url]" type="url" placeholder="Linked in Profile">
+            <input class="-full-width" name="social_profiles[linkedin][url]" type="text" placeholder="Linked in Profile">
         </div>
         <div class="g-6">
-            <input class="-full-width" name="social_profiles[portfolio][url]" type="url" placeholder="Portfolio Link">
+            <input class="-full-width" name="social_profiles[portfolio][url]" type="text" placeholder="Portfolio Link">
         </div>
 
         <div class="g-12">
