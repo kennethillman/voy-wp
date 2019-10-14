@@ -31,4 +31,5 @@
 			<!-- <a href="<?php echo get_privacy_policy_url();?>">Voy talent Privacy</a> -->
 	 	</div>
 	 </div>
+   <div class="pattern"></div>
  </section>
