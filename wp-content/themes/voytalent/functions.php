@@ -244,7 +244,7 @@ function voy_hsl_hex( $h, $s, $l, $to_hex = true ) {
 
 function add_theme_scripts() {
     wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds.css');
-    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom-new.js', array ( 'jquery' ), 1.1, true);
+    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom.js', array ( 'jquery' ), 1.1, true);
     wp_localize_script( 'voy_scripts', 'voy_ajax', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
@@ -296,6 +296,8 @@ add_action('wp_ajax_nopriv_post_candidate',  'post_candidate');
 function post_candidate(){
     if(isset($_POST)){
         $postData = $_POST;
+        echo '<pre>'; print_r($postData);
+        print_r($_FILES); exit;
         array_shift($postData);
         echo VoyWorkableAPI::post_candidate($postData);
     }

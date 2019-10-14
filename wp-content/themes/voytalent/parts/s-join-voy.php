@@ -16,7 +16,7 @@
             'UX Designer / Visual Designer', 'Video', 'Video & photography', 'Web design', 'Web Developer'
         );
     ?>
-    <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
+    <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();" enctype="multipart/form-data">
         <div class="gc">
           <div class="g-12">
                 <div class="component-divider">
@@ -87,6 +87,9 @@
         </div>
         <div class="g-6">
             <input class="-full-width" name="social_profiles[portfolio][url]" type="url" placeholder="Portfolio Link">
+        </div>
+        <div class="g-6">
+            <input class="-full-width" name="resume_url" id="resume_url" type="file" placeholder="Upload Your Resume">
         </div>
 
         <div class="g-12">

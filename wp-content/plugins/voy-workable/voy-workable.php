@@ -108,19 +108,32 @@ class VoyWorkableAPI
     public static function post_candidate($data = array()){
         $pData = [];
         $shortcode = array_shift($data);
+        $pData ['summary'] = "";
         foreach ($data as $key => $value){
             if($key == 'social_profiles'){
-                $pData [$key][] = [
+                /*$pData [$key][] = [
                     //'type' => key($value),
                     //'name' => $value[key($value)]['name'],
-                    'url' => stripslashes($value[key($value)]['url'])];
+                    'url' => stripslashes($value[key($value)]['url'])
+                    ];*/
+
+                foreach($value as $k => $v){
+                    if($k == 'linkedin' && $v['url']!=""){
+                        $pData ['summary'] .= "\n \n Linkedin Link - ".stripslashes($v['url']); 
+                    } else if($k == 'portfolio' && $v['url']!=""){
+                        $pData ['summary'] .= "\n \n Portfolio Link - ".stripslashes($v['url']);
+                    } else {
+                        $pData ['summary'] .= "";
+                    }
+                }    
             }elseif ($key == 'skills'){
                 $skills = explode(",",$value);
-                foreach ($skills as $skill){
+                /*foreach ($skills as $skill){
                     $pData [$key][] = $skill;
-                }
+                }*/
+                $pData [$key] = $skills;
             }elseif ($key == 'sourced'){
-              $pData [$key] = false;
+                $pData [$key] = false;
             }else{
                 $pData [$key] = $value;
             }
