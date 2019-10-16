@@ -81,7 +81,8 @@
 
 
 
-function post_candidates() {
+function post_candidates(e) {
+    e.preventDefault();
     var x = document.getElementsByClassName("selectable");
     var cSkills = [];
     for(c=0; c < x.length;c++){

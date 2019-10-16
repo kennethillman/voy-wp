@@ -311,6 +311,9 @@ function post_candidate(){
                     $tmp_file_name = $_FILES['resume_file']['tmp_name'];
                     $upload_dir = wp_upload_dir();
                     if($resume_name){
+                        if (!file_exists($upload_dir['basedir'].'/resume/')) {
+                            mkdir($upload_dir['basedir'].'/resume/', 0777, true);
+                        }
                         move_uploaded_file($tmp_file_name,$upload_dir['basedir'].'/resume/'.$resume_name);
                         $resume_url = $upload_dir['baseurl'].'/resume/'.$resume_name;
                     }
@@ -347,6 +350,9 @@ function post_candidate(){
                     $tmp_file_name = $_FILES['portfolio_file']['tmp_name'];
                     $upload_dir = wp_upload_dir();
                     if($portfolio_name){
+                        if (!file_exists($upload_dir['basedir'].'/portfolio/')) {
+                            mkdir($upload_dir['basedir'].'/portfolio/', 0777, true);
+                        }
                         move_uploaded_file($tmp_file_name,$upload_dir['basedir'].'/portfolio/'.$portfolio_name);
                         $portfolio_url = $upload_dir['baseurl'].'/portfolio/'.$portfolio_name;
                     }
