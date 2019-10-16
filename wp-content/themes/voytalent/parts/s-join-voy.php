@@ -16,7 +16,7 @@
             'UX Designer / Visual Designer', 'Video', 'Video & photography', 'Web design', 'Web Developer'
         );
     ?>
-    <form id="postCandidates" name="postCandidates" onsubmit="return post_candidates();">
+    <form id="postCandidates" name="postCandidates" method="post" enctype="multipart/form-data">
         <div class="gc">
           <div class="g-12">
                 <div class="component-divider">
@@ -37,13 +37,13 @@
 
             <div class="g-12">
                 <h2 class="header-section">
-                   <?php
-                      if ($jobID == "DF3F17BC4C" || get_the_ID() == 40) {
-                          echo "Welcome!";
-                      } else {
-                          echo "Interested!";
-                      }
-                  ?>
+                <?php
+                    if ($jobID == "DF3F17BC4C" || get_the_ID() == 40) {
+                        echo "Welcome!";
+                    } else {
+                        echo "Interested!";
+                    }
+                ?>
                 </h2>
                <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis metus eu felis cursus imperdiet. Donec porttitor ac diam eu lobortis. Nam sed diam tristique, pharetra felis sed, ultrices ligula. Pellentesque elementum mollis tincidunt. Curabitur sem libero, hendrerit vitae condimentum commodo.</p> -->
             </div>
@@ -88,6 +88,14 @@
         <div class="g-6">
             <input class="-full-width" name="social_profiles[portfolio][url]" type="text" placeholder="Portfolio Link">
         </div>
+        <div class="g-6">
+            <label for="resume_file">Upload your resume </label>
+            <input class="-full-width" name="resume_file" id="resume_file" type="file" accept="application/pdf">
+        </div>
+        <div class="g-6">
+            <label for="portfolio_file">Enclose File </label>
+            <input class="-full-width" name="portfolio_file" id="portfolio_file" type="file" accept="application/pdf">
+        </div>
 
         <div class="g-12">
             <h2 class="header-number"><figure></figure><span class="number">4.</span><span class="text">Describe your dreams and ambitions</span></h2>
@@ -110,7 +118,7 @@
 
         <div class="g-12">
           <br>
-            <button type="submit" class="btn -orange -icon" id="submitCandidate">Send<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></button>
+            <button type="submit" class="btn -orange -icon" id="submitCandidate" onClick="post_candidates();">Send<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></button>
         </div>
     </form>
 
