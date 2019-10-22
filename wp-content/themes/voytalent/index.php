@@ -23,7 +23,6 @@ get_header();
     if ( is_active_sidebar( 'voy-sidebar-1' ) ) :
         dynamic_sidebar( 'voy-sidebar-1' );
     endif;
-    //get_template_part( 'parts/s-team' );
 ?>
 
 <?php
