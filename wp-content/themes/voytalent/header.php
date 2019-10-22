@@ -31,20 +31,6 @@
 	    echo $toastloader;
     ?>
 
-    var VOY_PRESET = {
-      path: {
-        svg: {
-          icons: '<?php echo $svg_icon_path ?>'
-        },
-        styles: '<?php echo $css_path ?>',
-        // print: '<?php echo $css_print_path ?>',
-        scripts: {
-        //   polyfills: '<?php echo $js_polyfills_path ?>',
-        	voy: '<?php echo $js_path ?>',
-        },
-        // critical: '',
-      }
-    };
 
     /* - - Inline Critical JS - - */
     <?php
@@ -202,10 +188,7 @@
       );
   };
 
-  VOY.initial.loadCSS(VOY_PRESET.path.styles);
-
-
-
+ // VOY.initial.loadCSS(VOY_PRESET.path.styles);
 
 
 })();
