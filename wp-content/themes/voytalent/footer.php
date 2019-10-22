@@ -1,4 +1,4 @@
-<!-- <?php get_template_part( 'parts/s-join-email' ); ?> -->
+
 <?php get_template_part( 'parts/s-follow' ); ?>
 <?php get_template_part( 'parts/s-footer' ); ?>
 
@@ -7,6 +7,9 @@
 <?php wp_footer(); ?>
 
 <?php get_template_part( 'parts/s-grid-demo' ); ?>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6280301.js"></script>
+
 
 </body>
 </html>
