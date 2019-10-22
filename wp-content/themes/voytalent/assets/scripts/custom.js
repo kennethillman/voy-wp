@@ -1,4 +1,4 @@
-function post_candidates() {
+/*function post_candidates() {
     var x = document.getElementsByClassName("selectable");
     var cSkills = [];
     for(c=0; c < x.length;c++){
@@ -35,9 +35,7 @@ function post_candidates() {
             showResult(result, false);
             document.getElementById("submitCandidate").disabled = false;
 
-            /*setTimeout(function() {
-                document.getElementById("showPostCandidateResult").style.display = "none";
-            }, 2500);*/
+            
         } else {
             // If fail
             console.log(this.response);
@@ -48,6 +46,67 @@ function post_candidates() {
     };
 
    console.log('actionData -> ', actionData)
+
+    xhr.send(actionData);
+
+    return false;
+}*/
+
+function post_candidates(e) {
+    e.preventDefault();
+    var x = document.getElementsByClassName("selectable");
+    var cSkills = [];
+    for(c=0; c < x.length;c++){
+        cSkills.push(x[c].getAttribute("id"));
+    }
+
+    document.getElementById("submitCandidate").disabled = true;
+
+    var actionData=new FormData();
+    var formEl = document.forms.postCandidates;
+    var formData = new FormData(formEl);
+
+    actionData.append('action','post_candidate');
+    actionData.append('shortcode',formData.get('cShortcode'));
+    actionData.append('name',formData.get('first_name')+ ' '+formData.get('last_name'));
+    actionData.append('first_name',formData.get('first_name'));
+    actionData.append('last_name',formData.get('last_name'));
+    actionData.append('email',formData.get('cEmail'));
+    actionData.append('phone',formData.get('cPhone'));
+    actionData.append('summary',formData.get('cSummary'));
+    actionData.append('skills',cSkills.join());
+    actionData.append('social_profiles[linkedin][url]',formData.get('social_profiles[linkedin][url]'));
+    actionData.append('social_profiles[portfolio][url]',formData.get('social_profiles[portfolio][url]'));
+    actionData.append('sourced',false);
+    actionData.append('resume_file',document.getElementById("resume_file").files[0]);
+    actionData.append('portfolio_file',document.getElementById("portfolio_file").files[0]);         
+
+
+    var xhr = new XMLHttpRequest();
+    var apiUrl = voy_ajax.ajax_url ;
+    xhr.open("POST", apiUrl, true);
+    
+    xhr.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+            // If successful
+            var result = JSON.parse(this.response);
+            console.log("API Response ",result);
+
+            document.getElementById("showPostCandidateResult").style.display = "block";
+            showResult(result, false);
+            document.getElementById("submitCandidate").disabled = false;
+
+            
+        } else {
+            // If fail
+            console.log(this.response);
+        }
+    };
+    xhr.onerror = function() {
+        // Connection error
+    };
+
+    //console.log('actionData -> ', actionData)
 
     xhr.send(actionData);
 

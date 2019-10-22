@@ -295,7 +295,107 @@ add_action('wp_ajax_nopriv_post_candidate',  'post_candidate');
 
 function post_candidate(){
     if(isset($_POST)){
+        $resume_url = "";
+        $portfolio_url = "";
+
+        if(!empty($_FILES) && $_FILES['resume_file']['name']!=''){
+            $allowedExts = array("pdf");
+            $temp = explode(".", $_FILES["resume_file"]["name"]);
+            $filename = current($temp);
+            $extension = end($temp);
+            if ($_FILES['resume_file']['error'] === 0) {
+                if (($_FILES["resume_file"]["type"] == "application/pdf") && in_array($extension, $allowedExts))
+                {
+                    if(($_FILES["resume_file"]["size"] < 3145728)){
+                        $resume_file_name = sanitize_file_name(substr($filename,0,40));
+                        $resume_name = time().'_'.$resume_file_name.'.'.$extension;
+                        $tmp_file_name = $_FILES['resume_file']['tmp_name'];
+                        $upload_dir = wp_upload_dir();
+                        if($resume_name){
+                            if (!file_exists($upload_dir['basedir'].'/resume/')) {
+                                mkdir($upload_dir['basedir'].'/resume/', 0777, true);
+                            }
+                            move_uploaded_file($tmp_file_name,$upload_dir['basedir'].'/resume/'.$resume_name);
+                            $resume_url = $upload_dir['baseurl'].'/resume/'.$resume_name;
+                        }
+                    }else {
+                        $error = array('error'=>'Maximum 3MB file is allowed');
+                        echo json_encode($error);
+                        exit;
+                    }
+                    
+                }else {
+                    $error = array('error'=>'Invalid file format. Please upload only PDF file');
+                    echo json_encode($error);
+                    exit;
+                }
+            } else {
+                $error = array('error'=>"Please upload only PDF file. Maximum 3MB file is allowed.");
+                echo json_encode($error);
+                exit;
+            }
+
+            
+            /*$resume_name = time().'_'.$_FILES['resume_file']['name'];
+            $tmp_file_name = $_FILES['resume_file']['tmp_name'];
+            $upload_dir = wp_upload_dir();
+            if($resume_name){
+                move_uploaded_file($tmp_file_name,$upload_dir['basedir'].'/resume/'.$resume_name);
+                $resume_url = $upload_dir['baseurl'].'/resume/'.$resume_name;
+            }*/
+        }
+
+        if(!empty($_FILES) && $_FILES['portfolio_file']['name']!=''){
+            $allowedExts = array("pdf");
+            $temp = explode(".", $_FILES["portfolio_file"]["name"]);
+            $filename = current($temp);
+            $extension = end($temp);
+            if ($_FILES['portfolio_file']['error'] === 0) {
+                if (($_FILES["portfolio_file"]["type"] == "application/pdf") && in_array($extension, $allowedExts))
+                {
+                    if(($_FILES["portfolio_file"]["size"] < 3145728)){
+                        $portfolio_file_name = sanitize_file_name(substr($filename,0,40));
+                        $portfolio_name = time().'_'.$portfolio_file_name.'.'.$extension;
+                        $tmp_file_name = $_FILES['portfolio_file']['tmp_name'];
+                        $upload_dir = wp_upload_dir();
+                        if($portfolio_name){
+                            if (!file_exists($upload_dir['basedir'].'/portfolio/')) {
+                                mkdir($upload_dir['basedir'].'/portfolio/', 0777, true);
+                            }
+                            move_uploaded_file($tmp_file_name,$upload_dir['basedir'].'/portfolio/'.$portfolio_name);
+                            $portfolio_url = $upload_dir['baseurl'].'/portfolio/'.$portfolio_name;
+                        }
+                    } else {
+                        $error = array('error'=>'Maximum 3MB file is allowed');
+                        echo json_encode($error);
+                        exit;
+                    }
+                    
+                } else {
+                    $error = array('error'=>'Invalid file format. Please upload only PDF file');
+                    echo json_encode($error);
+                    exit;
+                }
+            } else {
+                $error = array('error'=>"Please upload only PDF file. Maximum 3MB file is allowed.");
+                echo json_encode($error);
+                exit;
+            }
+            
+            
+            /*$portfolio_name = time().'_'.$_FILES['portfolio_file']['name'];
+            $tmp_file_name = $_FILES['portfolio_file']['tmp_name'];
+            $upload_dir = wp_upload_dir();
+            if($portfolio_name){
+                move_uploaded_file($tmp_file_name,$upload_dir['basedir'].'/portfolio/'.$portfolio_name);
+                $portfolio_url = $upload_dir['baseurl'].'/portfolio/'.$portfolio_name;
+            }*/
+        }
+
         $postData = $_POST;
+        $postData['resume_url'] = $resume_url;
+        $postData['portfolio_url'] = $portfolio_url;
+        //echo '<pre>'; print_r($postData); exit;
         array_shift($postData);
         echo VoyWorkableAPI::post_candidate($postData);
     }

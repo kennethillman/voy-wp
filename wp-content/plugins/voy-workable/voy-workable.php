@@ -109,6 +109,7 @@ class VoyWorkableAPI
         $pData = [];
         $shortcode = array_shift($data);
         $pData ['summary'] = "";
+        //echo '<pre>'; print_r($data); exit;
         foreach ($data as $key => $value){
             if($key == 'social_profiles'){
                 /*$pData [$key][] = [
@@ -116,15 +117,30 @@ class VoyWorkableAPI
                     //'name' => $value[key($value)]['name'],
                     'url' => stripslashes($value[key($value)]['url'])
                     ];*/
-                foreach($value as $k => $v){
-                    if($k == 'linkedin' && $v['url']!=""){
-                        $pData ['summary'] .= "\n \n Linkedin Link - ".stripslashes($v['url']); 
-                    } else if($k == 'portfolio' && $v['url']!=""){
-                        $pData ['summary'] .= "\n \n Portfolio Link - ".stripslashes($v['url']);
-                    } else {
-                        $pData ['summary'] .= "";
+                if(is_array($value) && !empty($value)){
+                    foreach($value as $k => $v){
+                        if($k == 'linkedin' && $v['url']!=""){
+                            $pData ['summary'] .= "\n \n Linkedin Link - ".stripslashes($v['url']); 
+                        } else if($k == 'portfolio' && $v['url']!=""){
+                            $pData ['summary'] .= "\n \n Portfolio Link - ".stripslashes($v['url']);
+                        } else {
+                            $pData ['summary'] .= "";
+                        }
                     }
-                }    
+                }
+                
+            }elseif($key == 'resume_url'){
+                if($value !=''){
+                    $pData ['summary'] .= "\n \n Resume URL - ".stripslashes($value);  
+                } else {
+                    $pData ['summary'] .= "";
+                }
+            }elseif($key == 'portfolio_url'){
+                if($value !=''){
+                    $pData ['summary'] .= "\n \n Portfolio URL - ".stripslashes($value);  
+                } else {
+                    $pData ['summary'] .= "";
+                }
             }elseif ($key == 'skills'){
                 $skills = explode(",",$value);
                 /*foreach ($skills as $skill){
