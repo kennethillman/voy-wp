@@ -121,12 +121,12 @@
             <textarea name="cSummary" class="-full-width" placeholder="Describe your dreams and ambitions" required></textarea>
         </div>
 
-        <div class="g-12">
-            <p>View Voy privacy policy <a href="<?php echo get_privacy_policy_url();?>">here</a>. <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem. --></p>
-        </div>
+<!--         <div class="g-12">
+            <p>View Voy privacy policy here</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend leo. Aliquam semper luctus porta. Duis augue tortor, mattis id elit at, fringilla rhoncus sem.</p>
+        </div> -->
 
         <div class="g-12">
-            <label class="checkbox-holder">I approve Voy privacy policy
+            <label class="checkbox-holder">I approve <a href="<?php echo get_privacy_policy_url();?>" target="_blank">Voy privacy policy</a>
                 <input type="checkbox" required>
                 <span class="checkmark"></span>
             </label>
