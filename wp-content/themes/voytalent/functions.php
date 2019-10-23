@@ -243,8 +243,8 @@ function voy_hsl_hex( $h, $s, $l, $to_hex = true ) {
 }
 
 function add_theme_scripts() {
-    wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds-82.css');
-    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom-82.js', array ( 'jquery' ), 1.1, true);
+    wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds-82-3.css');
+    wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom-822.js', array ( 'jquery' ), 1.1, true);
     wp_localize_script( 'voy_scripts', 'voy_ajax', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
@@ -306,7 +306,7 @@ function post_candidate(){
             if ($_FILES['resume_file']['error'] === 0) {
                 if (($_FILES["resume_file"]["type"] == "application/pdf") && in_array($extension, $allowedExts))
                 {
-                    if(($_FILES["resume_file"]["size"] < 3145728)){
+                    if(($_FILES["resume_file"]["size"] < 5242880)){
                         $resume_file_name = sanitize_file_name(substr($filename,0,40));
                         $resume_name = time().'_'.$resume_file_name.'.'.$extension;
                         $tmp_file_name = $_FILES['resume_file']['tmp_name'];
@@ -353,7 +353,7 @@ function post_candidate(){
             if ($_FILES['portfolio_file']['error'] === 0) {
                 if (($_FILES["portfolio_file"]["type"] == "application/pdf") && in_array($extension, $allowedExts))
                 {
-                    if(($_FILES["portfolio_file"]["size"] < 3145728)){
+                    if(($_FILES["portfolio_file"]["size"] < 5242880)){
                         $portfolio_file_name = sanitize_file_name(substr($filename,0,40));
                         $portfolio_name = time().'_'.$portfolio_file_name.'.'.$extension;
                         $tmp_file_name = $_FILES['portfolio_file']['tmp_name'];
@@ -377,7 +377,7 @@ function post_candidate(){
                     exit;
                 }
             } else {
-                $error = array('error'=>"Please upload only PDF file. Maximum 3MB file is allowed.");
+                $error = array('error'=>"Please upload only PDF file. Maximum 5MB file is allowed.");
                 echo json_encode($error);
                 exit;
             }

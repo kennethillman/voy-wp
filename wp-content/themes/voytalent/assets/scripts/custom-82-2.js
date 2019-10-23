@@ -35,7 +35,7 @@
             showResult(result, false);
             document.getElementById("submitCandidate").disabled = false;
 
-            
+
         } else {
             // If fail
             console.log(this.response);
@@ -51,6 +51,35 @@
 
     return false;
 }*/
+
+  var inputs = document.querySelectorAll( '.-input-file' );
+  Array.prototype.forEach.call( inputs, function( input )
+  {
+    var label  = input.nextElementSibling,
+      labelVal = label.innerHTML;
+
+
+
+    input.addEventListener( 'change', function( e )
+    {
+      var fileName = '';
+      if( this.files && this.files.length > 1 )
+        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+      else
+        fileName = e.target.value.split( '\\' ).pop();
+
+      if( fileName )
+        label.querySelector( 'span' ).innerHTML = fileName;
+      else
+        label.innerHTML = labelVal;
+    });
+
+    // Firefox bug fix
+    input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+    input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+  });
+
+
 
 function post_candidates(e) {
     e.preventDefault();
@@ -79,28 +108,34 @@ function post_candidates(e) {
     actionData.append('social_profiles[portfolio][url]',formData.get('social_profiles[portfolio][url]'));
     actionData.append('sourced',false);
     actionData.append('resume_file',document.getElementById("resume_file").files[0]);
-    actionData.append('portfolio_file',document.getElementById("portfolio_file").files[0]);         
+    actionData.append('portfolio_file',document.getElementById("portfolio_file").files[0]);
 
 
     var xhr = new XMLHttpRequest();
     var apiUrl = voy_ajax.ajax_url ;
     xhr.open("POST", apiUrl, true);
-    
+
+    document.getElementById("formLoading").style.display = "block";
+
     xhr.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // If successful
             var result = JSON.parse(this.response);
             console.log("API Response ",result);
 
+
             document.getElementById("showPostCandidateResult").style.display = "block";
             showResult(result, false);
             document.getElementById("submitCandidate").disabled = false;
 
-            
+
         } else {
             // If fail
             console.log(this.response);
+
         }
+        document.getElementById("formLoading").style.display = "none";
+
     };
     xhr.onerror = function() {
         // Connection error
