@@ -30,11 +30,11 @@
     ?>
 
     /* - - Inline Critical JS - - */
-    <?php
-      $js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
-      $jsInlineHead = file_get_contents( $js_inline_head , true );
-      echo $jsInlineHead;
-    ?>
+    // <?php
+    //   $js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
+    //   $jsInlineHead = file_get_contents( $js_inline_head , true );
+    //   echo $jsInlineHead;
+    // ?>
 
     var VOY_PRESET = {
         version: '<?php echo $getBustHash ?>',
@@ -192,6 +192,7 @@
     <style type="text/css">
       body{
         background: #000;
+        overflow-x: hidden;
       }
 
       body > * {
