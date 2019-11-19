@@ -243,7 +243,7 @@ function voy_hsl_hex( $h, $s, $l, $to_hex = true ) {
 }
 
 function add_theme_scripts() {
-    wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds-82-3.css');
+    //wp_enqueue_style( 'voy-style', get_template_directory_uri() . '/assets/styles/voy-ds-82-3.css');
     wp_enqueue_script( 'voy_scripts', get_template_directory_uri() . '/assets/scripts/custom-822.js', array ( 'jquery' ), 1.1, true);
     wp_localize_script( 'voy_scripts', 'voy_ajax', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
 }
