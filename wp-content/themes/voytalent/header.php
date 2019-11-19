@@ -9,7 +9,7 @@
 	<?php
 
         // Cache busting for CSS/JS and SVG
-        $getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.css';
+        $getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.min.css';
         if ( file_exists( $getCacheBustFile ) ) {
             $getBustHash = '?' . filemtime( $getCacheBustFile );
         } else {
@@ -17,13 +17,11 @@
         }
 
 	    $svg_icon_path = get_template_directory_uri() . '/assets/svg/svg-sprite.svg' . $getBustHash;
-		$css_path = get_template_directory_uri() . '/assets/styles/voy-ds.css' . $getBustHash;
+		$css_path = get_template_directory_uri() . '/assets/styles/voy-ds.min.css' . $getBustHash;
 		$js_path = get_template_directory_uri() . '/assets/scripts/voy.js' . $getBustHash;
 	?>
 
 	<script type="text/javascript">
-
-
 
     /* - - Inline Sync resource loader - - */
 		<?php
@@ -31,14 +29,12 @@
 	    echo $toastloader;
     ?>
 
-
     /* - - Inline Critical JS - - */
     <?php
       $js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
       $jsInlineHead = file_get_contents( $js_inline_head , true );
       echo $jsInlineHead;
     ?>
-
 
     var VOY_PRESET = {
         version: '<?php echo $getBustHash ?>',
@@ -59,7 +55,6 @@
 
 
 
-
 //////////////////////////////////////////////////////
 //
 // SCRIPTS - Inline head
@@ -68,10 +63,7 @@
 
 
 
-
 (function () {
-
-
 
   var   win       = window,
       doc       = document,
@@ -188,7 +180,7 @@
       );
   };
 
- // VOY.initial.loadCSS(VOY_PRESET.path.styles);
+  VOY.initial.loadCSS(VOY_PRESET.path.styles);
 
 
 })();
@@ -196,6 +188,16 @@
 
 
     </script>
+
+    <style type="text/css">
+      body{
+        background: #000;
+      }
+
+      body > * {
+        visibility: hidden;
+      }
+    </style>
 
     <?php wp_head(); ?>
 </head>
