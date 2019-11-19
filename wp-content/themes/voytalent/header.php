@@ -6,222 +6,223 @@
     <link rel="profile" href="https://gmpg.org/xfn/11"/>
 
 
-	<?php
-
-        // Cache busting for CSS/JS and SVG
-        $getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.min.css';
-        if ( file_exists( $getCacheBustFile ) ) {
-            $getBustHash = '?' . filemtime( $getCacheBustFile );
-        } else {
-            $getBustHash = '';
-        }
-
-	    $svg_icon_path = get_template_directory_uri() . '/assets/svg/svg-sprite.svg' . $getBustHash;
-		$css_path = get_template_directory_uri() . '/assets/styles/voy-ds.min.css' . $getBustHash;
-		$js_path = get_template_directory_uri() . '/assets/scripts/voy.js' . $getBustHash;
-	?>
-
-	<script type="text/javascript">
-
-    /* - - Inline Sync resource loader - - */
-		<?php
-			$toastloader = file_get_contents( 'assets/scripts/vendor/toast.min.js' , true );
-	    echo $toastloader;
-    ?>
-
-    /* - - Inline Critical JS - - */
     <?php
-      /*$js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
-      $jsInlineHead = file_get_contents( $js_inline_head , true );
-      echo $jsInlineHead;*/
+
+    // Cache busting for CSS/JS and SVG
+    $getCacheBustFile = './wp-content/themes/voytalent/assets/styles/voy-ds.min.css';
+    if ( file_exists( $getCacheBustFile ) ) {
+        $getBustHash = '?' . filemtime( $getCacheBustFile );
+    } else {
+        $getBustHash = '';
+    }
+
+    $svg_icon_path = get_template_directory_uri() . '/assets/svg/svg-sprite.svg' . $getBustHash;
+    $css_path = get_template_directory_uri() . '/assets/styles/voy-ds.min.css' . $getBustHash;
+    $js_path = get_template_directory_uri() . '/assets/scripts/voy.js' . $getBustHash;
     ?>
 
-    var VOY_PRESET = {
-        version: '<?php echo $getBustHash ?>',
-        file: '<?php echo $getCacheBustFile ?>',
-        path: {
-            svg: {
-                icons: '<?php echo $svg_icon_path ?>'
-            },
-            styles: '<?php echo $css_path ?>',
-            // print: '<?php echo $css_print_path ?>',
-            scripts: {
-                //   polyfills: '<?php echo $js_polyfills_path ?>',
-                voy: '<?php echo $js_path ?>',
-            },
-            // critical: '',
-        }
-    };
+    <script type="text/javascript">
+
+        /* - - Inline Sync resource loader - - */
+        <?php
+        $toastloader = file_get_contents( 'assets/scripts/vendor/toast.min.js' , true );
+        echo $toastloader;
+        ?>
+
+        /* - - Inline Critical JS - - */
+        // <?php
+        //   $js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
+        //   $jsInlineHead = file_get_contents( $js_inline_head , true );
+        //   echo $jsInlineHead;
+        // ?>
+
+        var VOY_PRESET = {
+            version: '<?php echo $getBustHash ?>',
+            file: '<?php echo $getCacheBustFile ?>',
+            path: {
+                svg: {
+                    icons: '<?php echo $svg_icon_path ?>'
+                },
+                styles: '<?php echo $css_path ?>',
+                // print: '<?php echo $css_print_path ?>',
+                scripts: {
+                    //   polyfills: '<?php echo $js_polyfills_path ?>',
+                    voy: '<?php echo $js_path ?>',
+                },
+                // critical: '',
+            }
+        };
 
 
 
-//////////////////////////////////////////////////////
-//
-// SCRIPTS - Inline head
-//
-//////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////
+        //
+        // SCRIPTS - Inline head
+        //
+        //////////////////////////////////////////////////////
 
 
 
-(function () {
+        (function () {
 
-  var   win       = window,
-      doc       = document,
-      docElement    = doc.documentElement,
-      toast       = win.toast;
-
-
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////
-    Global Namespaces
-  *////////////////////////////////////////////////////////////////////////////////////////////////////////
+            var   win       = window,
+                doc       = document,
+                docElement    = doc.documentElement,
+                toast       = win.toast;
 
 
-  VOY = win.VOY || {};
-
-  VOY.fn = VOY.fn || {},
-  VOY.ui = VOY.ui || {},
-  VOY.helpers = VOY.helpers || {},
-  VOY.initial = VOY.initial || {},
-  VOY.sections = VOY.sections || {},
-  VOY.modules = VOY.modules || {},
-  VOY.components = VOY.components || {},
-  VOY.pages = VOY.pages || {},
+            /*///////////////////////////////////////////////////////////////////////////////////////////////////////
+              Global Namespaces
+            *////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////
-    VOY functions
-  *////////////////////////////////////////////////////////////////////////////////////////////////////////
+            VOY = win.VOY || {};
 
-  VOY.fn.listen = function(eventName, callback) {
-    if (doc.addEventListener) {
-      doc.addEventListener(eventName, callback, false);
-    } else {
-      docElement.attachEvent('onpropertychange', function(e) {
-        if (e.propertyName == eventName) {
-          callback();
-        }
-      });
-    }
-  };
-
-  /*
-    Custom Event: eventTrigger
-    -> VOY.fn.trigger('somethingLoad');
-  */
-
-  VOY.fn.trigger = function(eventName) {
-    if (doc.createEvent) {
-      var event = doc.createEvent('Event');
-      event.initEvent(eventName, true, true);
-      doc.dispatchEvent(event);
-    } else {
-      docElement[eventName] ++;
-    }
-  };
+            VOY.fn = VOY.fn || {},
+                VOY.ui = VOY.ui || {},
+                VOY.helpers = VOY.helpers || {},
+                VOY.initial = VOY.initial || {},
+                VOY.sections = VOY.sections || {},
+                VOY.modules = VOY.modules || {},
+                VOY.components = VOY.components || {},
+                VOY.pages = VOY.pages || {},
 
 
+                /*///////////////////////////////////////////////////////////////////////////////////////////////////////
+                  VOY functions
+                *////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////
-    VOY UI functions
-  *////////////////////////////////////////////////////////////////////////////////////////////////////////
+                VOY.fn.listen = function(eventName, callback) {
+                    if (doc.addEventListener) {
+                        doc.addEventListener(eventName, callback, false);
+                    } else {
+                        docElement.attachEvent('onpropertychange', function(e) {
+                            if (e.propertyName == eventName) {
+                                callback();
+                            }
+                        });
+                    }
+                };
 
-  /*
-    Has touch support
-    https://github.com/Modernizr/Modernizr/blob/master/feature-detects/touchevents.js
-  */
+            /*
+              Custom Event: eventTrigger
+              -> VOY.fn.trigger('somethingLoad');
+            */
 
-  VOY.ui.isTouch = function () {
-    var docTouch = win.DocumentTouch;
-    return win.hasOwnProperty('ontouchstart') || docTouch && doc instanceof docTouch || false;
-  };
-
-  if (VOY.ui.isTouch()) {
-    var docClass = docElement.className; // HTML tag
-    // Replace class
-    docElement.className = docClass.replace(/\bno-touch\b/g, 'touch');
-  };
+            VOY.fn.trigger = function(eventName) {
+                if (doc.createEvent) {
+                    var event = doc.createEvent('Event');
+                    event.initEvent(eventName, true, true);
+                    doc.dispatchEvent(event);
+                } else {
+                    docElement[eventName] ++;
+                }
+            };
 
 
 
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////////
-    VOY INITIAL
-  *////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /*///////////////////////////////////////////////////////////////////////////////////////////////////////
+              VOY UI functions
+            *////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            /*
+              Has touch support
+              https://github.com/Modernizr/Modernizr/blob/master/feature-detects/touchevents.js
+            */
+
+            VOY.ui.isTouch = function () {
+                var docTouch = win.DocumentTouch;
+                return win.hasOwnProperty('ontouchstart') || docTouch && doc instanceof docTouch || false;
+            };
+
+            if (VOY.ui.isTouch()) {
+                var docClass = docElement.className; // HTML tag
+                // Replace class
+                docElement.className = docClass.replace(/\bno-touch\b/g, 'touch');
+            };
 
 
-  VOY.initial.loadASSET = function (name) {
-      assetURL = name;
-      toast('' + assetURL + '');
-  };
 
-  VOY.initial.loadCSS = function (name) {
-      assetURL = name;
-      toast('[css]'+assetURL);
-  };
+            /*///////////////////////////////////////////////////////////////////////////////////////////////////////
+              VOY INITIAL
+            *////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-  VOY.initial.loadGoogleFONTS = function () {
-      var fonta = win.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/"/g,"").replace(/'/g,"");
-      var fontb = win.getComputedStyle(document.body, ':before').getPropertyValue('content').replace(/"/g,"").replace(/'/g,"");
-      if (fonta.indexOf('https') !== -1) {
-         VOY.initial.loadCSS(fonta);
-      }
-      if (fontb.indexOf('https') !== -1) {
-         VOY.initial.loadCSS(fontb);
-      }
-  };
+            VOY.initial.loadASSET = function (name) {
+                assetURL = name;
+                toast('' + assetURL + '');
+            };
 
-  VOY.initial.loadCoreJS = function (name) {
-      assetURL = name;
-      toast(
-        '[js]'+assetURL+'',
-        function() {
-          VOY.fn.trigger('afterCoreJS');
-        }
-      );
-  };
-
-  VOY.initial.loadCSS(VOY_PRESET.path.styles);
+            VOY.initial.loadCSS = function (name) {
+                assetURL = name;
+                toast('[css]'+assetURL);
+            };
 
 
-})();
+            VOY.initial.loadGoogleFONTS = function () {
+                var fonta = win.getComputedStyle(document.body, ':after').getPropertyValue('content').replace(/"/g,"").replace(/'/g,"");
+                var fontb = win.getComputedStyle(document.body, ':before').getPropertyValue('content').replace(/"/g,"").replace(/'/g,"");
+                if (fonta.indexOf('https') !== -1) {
+                    VOY.initial.loadCSS(fonta);
+                }
+                if (fontb.indexOf('https') !== -1) {
+                    VOY.initial.loadCSS(fontb);
+                }
+            };
+
+            VOY.initial.loadCoreJS = function (name) {
+                assetURL = name;
+                toast(
+                    '[js]'+assetURL+'',
+                    function() {
+                        VOY.fn.trigger('afterCoreJS');
+                    }
+                );
+            };
+
+            VOY.initial.loadCSS(VOY_PRESET.path.styles);
+
+
+        })();
 
 
 
     </script>
 
     <style type="text/css">
-      body{
-        background: #000;
-      }
+        body{
+            background: #000;
+            overflow-x: hidden;
+        }
 
-      body > * {
-        visibility: hidden;
-      }
+        body > * {
+            visibility: hidden;
+        }
     </style>
 
     <?php wp_head(); ?>
 </head>
 
 <?php
-    $bodyClass = '';
-    if(is_page() || is_front_page()){
-        $pid = (is_front_page())? get_option('page_on_front'): get_the_ID();
-        $hasFeaturedImage = get_the_post_thumbnail_url($pid);
-        $bodyClass = ($hasFeaturedImage!='')? '-has-featured-image': '';
-    }
+$bodyClass = '';
+if(is_page() || is_front_page()){
+    $pid = (is_front_page())? get_option('page_on_front'): get_the_ID();
+    $hasFeaturedImage = get_the_post_thumbnail_url($pid);
+    $bodyClass = ($hasFeaturedImage!='')? '-has-featured-image': '';
+}
 ?>
 
 <body <?php body_class( array( "ds-grid", "-grd", $bodyClass, $bodyClassVideo ) ); ?>>
 
 <script type="text/javascript">
-  VOY.initial.loadGoogleFONTS();
+    VOY.initial.loadGoogleFONTS();
 </script>
 
 <figure class="svg-sprite -hide">
-	<?php
+    <?php
     $svgSprite = file_get_contents( $svg_icon_path , true );
     echo $svgSprite;
-  ?>
+    ?>
 </figure>
 
 
@@ -240,42 +241,42 @@
             </svg>
         </a>
 
-<!-- NAV -->
+        <!-- NAV -->
 
         <nav>
             <?php
-                $menuParameters = array(
-                    'theme_location' => 'menu-1',
-                    'container' => false,
-                    'echo' => false,
-                    'items_wrap' => '<span>%3$s</span>',
-                    'depth' => 0,
-                    'link_before' => '<span>',
-                    'link_after' => '</span>',
-                );
+            $menuParameters = array(
+                'theme_location' => 'menu-1',
+                'container' => false,
+                'echo' => false,
+                'items_wrap' => '<span>%3$s</span>',
+                'depth' => 0,
+                'link_before' => '<span>',
+                'link_after' => '</span>',
+            );
 
-                echo strip_tags(wp_nav_menu($menuParameters), '<a><span>');
+            echo strip_tags(wp_nav_menu($menuParameters), '<a><span>');
             ?>
         </nav>
 
-<!-- SEARCH -->
+        <!-- SEARCH -->
 
         <figure class="search">
             <?php get_search_form(); ?>
         </figure>
 
-<!-- TOGGLE ICONS -->
+        <!-- TOGGLE ICONS -->
 
         <div id="toggle-search">
-          <svg role="img" title="icon" class="svg-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-magnifier"  svg=""></use>
-          </svg>
+            <svg role="img" title="icon" class="svg-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-magnifier"  svg=""></use>
+            </svg>
         </div>
 
         <div id="toggle-mobile-menu">
-          <svg role="img" title="icon" class="svg-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-menu-thin"  svg=""></use>
-          </svg>
+            <svg role="img" title="icon" class="svg-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voy-menu-thin"  svg=""></use>
+            </svg>
         </div>
 
 
@@ -294,46 +295,43 @@
 
     elseif(is_front_page() && $post_thumbnail!='' && $slider_shortcode=='') :
 
-        $front_page_ID = get_option('page_on_front');
+    $front_page_ID = get_option('page_on_front');
 
-        $featuredImage ['featured_image_480'] = $post_thumbnail['sizes']['featured_image_480'];
-        $featuredImage ['large'] = $post_thumbnail['sizes']['large'];
-        $featuredImage ['featured_image_1440'] = $post_thumbnail['sizes']['featured_image_1440'];
-        $featuredImage ['featured_image_2048'] = $post_thumbnail['sizes']['featured_image_2048'];
+    $featuredImage ['featured_image_480'] = $post_thumbnail['sizes']['featured_image_480'];
+    $featuredImage ['large'] = $post_thumbnail['sizes']['large'];
+    $featuredImage ['featured_image_1440'] = $post_thumbnail['sizes']['featured_image_1440'];
+    $featuredImage ['featured_image_2048'] = $post_thumbnail['sizes']['featured_image_2048'];
 
-        $front_page_theTitle = get_the_title($front_page_ID);
-        $front_page_theSubTitle = get_post_meta( $front_page_ID, 'wps_subtitle', true );
+    $front_page_theTitle = get_the_title($front_page_ID);
+    $front_page_theSubTitle = get_post_meta( $front_page_ID, 'wps_subtitle', true );
 
-        $getPageImagesAndTexting = getPageImagesAndTexting($front_page_ID);
-        $front_page_image_position = $getPageImagesAndTexting['image_position'];
-        $front_page_text_position = $getPageImagesAndTexting['text_position'];
-        $front_page_text_size = $getPageImagesAndTexting['text_size'];
+    $getPageImagesAndTexting = getPageImagesAndTexting($front_page_ID);
+    $front_page_image_position = $getPageImagesAndTexting['image_position'];
+    $front_page_text_position = $getPageImagesAndTexting['text_position'];
+    $front_page_text_size = $getPageImagesAndTexting['text_size'];
 ?>
 
-<?php get_template_part('parts/s-featured-image-style'); ?>
+    <?php get_template_part('parts/s-featured-image-style'); ?>
 
-<section class="<?php echo (get_the_post_thumbnail_url($front_page_ID)!='')? 's-featured-image' : 's-no-featured-image'; ?> <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : ''; ?>">
+    <section class="<?php echo (get_the_post_thumbnail_url($front_page_ID)!='')? 's-featured-image' : 's-no-featured-image'; ?> <?php echo ($front_page_text_position!='')?$front_page_text_position : '-text-pos-left'; ?> <?php echo ($front_page_text_size!='')?$front_page_text_size : ''; ?>">
         <figure class="image <?php echo ($front_page_image_position!='')?$front_page_image_position : '-focus-center-center'; ?>"></figure>
         <div class="text">
-        <div class="gc">
-            <div class="g-12">
-                <div class="headers">
-                    <?php if(!empty($front_page_theTitle)) : ?>
-                        <h1 class="header">
-                            <?php echo $front_page_theTitle;?>
-                        </h1>
-                    <?php  endif; ?>
-                    <?php if(!empty($front_page_theSubTitle)) : ?>
-                        <h3 class="sub-header">
-                            <?php echo $front_page_theSubTitle;?>
-                        </h3>
-                    <?php  endif; ?>
+            <div class="gc">
+                <div class="g-12">
+                    <div class="headers">
+                        <?php if(!empty($front_page_theTitle)) : ?>
+                            <h1 class="header">
+                                <?php echo $front_page_theTitle;?>
+                            </h1>
+                        <?php  endif; ?>
+                        <?php if(!empty($front_page_theSubTitle)) : ?>
+                            <h3 class="sub-header">
+                                <?php echo $front_page_theSubTitle;?>
+                            </h3>
+                        <?php  endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php  endif; ?>
-
-
-
