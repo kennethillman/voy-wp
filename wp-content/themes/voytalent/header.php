@@ -31,9 +31,9 @@
 
     /* - - Inline Critical JS - - */
     <?php
-      $js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
+      /*$js_inline_head = 'assets/scripts/voy.inlineHead.js'; // KI -> Gulp beautify this one!
       $jsInlineHead = file_get_contents( $js_inline_head , true );
-      echo $jsInlineHead;
+      echo $jsInlineHead;*/
     ?>
 
     var VOY_PRESET = {
@@ -286,13 +286,20 @@
     global $featuredImage;
     $featuredImage = [];
 
-    if(is_front_page()) :
+    $post_thumbnail = get_field( 'featured_image_1');
+    $slider_shortcode = get_field( 'slider_short_code');
+
+    if($slider_shortcode!=''):
+        echo do_shortcode($slider_shortcode);
+
+    elseif(is_front_page() && $post_thumbnail!='' && $slider_shortcode=='') :
+
         $front_page_ID = get_option('page_on_front');
 
-        $featuredImage ['featured_image_480'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_480' );
-        $featuredImage ['large'] = get_the_post_thumbnail_url($front_page_ID, 'large' );
-        $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_1440' );
-        $featuredImage ['featured_image_2048'] = get_the_post_thumbnail_url($front_page_ID, 'featured_image_2048' );
+        $featuredImage ['featured_image_480'] = $post_thumbnail['sizes']['featured_image_480'];
+        $featuredImage ['large'] = $post_thumbnail['sizes']['large'];
+        $featuredImage ['featured_image_1440'] = $post_thumbnail['sizes']['featured_image_1440'];
+        $featuredImage ['featured_image_2048'] = $post_thumbnail['sizes']['featured_image_2048'];
 
         $front_page_theTitle = get_the_title($front_page_ID);
         $front_page_theSubTitle = get_post_meta( $front_page_ID, 'wps_subtitle', true );

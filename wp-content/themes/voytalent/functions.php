@@ -663,3 +663,5 @@ function block_b_repeater_team() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'block_b_repeater_team');
 }
+
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');

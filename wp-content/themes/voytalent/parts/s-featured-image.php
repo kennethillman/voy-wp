@@ -14,11 +14,17 @@ $featuredImage = [];
 $theTitle = get_the_title(get_the_ID());
 $theSubTitle = get_post_meta( get_the_ID(), 'wps_subtitle', true );
 
-if(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_ID())) && get_the_post_thumbnail_url(get_the_ID())!=''):
-    $featuredImage ['featured_image_480'] = get_the_post_thumbnail_url(get_the_ID(), 'featured_image_480' );
-    $featuredImage ['large'] = get_the_post_thumbnail_url(get_the_ID(), 'large' );
-    $featuredImage ['featured_image_1440'] = get_the_post_thumbnail_url(get_the_ID(), 'featured_image_1440' );
-    $featuredImage ['featured_image_2048'] = get_the_post_thumbnail_url(get_the_ID(), 'featured_image_2048' );
+$post_thumbnail = get_field( 'featured_image_1');
+$slider_shortcode = get_field( 'slider_short_code');
+
+if($slider_shortcode!=''):
+    echo do_shortcode($slider_shortcode);
+
+elseif(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_the_ID())) && $post_thumbnail!='' && $slider_shortcode==''):
+    $featuredImage ['featured_image_480'] = $post_thumbnail['sizes']['featured_image_480'];
+    $featuredImage ['large'] = $post_thumbnail['sizes']['large'];
+    $featuredImage ['featured_image_1440'] = $post_thumbnail['sizes']['featured_image_1440'];
+    $featuredImage ['featured_image_2048'] = $post_thumbnail['sizes']['featured_image_2048'];
 
     $getPageImagesAndTexting = getPageImagesAndTexting(get_the_ID());
     $image_position = $getPageImagesAndTexting['image_position'];
