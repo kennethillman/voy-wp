@@ -34,7 +34,7 @@ elseif(is_page() && !is_home() && !is_front_page() && !empty(get_the_title(get_t
 
 <?php get_template_part('parts/s-featured-image-style'); ?>
 
-<section class="s-featured-image <?php echo ($text_position!='')?$text_position : '-text-pos-left'; ?> <?php echo ($text_size!='')?$text_size : ''; ?>">
+<section class="s-featured-image n2-section-smartslider  <?php echo ($text_position!='')?$text_position : '-text-pos-left'; ?> <?php echo ($text_size!='')?$text_size : ''; ?>">
     <?php if(!empty($featuredImage)) : ?>
         <figure class="image <?php echo ($image_position!='')?$image_position : '-focus-center-center'; ?>">
         </figure>

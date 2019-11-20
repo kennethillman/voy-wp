@@ -2,7 +2,7 @@
 <?php get_template_part( 'parts/s-follow' ); ?>
 <?php get_template_part( 'parts/s-footer' ); ?>
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/assets/scripts/VOY.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/assets/scripts/VOY2.js"></script>
 
 <?php wp_footer(); ?>
 

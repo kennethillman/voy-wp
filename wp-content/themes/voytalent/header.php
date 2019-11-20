@@ -204,11 +204,13 @@
 </head>
 
 <?php
+$post_thumbnail = get_field( 'featured_image_1');
+$slider_shortcode = get_field( 'slider_short_code');
 $bodyClass = '';
 if(is_page() || is_front_page()){
     $pid = (is_front_page())? get_option('page_on_front'): get_the_ID();
     $hasFeaturedImage = get_the_post_thumbnail_url($pid);
-    $bodyClass = ($hasFeaturedImage!='')? '-has-featured-image': '';
+    $bodyClass = ($post_thumbnail!='' || $slider_shortcode!='')? '-has-featured-image': '';
 }
 ?>
 
@@ -287,8 +289,7 @@ if(is_page() || is_front_page()){
     global $featuredImage;
     $featuredImage = [];
 
-    $post_thumbnail = get_field( 'featured_image_1');
-    $slider_shortcode = get_field( 'slider_short_code');
+
 
     if($slider_shortcode!=''):
         echo do_shortcode($slider_shortcode);
